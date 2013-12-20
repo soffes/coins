@@ -9,7 +9,6 @@
 #import "BTCValueViewController.h"
 #import "BTCConversionProvider.h"
 #import "BTCCurrencyPickerTableViewController.h"
-#import "BTCNavigationController.h"
 
 #import <SAMTextField/SAMTextField.h>
 #import <SAMGradientView/SAMGradientView.h>
@@ -24,6 +23,7 @@
 @property (nonatomic, readonly) UIButton *currencyButton;
 @property (nonatomic, readonly) UILabel *lastUpdatedLabel;
 @property (nonatomic) UIPopoverController *currencyPopover;
+@property (nonatomic) BOOL controlsHidden;
 @end
 
 @implementation BTCValueViewController
@@ -92,6 +92,22 @@
 	return _lastUpdatedLabel;
 }
 
+
+- (void)setControlsHidden:(BOOL)controlsHidden {
+	if (_controlsHidden == controlsHidden) {
+		return;
+	}
+	_controlsHidden = controlsHidden;
+
+	[UIView animateWithDuration:0.6 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+		self.currencyButton.alpha = _controlsHidden ? 0.0f : 1.0f;
+		self.lastUpdatedLabel.alpha = self.currencyButton.alpha;
+	} completion:nil];
+
+	[[UIApplication sharedApplication] setStatusBarHidden:_controlsHidden withAnimation:UIStatusBarAnimationFade];
+}
+
+
 #pragma mark - NSObject
 
 - (void)dealloc {
@@ -120,6 +136,9 @@
 	[self.view addSubview:self.currencyButton];
 	[self.view addSubview:self.inputButton];
 	[self.view addSubview:self.lastUpdatedLabel];
+
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
+	[self.view addGestureRecognizer:tap];
 
 	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates) {
 		self.conversionRates = conversionRates;
@@ -164,18 +183,13 @@
 }
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-	return UIStatusBarStyleLightContent;
-}
-
-
 #pragma mark - Actions
 
 - (void)pickCurrency:(id)sender {
 	BTCCurrencyPickerTableViewController *viewController = [[BTCCurrencyPickerTableViewController alloc] init];
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		UINavigationController *navigationController = [[BTCNavigationController alloc] initWithRootViewController:viewController];
+		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 		navigationController.navigationBar.titleTextAttributes = @{
 			NSForegroundColorAttributeName: [UIColor colorWithRed:0.102f green:0.451f blue:0.635f alpha:1.0f],
 			NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0f]
@@ -187,6 +201,11 @@
 	}
 
 	[self.navigationController pushViewController:viewController animated:YES];
+}
+
+
+- (void)toggleControls:(id)sender {
+	self.controlsHidden = !self.controlsHidden;
 }
 
 

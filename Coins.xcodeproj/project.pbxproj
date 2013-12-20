@@ -14,7 +14,6 @@
 		2100A1751864B81300C994C2 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 2100A1741864B81300C994C2 /* currencies.json */; };
 		2100A1781864BBCE00C994C2 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1771864BBCE00C994C2 /* BTCDefines.m */; };
 		2100A17A1864CB8100C994C2 /* gear.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2100A1791864CB8100C994C2 /* gear.pdf */; };
-		2100A1841864D75100C994C2 /* BTCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1831864D75100C994C2 /* BTCNavigationController.m */; };
 		2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
 		2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16A1864AD58006D3470 /* CoreGraphics.framework */; };
 		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
@@ -49,8 +48,6 @@
 		2100A1761864BBCE00C994C2 /* BTCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCDefines.h; sourceTree = "<group>"; };
 		2100A1771864BBCE00C994C2 /* BTCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCDefines.m; sourceTree = "<group>"; };
 		2100A1791864CB8100C994C2 /* gear.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = gear.pdf; sourceTree = "<group>"; };
-		2100A1821864D75100C994C2 /* BTCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCNavigationController.h; sourceTree = "<group>"; };
-		2100A1831864D75100C994C2 /* BTCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCNavigationController.m; sourceTree = "<group>"; };
 		2130E1651864AD58006D3470 /* Coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2130E1681864AD58006D3470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2130E16A1864AD58006D3470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,8 +102,6 @@
 				2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */,
 				2100A16B1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.h */,
 				2100A16C1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m */,
-				2100A1821864D75100C994C2 /* BTCNavigationController.h */,
-				2100A1831864D75100C994C2 /* BTCNavigationController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -265,6 +260,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Nothing Magical, Inc.";
 				TargetAttributes = {
+					2130E1641864AD58006D3470 = {
+						DevelopmentTeam = UP9C8XM22A;
+					};
 					2130E17F1864AD58006D3470 = {
 						TestTargetID = 2130E1641864AD58006D3470;
 					};
@@ -348,7 +346,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2130E1AF1864AE40006D3470 /* BTCConversionProvider.m in Sources */,
-				2100A1841864D75100C994C2 /* BTCNavigationController.m in Sources */,
 				2100A1731864B66D00C994C2 /* BTCTableViewCell.m in Sources */,
 				2130E1AC1864AE1A006D3470 /* BTCValueViewController.m in Sources */,
 				2100A1781864BBCE00C994C2 /* BTCDefines.m in Sources */,
@@ -468,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Coins-Info.plist";
@@ -482,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Coins-Info.plist";
