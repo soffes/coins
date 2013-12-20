@@ -1,0 +1,13 @@
+PODS:
+  - SAMCache (0.2.0)
+  - SAMTextField (0.1.1)
+
+DEPENDENCIES:
+  - SAMCache
+  - SAMTextField
+
+SPEC CHECKSUMS:
+  SAMCache: 0e89f0947169946b59063989d57c71587271d4c8
+  SAMTextField: 5cc022dd9f6bd9a6f8b561984cc836d2bad879d2
+
+COCOAPODS: 0.28.0
