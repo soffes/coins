@@ -1,13 +1,29 @@
 PODS:
   - SAMCache (0.2.0)
+  - SAMCategories (0.4.0)
+  - SAMGradientView (0.2.1)
   - SAMTextField (0.1.1)
+  - SSPullToRefresh (1.2.0)
+  - UIImage-Vector (0.1.0)
 
 DEPENDENCIES:
   - SAMCache
+  - SAMCategories
+  - SAMGradientView
   - SAMTextField
+  - SSPullToRefresh
+  - UIImage-Vector (from `https://github.com/soffes/UIImage-Vector`)
+
+EXTERNAL SOURCES:
+  UIImage-Vector:
+    :git: https://github.com/soffes/UIImage-Vector
 
 SPEC CHECKSUMS:
   SAMCache: 0e89f0947169946b59063989d57c71587271d4c8
+  SAMCategories: fb35d723e2d29b70afdd7efabfd1f99d4d1fe7f5
+  SAMGradientView: ab5543a14a69ecf5fc10239091740291c50b328c
   SAMTextField: 5cc022dd9f6bd9a6f8b561984cc836d2bad879d2
+  SSPullToRefresh: ecdc6efdee5322bba8b57dc77c1263ef6b4170bf
+  UIImage-Vector: b2b9911115362509a3de70dafebf28760bdf7bbc
 
 COCOAPODS: 0.28.0

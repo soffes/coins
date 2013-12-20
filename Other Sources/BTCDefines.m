@@ -10,3 +10,4 @@
 
 NSString *const kBTCSelectedCurrencyKey = @"BTCSelectedCurrency";
 NSString *const kBTCNumberOfCoinsKey = @"BTCNumberOfCoins";
+NSString *const kBTCCurrencyDidChangeNotificationName = @"BTCCurrencyDidChangeNotification";

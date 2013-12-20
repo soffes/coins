@@ -162,7 +162,6 @@
     "USD",
     "GBP",
     "HKD",
-    "RMB",
     "CAD",
     "EUR",
     "AUD",
@@ -224,7 +223,6 @@
     "IQD",
     "IRR",
     "ISK",
-    "JEP",
     "JMD",
     "JOD",
     "JPY",
@@ -294,7 +292,6 @@
     "SZL",
     "THB",
     "TJS",
-    "TMT",
     "TND",
     "TRY",
     "TTD",
@@ -314,7 +311,6 @@
     "XPF",
     "YER",
     "ZAR",
-    "ZMW",
     "ZWL"
   ]
 }

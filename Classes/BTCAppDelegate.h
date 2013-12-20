@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Nothing Magical, Inc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface BTCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

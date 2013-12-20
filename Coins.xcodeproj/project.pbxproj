@@ -13,6 +13,8 @@
 		2100A1731864B66D00C994C2 /* BTCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1721864B66D00C994C2 /* BTCTableViewCell.m */; };
 		2100A1751864B81300C994C2 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 2100A1741864B81300C994C2 /* currencies.json */; };
 		2100A1781864BBCE00C994C2 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1771864BBCE00C994C2 /* BTCDefines.m */; };
+		2100A17A1864CB8100C994C2 /* gear.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2100A1791864CB8100C994C2 /* gear.pdf */; };
+		2100A1841864D75100C994C2 /* BTCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1831864D75100C994C2 /* BTCNavigationController.m */; };
 		2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
 		2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16A1864AD58006D3470 /* CoreGraphics.framework */; };
 		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
@@ -46,6 +48,9 @@
 		2100A1741864B81300C994C2 /* currencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
 		2100A1761864BBCE00C994C2 /* BTCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCDefines.h; sourceTree = "<group>"; };
 		2100A1771864BBCE00C994C2 /* BTCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCDefines.m; sourceTree = "<group>"; };
+		2100A1791864CB8100C994C2 /* gear.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = gear.pdf; sourceTree = "<group>"; };
+		2100A1821864D75100C994C2 /* BTCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCNavigationController.h; sourceTree = "<group>"; };
+		2100A1831864D75100C994C2 /* BTCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCNavigationController.m; sourceTree = "<group>"; };
 		2130E1651864AD58006D3470 /* Coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2130E1681864AD58006D3470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2130E16A1864AD58006D3470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +98,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2100A17B1864D21A00C994C2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2130E1AA1864AE1A006D3470 /* BTCValueViewController.h */,
+				2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */,
+				2100A16B1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.h */,
+				2100A16C1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m */,
+				2100A1821864D75100C994C2 /* BTCNavigationController.h */,
+				2100A1831864D75100C994C2 /* BTCNavigationController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2100A17C1864D22300C994C2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2130E1981864AD8B006D3470 /* BTCAppDelegate.h */,
+				2130E1991864AD8B006D3470 /* BTCAppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		2100A17D1864D26700C994C2 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2100A1711864B66D00C994C2 /* BTCTableViewCell.h */,
+				2100A1721864B66D00C994C2 /* BTCTableViewCell.m */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		2100A17E1864D27F00C994C2 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				2130E1AD1864AE40006D3470 /* BTCConversionProvider.h */,
+				2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */,
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
 		2130E15C1864AD57006D3470 = {
 			isa = PBXGroup;
 			children = (
@@ -130,16 +175,10 @@
 		2130E1971864AD8B006D3470 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2130E1981864AD8B006D3470 /* BTCAppDelegate.h */,
-				2130E1991864AD8B006D3470 /* BTCAppDelegate.m */,
-				2130E1AA1864AE1A006D3470 /* BTCValueViewController.h */,
-				2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */,
-				2130E1AD1864AE40006D3470 /* BTCConversionProvider.h */,
-				2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */,
-				2100A16B1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.h */,
-				2100A16C1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m */,
-				2100A1711864B66D00C994C2 /* BTCTableViewCell.h */,
-				2100A1721864B66D00C994C2 /* BTCTableViewCell.m */,
+				2100A17C1864D22300C994C2 /* Application */,
+				2100A17B1864D21A00C994C2 /* View Controllers */,
+				2100A17D1864D26700C994C2 /* Table View Cells */,
+				2100A17E1864D27F00C994C2 /* Providers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -158,6 +197,7 @@
 		2130E19D1864AD8B006D3470 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2100A1791864CB8100C994C2 /* gear.pdf */,
 				2100A1741864B81300C994C2 /* currencies.json */,
 				2130E19E1864AD8B006D3470 /* Coins-Info.plist */,
 				2130E19F1864AD8B006D3470 /* Images.xcassets */,
@@ -256,6 +296,7 @@
 				2130E1A31864AD8B006D3470 /* Images.xcassets in Resources */,
 				2100A1701864B64500C994C2 /* Localizable.strings in Resources */,
 				2100A1751864B81300C994C2 /* currencies.json in Resources */,
+				2100A17A1864CB8100C994C2 /* gear.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2130E1AF1864AE40006D3470 /* BTCConversionProvider.m in Sources */,
+				2100A1841864D75100C994C2 /* BTCNavigationController.m in Sources */,
 				2100A1731864B66D00C994C2 /* BTCTableViewCell.m in Sources */,
 				2130E1AC1864AE1A006D3470 /* BTCValueViewController.m in Sources */,
 				2100A1781864BBCE00C994C2 /* BTCDefines.m in Sources */,

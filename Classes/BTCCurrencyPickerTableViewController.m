@@ -17,9 +17,9 @@
 
 @implementation BTCCurrencyPickerTableViewController
 
-- (instancetype)init {
-	return (self = [super initWithStyle:UITableViewStyleGrouped]);
-}
+//- (instancetype)init {
+//	return (self = [super initWithStyle:UITableViewStyleGrouped]);
+//}
 
 
 #pragma mark - UIViewController
@@ -43,9 +43,14 @@
 	[super viewWillAppear:animated];
 
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.currencyOrder indexOfObject:self.selectedKey] inSection:0];
-	[self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+	[self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
 
 	[self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 
@@ -62,9 +67,6 @@
 
 	NSString *key = self.currencyOrder[indexPath.row];
 
-//	cell.textLabel.textColor = [key isEqualToString:self.selectedKey] ? [UIColor shr_blueColor] : [UIColor shr_darkTextColor];
-	cell.detailTextLabel.textColor = cell.textLabel.textColor;
-
 	cell.textLabel.text = self.currencies[key];
 	cell.detailTextLabel.text = key;
 
@@ -80,6 +82,7 @@
 	[userDefaults setObject:key forKey:kBTCSelectedCurrencyKey];
 	[userDefaults synchronize];
 
+	[[NSNotificationCenter defaultCenter] postNotificationName:kBTCCurrencyDidChangeNotificationName object:key];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

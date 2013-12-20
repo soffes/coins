@@ -8,6 +8,7 @@
 
 #import "BTCAppDelegate.h"
 #import "BTCValueViewController.h"
+#import "BTCNavigationController.h"
 
 @implementation BTCAppDelegate
 
@@ -17,9 +18,12 @@
 		kBTCNumberOfCoinsKey: @0
 	}];
 
+	BTCNavigationController *navigationController = [[BTCNavigationController alloc] initWithRootViewController:[[BTCValueViewController alloc] init]];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[BTCValueViewController alloc] init]];
+	self.window.rootViewController = navigationController;
+
     [self.window makeKeyAndVisible];
     return YES;
 }
