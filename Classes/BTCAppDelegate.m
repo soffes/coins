@@ -24,7 +24,9 @@
 
 	[[NSUserDefaults standardUserDefaults] registerDefaults:@{
 		kBTCSelectedCurrencyKey: @"USD",
-		kBTCNumberOfCoinsKey: @0
+		kBTCNumberOfCoinsKey: @0,
+		kBTCAutomaticallyRefreshKey: @YES,
+		kBTCDisableSleepKey: @NO
 	}];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

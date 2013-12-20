@@ -9,10 +9,10 @@
 #import "BTCValueViewController.h"
 #import "BTCConversionProvider.h"
 #import "BTCCurrencyPickerTableViewController.h"
+#import "BTCTickingButton.h"
 
 #import <SAMTextField/SAMTextField.h>
 #import <SAMGradientView/SAMGradientView.h>
-#import <SAMCategories/NSDate+SAMAdditions.h>
 #import "UIImage+Vector.h"
 
 @interface BTCValueViewController () <UITextFieldDelegate>
@@ -21,9 +21,12 @@
 @property (nonatomic, readonly) SAMTextField *textField;
 @property (nonatomic, readonly) UILabel *label;
 @property (nonatomic, readonly) UIButton *currencyButton;
-@property (nonatomic, readonly) UILabel *lastUpdatedLabel;
+@property (nonatomic, readonly) BTCTickingButton *updateButton;
 @property (nonatomic) UIPopoverController *currencyPopover;
 @property (nonatomic) BOOL controlsHidden;
+@property (nonatomic) BOOL loading;
+@property (nonatomic) BOOL automaticallyRefreshes;
+@property (nonatomic) NSTimer *autoRefreshTimer;
 @end
 
 @implementation BTCValueViewController
@@ -34,7 +37,7 @@
 @synthesize label = _label;
 @synthesize currencyButton = _currencyButton;
 @synthesize inputButton = _inputButton;
-@synthesize lastUpdatedLabel = _lastUpdatedLabel;
+@synthesize updateButton = _updateButton;
 
 - (UITextField *)textField {
 	if (!_textField) {
@@ -83,28 +86,40 @@
 }
 
 
-- (UILabel *)lastUpdatedLabel {
-	if (!_lastUpdatedLabel) {
-		_lastUpdatedLabel = [[UILabel alloc] init];
-		_lastUpdatedLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.3f];
-		_lastUpdatedLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
+- (BTCTickingButton *)updateButton {
+	if (!_updateButton) {
+		_updateButton = [[BTCTickingButton alloc] init];
+		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.3f] forState:UIControlStateNormal];
+		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.8f] forState:UIControlStateHighlighted];
+		_updateButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
+		_updateButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+		[_updateButton addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
 	}
-	return _lastUpdatedLabel;
+	return _updateButton;
 }
 
 
 - (void)setControlsHidden:(BOOL)controlsHidden {
-	if (_controlsHidden == controlsHidden) {
+	[self setControlsHidden:controlsHidden animated:YES];
+}
+
+
+- (void)setAutomaticallyRefreshes:(BOOL)automaticallyRefreshes {
+	if (_automaticallyRefreshes == automaticallyRefreshes) {
 		return;
 	}
-	_controlsHidden = controlsHidden;
 
-	[UIView animateWithDuration:0.6 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-		self.currencyButton.alpha = _controlsHidden ? 0.0f : 1.0f;
-		self.lastUpdatedLabel.alpha = self.currencyButton.alpha;
-	} completion:nil];
+	_automaticallyRefreshes = automaticallyRefreshes;
 
-	[[UIApplication sharedApplication] setStatusBarHidden:_controlsHidden withAnimation:UIStatusBarAnimationFade];
+	if (_automaticallyRefreshes) {
+		if (!self.autoRefreshTimer) {
+			self.autoRefreshTimer = [NSTimer timerWithTimeInterval:60.0 target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
+			[[NSRunLoop mainRunLoop] addTimer:self.autoRefreshTimer forMode:NSRunLoopCommonModes];
+		}
+	} else {
+		[self.autoRefreshTimer invalidate];
+		self.autoRefreshTimer = nil;
+	}
 }
 
 
@@ -135,22 +150,19 @@
 	[self.view addSubview:self.label];
 	[self.view addSubview:self.currencyButton];
 	[self.view addSubview:self.inputButton];
-	[self.view addSubview:self.lastUpdatedLabel];
+	[self.view addSubview:self.updateButton];
 
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
 	[self.view addGestureRecognizer:tap];
 
-	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates) {
-		self.conversionRates = conversionRates;
+	[self refresh:nil];
+	[self _preferencesDidChange];
 
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self _update];
-			self.lastUpdatedLabel.text = [NSString stringWithFormat:@"Updated %@ ago", [conversionRates[@"updatedAt"] sam_timeInWords]];
-		});
-	}];
+	[self setControlsHidden:[[NSUserDefaults standardUserDefaults] boolForKey:kBTCControlsHiddenKey] animated:NO];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_update) name:kBTCCurrencyDidChangeNotificationName object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_preferencesDidChange) name:NSUserDefaultsDidChangeNotification object:nil];
 }
 
 
@@ -161,17 +173,17 @@
 
 	CGSize size = self.view.bounds.size;
 
-	CGSize labelSize = [self.label sizeThatFits:CGSizeMake(size.width - 40.0f, 100.0f)];
-	labelSize.width = fminf(280.0f, labelSize.width);
-
 	CGFloat offset = -20.0f;
+	CGSize labelSize = [self.label sizeThatFits:CGSizeMake(size.width, 200.0f)];
+	labelSize.width = fminf(300.0f, labelSize.width);
+
 	self.label.frame = CGRectMake(roundf((size.width - labelSize.width) / 2.0f), roundf((size.height - labelSize.height) / 2.0f) + offset, labelSize.width, labelSize.height);
 
 //	self.textField.frame = CGRectMake(20.0f, CGRectGetMaxY(self.label.frame) + offset + 10.0f, 280.0f, 44.0f);
 	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.label.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
 
 	self.currencyButton.frame = CGRectMake(size.width - 44.0f, size.height - 44.0f, 44.0f, 44.0f);
-	self.lastUpdatedLabel.frame = CGRectMake(10.0f, size.height - 31.0f, 200.0f, 20.0f);
+	self.updateButton.frame = CGRectMake(44.0f, size.height - 44.0f, size.width - 88.0f, 44.0f);
 }
 
 
@@ -180,10 +192,45 @@
 
 	[self _update];
 	[self.navigationController setNavigationBarHidden:YES animated:animated];
+
+	[self.updateButton startTicking];
+	
+//	if (self.autoRefreshTimer) {
+//		[[NSRunLoop mainRunLoop] addTimer:self.autoRefreshTimer forMode:NSRunLoopCommonModes];
+//	}
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated {
+	[super viewDidDisappear:animated];
+
+	[self.updateButton stopTicking];
+
+//	[self.autoRefreshTimer invalidate];
 }
 
 
 #pragma mark - Actions
+
+- (void)refresh:(id)sender {
+	if (self.loading) {
+		return;
+	}
+
+	self.loading = YES;
+	self.updateButton.format = @"Updating…";
+
+	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates) {
+		self.conversionRates = conversionRates;
+
+		[self _update];
+
+		self.updateButton.format = @"Updated %@";
+		self.updateButton.date = conversionRates[@"updatedAt"];
+		self.loading = NO;
+	}];
+}
+
 
 - (void)pickCurrency:(id)sender {
 	BTCCurrencyPickerTableViewController *viewController = [[BTCCurrencyPickerTableViewController alloc] init];
@@ -210,6 +257,31 @@
 
 
 #pragma mark - Private
+
+- (void)setControlsHidden:(BOOL)controlsHidden animated:(BOOL)animated {
+	if (_controlsHidden == controlsHidden) {
+		return;
+	}
+	_controlsHidden = controlsHidden;
+
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults setBool:_controlsHidden forKey:kBTCControlsHiddenKey];
+	[userDefaults synchronize];
+
+	void (^animations)(void) = ^{
+		self.currencyButton.alpha = _controlsHidden ? 0.0f : 1.0f;
+		self.updateButton.alpha = self.currencyButton.alpha;
+	};
+
+	if (animated) {
+		[UIView animateWithDuration:0.6 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:UIViewAnimationOptionAllowUserInteraction animations:animations completion:nil];
+	} else {
+		animations();
+	}
+
+	[[UIApplication sharedApplication] setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+}
+
 
 - (void)_textFieldDidChange:(NSNotification *)notification {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -249,6 +321,13 @@
 
 	NSString *title = [numberFormatter stringFromNumber:[userDefaults objectForKey:kBTCNumberOfCoinsKey]];
 	[self.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
+	[self viewDidLayoutSubviews];
+}
+
+
+- (void)_preferencesDidChange {
+	[UIApplication sharedApplication].idleTimerDisabled = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCDisableSleepKey];
+	self.automaticallyRefreshes = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 }
 
 

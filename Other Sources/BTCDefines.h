@@ -11,6 +11,10 @@
 
 extern NSString *const kBTCSelectedCurrencyKey;
 extern NSString *const kBTCNumberOfCoinsKey;
+extern NSString *const kBTCControlsHiddenKey;
+extern NSString *const kBTCAutomaticallyRefreshKey;
+extern NSString *const kBTCDisableSleepKey;
+
 extern NSString *const kBTCCurrencyDidChangeNotificationName;
 
 #endif

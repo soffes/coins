@@ -24,13 +24,15 @@
 
 
 - (void)getConversionRates:(void (^)(NSDictionary *))completion {
-	if (completion) {
-		[[SAMCache sharedCache] objectForKey:@"BTCConversion" usingBlock:^(id<NSCopying> object) {
-			if (object) {
-				completion((NSDictionary *)object);
-			}
-		}];
-	}
+//	if (completion) {
+//		[[SAMCache sharedCache] objectForKey:@"BTCConversion" usingBlock:^(id<NSCopying> object) {
+//			if (object) {
+//				completion((NSDictionary *)object);
+//			}
+//		}];
+//	}
+
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 
 	NSURL *URL = [[NSURL alloc] initWithString:@"https://coinbase.com/api/v1/currencies/exchange_rates"];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
@@ -52,9 +54,13 @@
 
 		[[SAMCache sharedCache] setObject:dictionary forKey:@"BTCConversion"];
 
-		if (completion) {
-			completion(dictionary);
-		}
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+
+			if (completion) {
+				completion(dictionary);
+			}
+		});
 	}];
 
 	[task resume];
