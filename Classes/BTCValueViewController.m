@@ -25,7 +25,7 @@
 @property (nonatomic) UIPopoverController *currencyPopover;
 @property (nonatomic) BOOL controlsHidden;
 @property (nonatomic) BOOL loading;
-@property (nonatomic) BOOL automaticallyRefreshes;
+@property (nonatomic) BOOL autoRefreshing;
 @property (nonatomic) NSTimer *autoRefreshTimer;
 @end
 
@@ -104,21 +104,18 @@
 }
 
 
-- (void)setAutomaticallyRefreshes:(BOOL)automaticallyRefreshes {
-	if (_automaticallyRefreshes == automaticallyRefreshes) {
+- (void)setAutoRefreshing:(BOOL)autoRefreshing {
+	if (_autoRefreshing == autoRefreshing) {
 		return;
 	}
 
-	_automaticallyRefreshes = automaticallyRefreshes;
+	_autoRefreshing = autoRefreshing;
 
-	if (_automaticallyRefreshes) {
-		if (!self.autoRefreshTimer) {
-			self.autoRefreshTimer = [NSTimer timerWithTimeInterval:60.0 target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
-			[[NSRunLoop mainRunLoop] addTimer:self.autoRefreshTimer forMode:NSRunLoopCommonModes];
-		}
+	if (_autoRefreshing) {
+		self.autoRefreshTimer = [NSTimer timerWithTimeInterval:60.0 target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
+		[[NSRunLoop mainRunLoop] addTimer:self.autoRefreshTimer forMode:NSRunLoopCommonModes];
 	} else {
 		[self.autoRefreshTimer invalidate];
-		self.autoRefreshTimer = nil;
 	}
 }
 
@@ -160,9 +157,12 @@
 
 	[self setControlsHidden:[[NSUserDefaults standardUserDefaults] boolForKey:kBTCControlsHiddenKey] animated:NO];
 
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_update) name:kBTCCurrencyDidChangeNotificationName object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_preferencesDidChange) name:NSUserDefaultsDidChangeNotification object:nil];
+	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+	[notificationCenter addObserver:self selector:@selector(_textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(_update) name:kBTCCurrencyDidChangeNotificationName object:nil];
+	[notificationCenter addObserver:self selector:@selector(_preferencesDidChange) name:NSUserDefaultsDidChangeNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 
@@ -194,10 +194,8 @@
 	[self.navigationController setNavigationBarHidden:YES animated:animated];
 
 	[self.updateButton startTicking];
-	
-//	if (self.autoRefreshTimer) {
-//		[[NSRunLoop mainRunLoop] addTimer:self.autoRefreshTimer forMode:NSRunLoopCommonModes];
-//	}
+
+	self.autoRefreshing = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 }
 
 
@@ -206,7 +204,7 @@
 
 	[self.updateButton stopTicking];
 
-//	[self.autoRefreshTimer invalidate];
+	self.autoRefreshing = NO;
 }
 
 
@@ -327,7 +325,13 @@
 
 - (void)_preferencesDidChange {
 	[UIApplication sharedApplication].idleTimerDisabled = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCDisableSleepKey];
-	self.automaticallyRefreshes = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
+	[self _updateTimerPaused:nil];
+}
+
+
+- (void)_updateTimerPaused:(NSNotification *)notification {
+	BOOL active = [[UIApplication sharedApplication] applicationState] == UIApplicationStateActive;
+	self.autoRefreshing = active && [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 }
 
 
