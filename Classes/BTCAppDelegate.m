@@ -22,7 +22,8 @@
 		NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0f]
 	};
 
-	[[NSUserDefaults standardUserDefaults] registerDefaults:@{
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults registerDefaults:@{
 		kBTCSelectedCurrencyKey: @"USD",
 		kBTCNumberOfCoinsKey: @0,
 		kBTCAutomaticallyRefreshKey: @YES,
@@ -35,6 +36,16 @@
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[BTCValueViewController alloc] init]];
 
     [self.window makeKeyAndVisible];
+
+	dispatch_async(dispatch_get_main_queue(), ^{
+		NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+		NSString *versionString = [NSString stringWithFormat:@"%@ (%@)",
+								   info[@"CFBundleShortVersionString"],
+								   info[@"CFBundleVersion"]];
+		[userDefaults setObject:versionString forKey:@"BTCVersion"];
+		[userDefaults synchronize];
+	});
+
     return YES;
 }
 

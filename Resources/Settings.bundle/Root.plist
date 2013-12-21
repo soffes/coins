@@ -10,7 +10,7 @@
 			<key>Key</key>
 			<string>BTCAutomaticallyRefresh</string>
 			<key>Title</key>
-			<string>Automatically Refresh</string>
+			<string>AUTOMATICALLY_REFRESH</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
@@ -20,10 +20,36 @@
 			<key>Key</key>
 			<string>BTCDisableSleep</string>
 			<key>Title</key>
-			<string>Disable Sleep</string>
+			<string>DISABLE_SLEEP</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
+		<dict>
+			<key>Title</key>
+			<string>ABOUT</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>VERSION</string>
+			<key>DefaultValue</key>
+			<string> </string>
+			<key>Key</key>
+			<string>BTCVersion</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>ACKNOWLEDGEMENTS</string>
+			<key>File</key>
+			<string>Acknowledgements</string>
+		</dict>
 	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
 </dict>
 </plist>

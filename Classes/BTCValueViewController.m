@@ -352,8 +352,10 @@
 
 
 - (void)_textFieldDidChange:(NSNotification *)notification {
+	NSString *string = [self.textField.text stringByReplacingOccurrencesOfString:@"," withString:@"."];
+
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	[userDefaults setObject:@([self.textField.text floatValue]) forKey:kBTCNumberOfCoinsKey];
+	[userDefaults setObject:@([string floatValue]) forKey:kBTCNumberOfCoinsKey];
 	[userDefaults synchronize];
 
 	[self _update];

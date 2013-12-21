@@ -29,6 +29,7 @@
 		2130E1A91864AD9E006D3470 /* CoinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1A61864AD96006D3470 /* CoinsTests.m */; };
 		2130E1AC1864AE1A006D3470 /* BTCValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */; };
 		2130E1AF1864AE40006D3470 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */; };
+		21F99A8618652DAF00C19618 /* Coins.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 21F99A8518652DAF00C19618 /* Coins.entitlements */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueViewController.m; sourceTree = "<group>"; };
 		2130E1AD1864AE40006D3470 /* BTCConversionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCConversionProvider.h; sourceTree = "<group>"; };
 		2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCConversionProvider.m; sourceTree = "<group>"; };
+		21F99A8518652DAF00C19618 /* Coins.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
 		7C733206B69A4AA88CE1C3A3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B206D3CD97420994DFC1B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 		2130E19D1864AD8B006D3470 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				21F99A8518652DAF00C19618 /* Coins.entitlements */,
 				2100A1741864B81300C994C2 /* currencies.json */,
 				2130E19E1864AD8B006D3470 /* Coins-Info.plist */,
 				2130E19F1864AD8B006D3470 /* Images.xcassets */,
@@ -316,6 +319,7 @@
 			files = (
 				2130E1A31864AD8B006D3470 /* Images.xcassets in Resources */,
 				2100A1701864B64500C994C2 /* Localizable.strings in Resources */,
+				21F99A8618652DAF00C19618 /* Coins.entitlements in Resources */,
 				2100A18E1864F86D00C994C2 /* Settings.bundle in Resources */,
 				2100A1751864B81300C994C2 /* currencies.json in Resources */,
 			);
@@ -506,11 +510,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Resources/Coins.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F7009391-7E5C-4F4A-BC20-06651EAF4F39";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
