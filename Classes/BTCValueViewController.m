@@ -11,6 +11,7 @@
 #import "BTCCurrencyPickerTableViewController.h"
 #import "BTCTickingButton.h"
 
+#import <QuartzCore/QuartzCore.h>
 #import <SAMTextField/SAMTextField.h>
 #import <SAMGradientView/SAMGradientView.h>
 #import "UIImage+Vector.h"
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) UILabel *label;
 @property (nonatomic, readonly) UIButton *currencyButton;
 @property (nonatomic, readonly) BTCTickingButton *updateButton;
+@property (nonatomic, readonly) UIButton *doneButton;
 @property (nonatomic) UIPopoverController *currencyPopover;
 @property (nonatomic) BOOL controlsHidden;
 @property (nonatomic) BOOL loading;
@@ -38,6 +40,7 @@
 @synthesize currencyButton = _currencyButton;
 @synthesize inputButton = _inputButton;
 @synthesize updateButton = _updateButton;
+@synthesize doneButton = _doneButton;
 
 - (UITextField *)textField {
 	if (!_textField) {
@@ -45,10 +48,12 @@
 		_textField.keyboardType = UIKeyboardTypeDecimalPad;
 		_textField.delegate = self;
 		_textField.text = [[NSUserDefaults standardUserDefaults] stringForKey:kBTCNumberOfCoinsKey];
-		_textField.font = [UIFont fontWithName:@"Avenir-Light" size:24.0f];
+		_textField.font = [UIFont fontWithName:@"Avenir-Light" size:20.0f];
 		_textField.textColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
 		_textField.textAlignment = NSTextAlignmentCenter;
 		_textField.textEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
+		_textField.alpha = 0.0f;
+		_textField.tintColor = [UIColor whiteColor];
 	}
 	return _textField;
 }
@@ -81,6 +86,7 @@
 		_inputButton = [[UIButton alloc] init];
 		_inputButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:20.0f];
 		[_inputButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
+		[_inputButton addTarget:self action:@selector(startEditing:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _inputButton;
 }
@@ -96,6 +102,25 @@
 		[_updateButton addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _updateButton;
+}
+
+
+- (UIButton *)doneButton {
+	if (!_doneButton) {
+		_doneButton = [[UIButton alloc] init];
+		_doneButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:14.0f];
+		_doneButton.alpha = 0.0f;
+		[_doneButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
+		[_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+		[_doneButton addTarget:self action:@selector(toggleControls:) forControlEvents:UIControlEventTouchUpInside];
+		[_doneButton setTitle:@"Done" forState:UIControlStateNormal];
+
+		_doneButton.layer.borderColor = [UIColor colorWithWhite:1.0f alpha:0.5f].CGColor;
+		_doneButton.layer.borderWidth = 1.0f;
+		_doneButton.layer.cornerRadius = 5.0f;
+
+	}
+	return _doneButton;
 }
 
 
@@ -148,6 +173,7 @@
 	[self.view addSubview:self.currencyButton];
 	[self.view addSubview:self.inputButton];
 	[self.view addSubview:self.updateButton];
+	[self.view addSubview:self.doneButton];
 
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
 	[self.view addGestureRecognizer:tap];
@@ -171,19 +197,17 @@
 
 	self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
 
+	BOOL statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
 	CGSize size = self.view.bounds.size;
-
 	CGFloat offset = -20.0f;
 	CGSize labelSize = [self.label sizeThatFits:CGSizeMake(size.width, 200.0f)];
 	labelSize.width = fminf(300.0f, labelSize.width);
 
 	self.label.frame = CGRectMake(roundf((size.width - labelSize.width) / 2.0f), roundf((size.height - labelSize.height) / 2.0f) + offset, labelSize.width, labelSize.height);
-
-//	self.textField.frame = CGRectMake(20.0f, CGRectGetMaxY(self.label.frame) + offset + 10.0f, 280.0f, 44.0f);
 	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.label.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
-
 	self.currencyButton.frame = CGRectMake(size.width - 44.0f, size.height - 44.0f, 44.0f, 44.0f);
 	self.updateButton.frame = CGRectMake(44.0f, size.height - 44.0f, size.width - 88.0f, 44.0f);
+	self.doneButton.frame = CGRectMake(size.width - 70.0f, 10.0f + (statusBarHidden ? 0.0f : 20.0f), 60.0f, 32.0f);
 }
 
 
@@ -250,7 +274,50 @@
 
 
 - (void)toggleControls:(id)sender {
+	if (self.editing) {
+		[self setEditing:NO animated:YES];
+		return;
+	}
+
 	self.controlsHidden = !self.controlsHidden;
+}
+
+
+- (void)startEditing:(id)sender {
+	[self setEditing:YES animated:YES];
+}
+
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+
+	CGSize size = self.view.bounds.size;
+
+	if (editing) {
+		self.textField.frame = self.inputButton.frame;
+	}
+
+	void (^animations)(void) = ^{
+		self.textField.alpha = editing ? 1.0f : 0.0f;
+		self.textField.frame = editing ? CGRectMake(20.0f, CGRectGetMinY(self.label.frame) - 108.0f, size.width - 40.0f, 44.0f) : self.inputButton.frame;
+
+		self.label.alpha = editing ? 0.0f : 1.0f;
+		self.inputButton.alpha = editing ? 0.0f : 1.0f;
+		self.doneButton.alpha = editing ? 1.0f : 0.0f;
+
+	};
+
+	if (animated) {
+		[UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:1.0f animations:animations completion:nil];
+	} else {
+		animations();
+	}
+
+	if (editing) {
+		[self.textField becomeFirstResponder];
+	} else {
+		[self.textField resignFirstResponder];
+	}
 }
 
 
@@ -262,6 +329,8 @@
 	}
 	_controlsHidden = controlsHidden;
 
+	[[UIApplication sharedApplication] setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults setBool:_controlsHidden forKey:kBTCControlsHiddenKey];
 	[userDefaults synchronize];
@@ -269,6 +338,7 @@
 	void (^animations)(void) = ^{
 		self.currencyButton.alpha = _controlsHidden ? 0.0f : 1.0f;
 		self.updateButton.alpha = self.currencyButton.alpha;
+		[self viewDidLayoutSubviews];
 	};
 
 	if (animated) {
@@ -276,8 +346,6 @@
 	} else {
 		animations();
 	}
-
-	[[UIApplication sharedApplication] setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
 }
 
 
