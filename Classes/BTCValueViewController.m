@@ -54,6 +54,9 @@
 		_textField.textEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
 		_textField.alpha = 0.0f;
 		_textField.tintColor = [UIColor whiteColor];
+		_textField.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.1f];
+
+		_textField.layer.cornerRadius = 5.0f;
 	}
 	return _textField;
 }
@@ -207,7 +210,6 @@
 	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.label.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
 	self.currencyButton.frame = CGRectMake(size.width - 44.0f, size.height - 44.0f, 44.0f, 44.0f);
 	self.updateButton.frame = CGRectMake(44.0f, size.height - 44.0f, size.width - 88.0f, 44.0f);
-	self.doneButton.frame = CGRectMake(size.width - 70.0f, 6.0f + (statusBarHidden ? 4.0f : 20.0f), 60.0f, 32.0f);
 }
 
 
@@ -291,10 +293,15 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
 
+	BOOL statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
 	CGSize size = self.view.bounds.size;
+	CGRect doneFrame = CGRectMake(size.width - 80.0f, 16.0f + (statusBarHidden ? 4.0f : 20.0f), 60.0f, 32.0f);
+	CGRect topDoneFrame = doneFrame;
+	topDoneFrame.origin.y -= 40.0f;
 
 	if (editing) {
 		self.textField.frame = self.inputButton.frame;
+		self.doneButton.frame = topDoneFrame;
 	}
 
 	void (^animations)(void) = ^{
@@ -303,6 +310,8 @@
 
 		self.label.alpha = editing ? 0.0f : 1.0f;
 		self.inputButton.alpha = editing ? 0.0f : 1.0f;
+
+		self.doneButton.frame = editing ? doneFrame : topDoneFrame;
 		self.doneButton.alpha = editing ? 1.0f : 0.0f;
 
 	};
