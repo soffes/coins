@@ -207,7 +207,7 @@
 	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.label.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
 	self.currencyButton.frame = CGRectMake(size.width - 44.0f, size.height - 44.0f, 44.0f, 44.0f);
 	self.updateButton.frame = CGRectMake(44.0f, size.height - 44.0f, size.width - 88.0f, 44.0f);
-	self.doneButton.frame = CGRectMake(size.width - 70.0f, 10.0f + (statusBarHidden ? 0.0f : 20.0f), 60.0f, 32.0f);
+	self.doneButton.frame = CGRectMake(size.width - 70.0f, 6.0f + (statusBarHidden ? 4.0f : 20.0f), 60.0f, 32.0f);
 }
 
 
