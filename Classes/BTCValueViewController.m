@@ -269,6 +269,13 @@
 }
 
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+
+	[self.currencyPopover dismissPopoverAnimated:YES];
+}
+
+
 #pragma mark - Actions
 
 - (void)refresh:(id)sender {
