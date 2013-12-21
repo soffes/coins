@@ -28,6 +28,14 @@
 }
 
 
+- (instancetype)initWithFrame:(CGRect)frame {
+	if ((self = [super initWithFrame:frame])) {
+		self.format = @"";
+	}
+	return self;
+}
+
+
 - (void)startTicking {
 	if (self.ticking) {
 		return;
@@ -51,7 +59,7 @@
 
 
 - (void)tick {
-	NSString *title = [NSString stringWithFormat:self.format, [self.date coins_timeAgoInWords]];
+	NSString *title = self.date ? [NSString stringWithFormat:self.format, [self.date coins_timeAgoInWords]] : @"Never updated";
 	[self setTitle:title forState:UIControlStateNormal];
 }
 

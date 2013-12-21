@@ -18,7 +18,7 @@
 		self.textLabel.adjustsFontSizeToFitWidth = YES;
 
 		self.detailTextLabel.font = [UIFont fontWithName:@"Avenir" size:18.0f];
-		self.detailTextLabel.textColor = self.textLabel.textColor;
+		self.detailTextLabel.textColor = [self.textLabel.textColor colorWithAlphaComponent:0.5f];
 		self.detailTextLabel.highlightedTextColor = self.textLabel.highlightedTextColor;
 
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -32,6 +32,18 @@
 		self.selectedBackgroundView = selected;
 	}
 	return self;
+}
+
+
+- (void)layoutSubviews {
+	[super layoutSubviews];
+
+	CGRect rect = self.textLabel.frame;
+	rect.size.width = fminf(rect.size.width, 240.0f);
+	self.textLabel.frame = rect;
+
+	CGSize size = self.contentView.bounds.size;
+	self.detailTextLabel.frame = CGRectMake(size.width - 70.0f, 10.0f, 60.0f, size.height - 20.0f);
 }
 
 @end

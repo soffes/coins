@@ -24,14 +24,6 @@
 
 
 - (void)getConversionRates:(void (^)(NSDictionary *))completion {
-//	if (completion) {
-//		[[SAMCache sharedCache] objectForKey:@"BTCConversion" usingBlock:^(id<NSCopying> object) {
-//			if (object) {
-//				completion((NSDictionary *)object);
-//			}
-//		}];
-//	}
-
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 
 	NSURL *URL = [[NSURL alloc] initWithString:@"https://coinbase.com/api/v1/currencies/exchange_rates"];
@@ -64,6 +56,11 @@
 	}];
 
 	[task resume];
+}
+
+
+- (NSDictionary *)lastConversionRates {
+	return [[SAMCache sharedCache] objectForKey:@"BTCConversion"];
 }
 
 @end

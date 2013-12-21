@@ -10,18 +10,15 @@
 #import "BTCConversionProvider.h"
 #import "BTCCurrencyPickerTableViewController.h"
 #import "BTCTickingButton.h"
+#import "BTCTextField.h"
 
 #import <QuartzCore/QuartzCore.h>
-#import <SAMTextField/SAMTextField.h>
 #import <SAMGradientView/SAMGradientView.h>
-#import "UIImage+Vector.h"
 
 @interface BTCValueViewController () <UITextFieldDelegate>
-@property (nonatomic) NSDictionary *conversionRates;
 @property (nonatomic, readonly) UIButton *inputButton;
-@property (nonatomic, readonly) SAMTextField *textField;
-@property (nonatomic, readonly) UILabel *label;
-@property (nonatomic, readonly) UIButton *currencyButton;
+@property (nonatomic, readonly) BTCTextField *textField;
+@property (nonatomic, readonly) UIButton *valueButton;
 @property (nonatomic, readonly) BTCTickingButton *updateButton;
 @property (nonatomic, readonly) UIButton *doneButton;
 @property (nonatomic) UIPopoverController *currencyPopover;
@@ -36,51 +33,31 @@
 #pragma mark - Accessors
 
 @synthesize textField = _textField;
-@synthesize label = _label;
-@synthesize currencyButton = _currencyButton;
+@synthesize valueButton = _valueButton;
 @synthesize inputButton = _inputButton;
 @synthesize updateButton = _updateButton;
 @synthesize doneButton = _doneButton;
 
-- (UITextField *)textField {
+- (BTCTextField *)textField {
 	if (!_textField) {
-		_textField = [[SAMTextField alloc] init];
-		_textField.keyboardType = UIKeyboardTypeDecimalPad;
+		_textField = [[BTCTextField alloc] init];
 		_textField.delegate = self;
-		_textField.text = [[NSUserDefaults standardUserDefaults] stringForKey:kBTCNumberOfCoinsKey];
-		_textField.font = [UIFont fontWithName:@"Avenir-Light" size:20.0f];
-		_textField.textColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
-		_textField.textAlignment = NSTextAlignmentCenter;
-		_textField.textEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
 		_textField.alpha = 0.0f;
-		_textField.tintColor = [UIColor whiteColor];
-		_textField.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.1f];
-
-		_textField.layer.cornerRadius = 5.0f;
 	}
 	return _textField;
 }
 
 
-- (UILabel *)label {
-	if (!_label) {
-		_label = [[UILabel alloc] init];
-		_label.font = [UIFont fontWithName:@"Avenir-Heavy" size:50.0f];
-		_label.textColor = [UIColor whiteColor];
-		_label.adjustsFontSizeToFitWidth = YES;
-		_label.textAlignment = NSTextAlignmentCenter;
+- (UIButton *)valueButton {
+	if (!_valueButton) {
+		_valueButton = [[UIButton alloc] init];
+		_valueButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:50.0f];
+		_valueButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+		_valueButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+		[_valueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[_valueButton addTarget:self action:@selector(pickCurrency:) forControlEvents:UIControlEventTouchUpInside];
 	}
-	return _label;
-}
-
-
-- (UIButton *)currencyButton {
-	if (!_currencyButton) {
-		_currencyButton = [[UIButton alloc] init];
-		[_currencyButton addTarget:self action:@selector(pickCurrency:) forControlEvents:UIControlEventTouchUpInside];
-		[_currencyButton setImage:[UIImage imageWithPDFNamed:@"gear" tintColor:[UIColor colorWithWhite:1.0f alpha:0.5f] height:20.0f] forState:UIControlStateNormal];
-	}
-	return _currencyButton;
+	return _valueButton;
 }
 
 
@@ -116,7 +93,7 @@
 		[_doneButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
 		[_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 		[_doneButton addTarget:self action:@selector(toggleControls:) forControlEvents:UIControlEventTouchUpInside];
-		[_doneButton setTitle:@"Done" forState:UIControlStateNormal];
+		[_doneButton setTitle:NSLocalizedString(@"DONE", nil) forState:UIControlStateNormal];
 
 		_doneButton.layer.borderColor = [UIColor colorWithWhite:1.0f alpha:0.5f].CGColor;
 		_doneButton.layer.borderWidth = 1.0f;
@@ -148,6 +125,13 @@
 }
 
 
+- (void)setLoading:(BOOL)loading {
+	_loading = loading;
+
+	self.updateButton.format = _loading ? NSLocalizedString(@"UPDATING", nil) : NSLocalizedString(@"UPDATED_FORMAT", nil);
+}
+
+
 #pragma mark - NSObject
 
 - (void)dealloc {
@@ -172,8 +156,7 @@
 	self.automaticallyAdjustsScrollViewInsets = NO;
 
 	[self.view addSubview:self.textField];
-	[self.view addSubview:self.label];
-	[self.view addSubview:self.currencyButton];
+	[self.view addSubview:self.valueButton];
 	[self.view addSubview:self.inputButton];
 	[self.view addSubview:self.updateButton];
 	[self.view addSubview:self.doneButton];
@@ -181,6 +164,7 @@
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
 	[self.view addGestureRecognizer:tap];
 
+	[self _update];
 	[self refresh:nil];
 	[self _preferencesDidChange];
 
@@ -202,12 +186,11 @@
 
 	CGSize size = self.view.bounds.size;
 	CGFloat offset = -20.0f;
-	CGSize labelSize = [self.label sizeThatFits:CGSizeMake(size.width, 200.0f)];
+	CGSize labelSize = [self.valueButton sizeThatFits:CGSizeMake(size.width, 200.0f)];
 	labelSize.width = fminf(300.0f, labelSize.width);
 
-	self.label.frame = CGRectMake(roundf((size.width - labelSize.width) / 2.0f), roundf((size.height - labelSize.height) / 2.0f) + offset, labelSize.width, labelSize.height);
-	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.label.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
-	self.currencyButton.frame = CGRectMake(size.width - 44.0f, size.height - 44.0f, 44.0f, 44.0f);
+	self.valueButton.frame = CGRectMake(roundf((size.width - labelSize.width) / 2.0f), roundf((size.height - labelSize.height) / 2.0f) + offset, labelSize.width, labelSize.height);
+	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.valueButton.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
 	self.updateButton.frame = CGRectMake(44.0f, size.height - 44.0f, size.width - 88.0f, 44.0f);
 }
 
@@ -221,6 +204,10 @@
 	[self.updateButton startTicking];
 
 	self.autoRefreshing = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
+
+	if ([[NSUserDefaults standardUserDefaults] integerForKey:kBTCNumberOfCoinsKey] == 0) {
+		[self setEditing:YES animated:animated];
+	}
 }
 
 
@@ -233,6 +220,55 @@
 }
 
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+
+	BOOL statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
+	CGSize size = self.view.bounds.size;
+	CGRect doneFrame = CGRectMake(size.width - 80.0f, 16.0f + (statusBarHidden ? 4.0f : 20.0f), 60.0f, 32.0f);
+	CGRect topDoneFrame = doneFrame;
+	topDoneFrame.origin.y -= 40.0f;
+
+	CGFloat inputWidth = fminf(size.width - 40.0f, 500.0f);
+	CGRect inputFrame = CGRectMake(roundf((size.width - inputWidth) / 2.0f), CGRectGetMinY(self.valueButton.frame) - 108.0f, inputWidth, 54.0f);
+	if (self.view.bounds.size.height < 500) {
+		inputFrame.origin.y += 14.0f;
+	}
+
+	CGRect downInputFrame = inputFrame;
+	downInputFrame.origin.y = self.inputButton.frame.origin.y;
+
+	if (editing) {
+		self.textField.frame = downInputFrame;
+		self.doneButton.frame = topDoneFrame;
+	}
+
+	void (^animations)(void) = ^{
+		self.textField.alpha = editing ? 1.0f : 0.0f;
+		self.textField.frame = editing ? inputFrame : downInputFrame;
+
+		self.valueButton.alpha = editing ? 0.0f : 1.0f;
+		self.inputButton.alpha = editing ? 0.0f : 1.0f;
+
+		self.doneButton.frame = editing ? doneFrame : topDoneFrame;
+		self.doneButton.alpha = editing ? 1.0f : 0.0f;
+
+	};
+
+	if (animated) {
+		[UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:1.0f animations:animations completion:nil];
+	} else {
+		animations();
+	}
+
+	if (editing) {
+		[self.textField becomeFirstResponder];
+	} else {
+		[self.textField resignFirstResponder];
+	}
+}
+
+
 #pragma mark - Actions
 
 - (void)refresh:(id)sender {
@@ -241,15 +277,9 @@
 	}
 
 	self.loading = YES;
-	self.updateButton.format = @"Updating…";
 
 	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates) {
-		self.conversionRates = conversionRates;
-
 		[self _update];
-
-		self.updateButton.format = @"Updated %@";
-		self.updateButton.date = conversionRates[@"updatedAt"];
 		self.loading = NO;
 	}];
 }
@@ -266,7 +296,7 @@
 		};
 
 		self.currencyPopover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
-		[self.currencyPopover presentPopoverFromRect:self.currencyButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+		[self.currencyPopover presentPopoverFromRect:self.valueButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
 		return;
 	}
 
@@ -289,63 +319,27 @@
 }
 
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-	[super setEditing:editing animated:animated];
-
-	BOOL statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
-	CGSize size = self.view.bounds.size;
-	CGRect doneFrame = CGRectMake(size.width - 80.0f, 16.0f + (statusBarHidden ? 4.0f : 20.0f), 60.0f, 32.0f);
-	CGRect topDoneFrame = doneFrame;
-	topDoneFrame.origin.y -= 40.0f;
-
-	if (editing) {
-		self.textField.frame = self.inputButton.frame;
-		self.doneButton.frame = topDoneFrame;
-	}
-
-	void (^animations)(void) = ^{
-		self.textField.alpha = editing ? 1.0f : 0.0f;
-		self.textField.frame = editing ? CGRectMake(20.0f, CGRectGetMinY(self.label.frame) - 108.0f, size.width - 40.0f, 44.0f) : self.inputButton.frame;
-
-		self.label.alpha = editing ? 0.0f : 1.0f;
-		self.inputButton.alpha = editing ? 0.0f : 1.0f;
-
-		self.doneButton.frame = editing ? doneFrame : topDoneFrame;
-		self.doneButton.alpha = editing ? 1.0f : 0.0f;
-
-	};
-
-	if (animated) {
-		[UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:1.0f animations:animations completion:nil];
-	} else {
-		animations();
-	}
-
-	if (editing) {
-		[self.textField becomeFirstResponder];
-	} else {
-		[self.textField resignFirstResponder];
-	}
-}
-
-
 #pragma mark - Private
 
 - (void)setControlsHidden:(BOOL)controlsHidden animated:(BOOL)animated {
+	UIApplication *application = [UIApplication sharedApplication];
+
 	if (_controlsHidden == controlsHidden) {
+		if (application.statusBarHidden != controlsHidden) {
+			[application setStatusBarHidden:controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+		}
 		return;
 	}
 	_controlsHidden = controlsHidden;
 
-	[[UIApplication sharedApplication] setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+	[application setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults setBool:_controlsHidden forKey:kBTCControlsHiddenKey];
 	[userDefaults synchronize];
 
 	void (^animations)(void) = ^{
-		self.currencyButton.alpha = _controlsHidden ? 0.0f : 1.0f;
-		self.updateButton.alpha = self.currencyButton.alpha;
+		self.updateButton.alpha = _controlsHidden ? 0.0f : 1.0f;
 		[self viewDidLayoutSubviews];
 	};
 
@@ -367,9 +361,13 @@
 
 
 - (void)_update {
+	NSDictionary *conversionRates = [[BTCConversionProvider sharedProvider] lastConversionRates];
+
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self.currencyPopover dismissPopoverAnimated:YES];
 	}
+
+	self.updateButton.date = conversionRates[@"updatedAt"];
 
 	static NSNumberFormatter *currencyFormatter = nil;
 	static dispatch_once_t currencyOnceToken;
@@ -380,8 +378,8 @@
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	currencyFormatter.currencyCode = [userDefaults stringForKey:kBTCSelectedCurrencyKey];
-	CGFloat value = [self.textField.text floatValue] * [self.conversionRates[currencyFormatter.currencyCode] floatValue];
-	self.label.text = [currencyFormatter stringFromNumber:@(value)];
+	CGFloat value = [self.textField.text floatValue] * [conversionRates[currencyFormatter.currencyCode] floatValue];
+	[self.valueButton setTitle:[currencyFormatter stringFromNumber:@(value)] forState:UIControlStateNormal];
 
 	static NSNumberFormatter *numberFormatter = nil;
 	static dispatch_once_t numberOnceToken;

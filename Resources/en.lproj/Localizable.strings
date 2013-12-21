@@ -7,3 +7,6 @@
 */
 
 "CURRENCY" = "Currency";
+"DONE" = "Done";
+"UPDATING" = "Updating…";
+"UPDATED_FORMAT" = "Updated %@";

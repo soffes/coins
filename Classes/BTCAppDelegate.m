@@ -15,7 +15,7 @@
 	application.statusBarStyle = UIStatusBarStyleLightContent;
 
 	UINavigationBar *navigationBar = [UINavigationBar appearance];
-	navigationBar.barTintColor = [UIColor colorWithRed:0.302f green:0.235f blue:0.616f alpha:0.5f];
+	navigationBar.barTintColor = [UIColor colorWithRed:0.102f green:0.451f blue:0.635f alpha:0.7f];
 	navigationBar.tintColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
 	navigationBar.titleTextAttributes = @{
 		NSForegroundColorAttributeName: [UIColor whiteColor],
@@ -26,7 +26,8 @@
 		kBTCSelectedCurrencyKey: @"USD",
 		kBTCNumberOfCoinsKey: @0,
 		kBTCAutomaticallyRefreshKey: @YES,
-		kBTCDisableSleepKey: @NO
+		kBTCDisableSleepKey: @NO,
+		kBTCControlsHiddenKey: @NO
 	}];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

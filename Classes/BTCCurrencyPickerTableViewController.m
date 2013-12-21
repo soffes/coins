@@ -17,18 +17,12 @@
 
 @implementation BTCCurrencyPickerTableViewController
 
-//- (instancetype)init {
-//	return (self = [super initWithStyle:UITableViewStyleGrouped]);
-//}
-
-
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.title = NSLocalizedString(@"CURRENCY", nil);
 
-//	self.tableView.backgroundColor = [UIColor shr_lightRowColor];
 	[self.tableView registerClass:[BTCTableViewCell class] forCellReuseIdentifier:@"Cell"];
 
 	NSData *data = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"currencies" ofType:@"json"]];
