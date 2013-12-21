@@ -200,7 +200,6 @@
 
 	self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
 
-	BOOL statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
 	CGSize size = self.view.bounds.size;
 	CGFloat offset = -20.0f;
 	CGSize labelSize = [self.label sizeThatFits:CGSizeMake(size.width, 200.0f)];
