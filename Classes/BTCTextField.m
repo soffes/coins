@@ -15,13 +15,17 @@
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
 		self.keyboardType = UIKeyboardTypeDecimalPad;
-		self.text = [[NSUserDefaults standardUserDefaults] stringForKey:kBTCNumberOfCoinsKey];
 		self.font = [UIFont fontWithName:@"Avenir-Light" size:24.0f];
 		self.textColor = [UIColor whiteColor];
 		self.textAlignment = NSTextAlignmentCenter;
 		self.tintColor = [UIColor whiteColor];
 		self.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.1f];
 		self.layer.cornerRadius = 5.0f;
+
+		self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"0" attributes:@{
+			NSForegroundColorAttributeName: [UIColor colorWithWhite:1.0f alpha:0.3f],
+			NSFontAttributeName: self.font
+		}];
 
 		UILabel *suffix = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 60.0f, 54.0f)];
 		suffix.text = @"BTC";

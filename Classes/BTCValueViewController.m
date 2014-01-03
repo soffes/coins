@@ -43,6 +43,9 @@
 		_textField = [[BTCTextField alloc] init];
 		_textField.delegate = self;
 		_textField.alpha = 0.0f;
+
+		NSString *number = [[NSUserDefaults standardUserDefaults] stringForKey:kBTCNumberOfCoinsKey];
+		_textField.text = [number isEqualToString:@"0"] ? nil : number;
 	}
 	return _textField;
 }
@@ -176,6 +179,7 @@
 	[notificationCenter addObserver:self selector:@selector(_preferencesDidChange) name:NSUserDefaultsDidChangeNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidBecomeActiveNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(refresh:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 
