@@ -366,7 +366,7 @@
 	NSString *string = [self.textField.text stringByReplacingOccurrencesOfString:@"," withString:@"."];
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	[userDefaults setObject:@([string floatValue]) forKey:kBTCNumberOfCoinsKey];
+	[userDefaults setObject:@([string doubleValue]) forKey:kBTCNumberOfCoinsKey];
 	[userDefaults synchronize];
 
 	[self _update];
@@ -402,9 +402,11 @@
 		numberFormatter.currencySymbol = @"";
 		numberFormatter.minimumFractionDigits = 0;
 		numberFormatter.maximumFractionDigits = 10;
+		numberFormatter.roundingMode = NSNumberFormatterRoundDown;
 	});
 
-	NSString *title = [numberFormatter stringFromNumber:[userDefaults objectForKey:kBTCNumberOfCoinsKey]];
+	NSNumber *number = [userDefaults objectForKey:kBTCNumberOfCoinsKey];
+	NSString *title = [numberFormatter stringFromNumber:number];
 	[self.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
 	[self viewDidLayoutSubviews];
 }
