@@ -62,7 +62,7 @@
 - (UIButton *)valueButton {
 	if (!_valueButton) {
 		_valueButton = [[UIButton alloc] init];
-		_valueButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:50.0f];
+		_valueButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 80.0f : 50.0f];
 		_valueButton.titleLabel.adjustsFontSizeToFitWidth = YES;
 		_valueButton.titleLabel.textAlignment = NSTextAlignmentCenter;
 		[_valueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -75,7 +75,7 @@
 - (UIButton *)inputButton {
 	if (!_inputButton) {
 		_inputButton = [[UIButton alloc] init];
-		_inputButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:20.0f];
+		_inputButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 30.0f : 20.0f];
 		[_inputButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
 		[_inputButton addTarget:self action:@selector(startEditing:) forControlEvents:UIControlEventTouchUpInside];
 	}
@@ -262,7 +262,7 @@
 	CGSize size = self.view.bounds.size;
 	CGFloat offset = -20.0f;
 	CGSize labelSize = [self.valueButton sizeThatFits:CGSizeMake(size.width, 200.0f)];
-	labelSize.width = fminf(300.0f, labelSize.width);
+	labelSize.width = fminf(size.width - 20.0f, labelSize.width);
 
 	self.scrollView.frame = self.view.bounds;
 	self.scrollView.contentSize = self.view.bounds.size;
@@ -284,7 +284,7 @@
 
 	self.autoRefreshing = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 
-	if ([[NSUserDefaults standardUserDefaults] integerForKey:kBTCNumberOfCoinsKey] == 0) {
+	if ([[NSUserDefaults standardUserDefaults] doubleForKey:kBTCNumberOfCoinsKey] == 0.0) {
 		[self setEditing:YES animated:animated];
 	}
 }
