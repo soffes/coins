@@ -8,6 +8,8 @@
 
 #import "BTCTableViewCell.h"
 
+#import "UIColor+Coins.h"
+
 @implementation BTCTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -28,7 +30,7 @@
 		}
 
 		UIView *selected = [[UIView alloc] init];
-		selected.backgroundColor = [UIColor colorWithRed:0.102f green:0.451f blue:0.635f alpha:1.0f];
+		selected.backgroundColor = [UIColor btc_blueColor];
 		self.selectedBackgroundView = selected;
 	}
 	return self;

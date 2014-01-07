@@ -14,6 +14,8 @@
 #import <Crashlytics/Crashlytics.h>
 #endif
 
+#import "UIColor+Coins.h"
+
 @implementation BTCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -26,7 +28,7 @@
 	application.statusBarStyle = UIStatusBarStyleLightContent;
 
 	UINavigationBar *navigationBar = [UINavigationBar appearance];
-	navigationBar.barTintColor = [UIColor colorWithRed:0.102f green:0.451f blue:0.635f alpha:0.7f];
+	navigationBar.barTintColor = [UIColor btc_blueColor];
 	navigationBar.tintColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
 	navigationBar.titleTextAttributes = @{
 		NSForegroundColorAttributeName: [UIColor whiteColor],

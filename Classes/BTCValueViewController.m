@@ -14,8 +14,10 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <SAMGradientView/SAMGradientView.h>
+#import <SSPullToRefresh/SSPullToRefresh.h>
+#import "UIColor+Coins.h"
 
-@interface BTCValueViewController () <UITextFieldDelegate>
+@interface BTCValueViewController () <UITextFieldDelegate, SSPullToRefreshViewDelegate>
 @property (nonatomic, readonly) UIButton *inputButton;
 @property (nonatomic, readonly) BTCTextField *textField;
 @property (nonatomic, readonly) UIButton *valueButton;
@@ -26,6 +28,9 @@
 @property (nonatomic) BOOL loading;
 @property (nonatomic) BOOL autoRefreshing;
 @property (nonatomic) NSTimer *autoRefreshTimer;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (nonatomic, readonly) SSPullToRefreshView *pullToRefresh;
+@property (nonatomic, readonly) SAMGradientView *backgroundView;
 @end
 
 @implementation BTCValueViewController
@@ -37,6 +42,9 @@
 @synthesize inputButton = _inputButton;
 @synthesize updateButton = _updateButton;
 @synthesize doneButton = _doneButton;
+@synthesize scrollView =_scrollView;
+@synthesize pullToRefresh = _pullToRefresh;
+@synthesize backgroundView = _backgroundView;
 
 - (BTCTextField *)textField {
 	if (!_textField) {
@@ -131,7 +139,53 @@
 - (void)setLoading:(BOOL)loading {
 	_loading = loading;
 
-	self.updateButton.format = _loading ? NSLocalizedString(@"UPDATING", nil) : NSLocalizedString(@"UPDATED_FORMAT", nil);
+	if (loading) {
+		self.updateButton.format = NSLocalizedString(@"UPDATING", nil);
+		[self.pullToRefresh startLoading];
+	} else {
+		self.updateButton.format = NSLocalizedString(@"UPDATED_FORMAT", nil);
+		[self.pullToRefresh finishLoading];
+	}
+}
+
+
+- (UIScrollView *)scrollView {
+	if (!_scrollView) {
+		_scrollView = [[UIScrollView alloc] init];
+		_scrollView.showsHorizontalScrollIndicator = NO;
+		_scrollView.showsVerticalScrollIndicator = NO;
+		_scrollView.alwaysBounceVertical = YES;
+	}
+	return _scrollView;
+}
+
+
+- (SSPullToRefreshView *)pullToRefresh {
+	if (!_pullToRefresh) {
+		_pullToRefresh = [[SSPullToRefreshView alloc] initWithScrollView:self.scrollView delegate:self];
+		_pullToRefresh.defaultContentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+
+		SSPullToRefreshSimpleContentView *contentView = [[SSPullToRefreshSimpleContentView alloc] init];
+		contentView.statusLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.8f];
+		contentView.statusLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
+		contentView.activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+		_pullToRefresh.contentView = contentView;
+	}
+	return _pullToRefresh;
+}
+
+
+- (SAMGradientView *)backgroundView {
+	if (!_backgroundView) {
+		_backgroundView = [[SAMGradientView alloc] init];
+		_backgroundView.backgroundColor = [UIColor clearColor];
+		_backgroundView.gradientColors = @[
+			[UIColor btc_blueColor],
+			[UIColor btc_purpleColor]
+		];
+		_backgroundView.dimmedGradientColors = _backgroundView.gradientColors;
+	}
+	return _backgroundView;
 }
 
 
@@ -150,22 +204,39 @@
 	SAMGradientView *gradient = [[SAMGradientView alloc] initWithFrame:self.view.bounds];
 	gradient.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	gradient.gradientColors = @[
-		[UIColor colorWithRed:0.102f green:0.451f blue:0.635f alpha:1.0f],
-		[UIColor colorWithRed:0.302f green:0.235f blue:0.616f alpha:1.0f]
+		[UIColor btc_blueColor],
+		[UIColor btc_purpleColor]
 	];
+	gradient.gradientLocations = @[@0.5f, @0.51f];
 	gradient.dimmedGradientColors = gradient.gradientColors;
 	[self.view addSubview:gradient];
 
+	[self.view addSubview:self.scrollView];
+	[self pullToRefresh];
+
+	gradient = [[SAMGradientView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.bounds.size.width, 30.0f)];
+	gradient.backgroundColor = [UIColor clearColor];
+	gradient.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+	gradient.gradientColors = @[
+		[UIColor btc_blueColor],
+		[[UIColor btc_blueColor] colorWithAlphaComponent:0.0f]
+	];
+	gradient.gradientLocations = @[@0.6f, @1];
+	gradient.dimmedGradientColors = gradient.gradientColors;
+	[self.view addSubview:gradient];
+
+	[self.scrollView addSubview:self.backgroundView];
+
 	self.automaticallyAdjustsScrollViewInsets = NO;
 
-	[self.view addSubview:self.textField];
-	[self.view addSubview:self.valueButton];
-	[self.view addSubview:self.inputButton];
+	[self.scrollView addSubview:self.textField];
+	[self.scrollView addSubview:self.valueButton];
+	[self.scrollView addSubview:self.inputButton];
 	[self.view addSubview:self.updateButton];
-	[self.view addSubview:self.doneButton];
+	[self.scrollView addSubview:self.doneButton];
 
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
-	[self.view addGestureRecognizer:tap];
+	[self.scrollView addGestureRecognizer:tap];
 
 	[self _update];
 	[self refresh:nil];
@@ -192,6 +263,10 @@
 	CGFloat offset = -20.0f;
 	CGSize labelSize = [self.valueButton sizeThatFits:CGSizeMake(size.width, 200.0f)];
 	labelSize.width = fminf(300.0f, labelSize.width);
+
+	self.scrollView.frame = self.view.bounds;
+	self.scrollView.contentSize = self.view.bounds.size;
+	self.backgroundView.frame = self.view.bounds;
 
 	self.valueButton.frame = CGRectMake(roundf((size.width - labelSize.width) / 2.0f), roundf((size.height - labelSize.height) / 2.0f) + offset, labelSize.width, labelSize.height);
 	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.valueButton.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
@@ -302,7 +377,7 @@
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 		navigationController.navigationBar.titleTextAttributes = @{
-			NSForegroundColorAttributeName: [UIColor colorWithRed:0.102f green:0.451f blue:0.635f alpha:1.0f],
+			NSForegroundColorAttributeName: [UIColor btc_blueColor],
 			NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0f]
 		};
 
@@ -430,6 +505,18 @@
 	[self _update];
 	[textField resignFirstResponder];
 	return NO;
+}
+
+
+#pragma mark - SSPullToRefreshViewDelegate
+
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
+	[self refresh:view];
+}
+
+
+- (BOOL)pullToRefreshViewShouldStartLoading:(SSPullToRefreshView *)view {
+	return !self.loading && !self.editing;
 }
 
 @end
