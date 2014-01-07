@@ -22,28 +22,28 @@
 		if (intervalInSeconds >= 0 && intervalInSeconds < 10) {
 			return @"just now";
 		} else if (intervalInSeconds >= 10 && intervalInSeconds < 60) {
-			return [NSString stringWithFormat:@"%d seconds ago", (NSInteger)intervalInSeconds];
+			return [NSString stringWithFormat:@"%ld seconds ago", (long)intervalInSeconds];
 		} else {
 			return @"1 minute ago";
 		}
 	} else if (intervalInMinutes >= 2 && intervalInMinutes <= 44) {
-		return [NSString stringWithFormat:@"%d minutes ago", (NSInteger)intervalInMinutes];
+		return [NSString stringWithFormat:@"%ld minutes ago", (long)intervalInMinutes];
 	} else if (intervalInMinutes >= 45 && intervalInMinutes <= 89) {
 		return @"about 1 hour ago";
 	} else if (intervalInMinutes >= 90 && intervalInMinutes <= 1439) {
-		return [NSString stringWithFormat:@"%d hours ago", (NSInteger)ceilf((CGFloat)intervalInMinutes / 60.0f)];
+		return [NSString stringWithFormat:@"%ld hours ago", (long)ceilf((CGFloat)intervalInMinutes / 60.0f)];
 	} else if (intervalInMinutes >= 1440 && intervalInMinutes <= 2879) {
 		return @"1 day ago";
 	} else if (intervalInMinutes >= 2880 && intervalInMinutes <= 43199) {
-		return [NSString stringWithFormat:@"%d days ago", (NSInteger)ceilf((CGFloat)intervalInMinutes / 1440.0f)];
+		return [NSString stringWithFormat:@"%ld days ago", (long)ceilf((CGFloat)intervalInMinutes / 1440.0f)];
 	} else if (intervalInMinutes >= 43200 && intervalInMinutes <= 86399) {
 		return @"1 month ago";
 	} else if (intervalInMinutes >= 86400 && intervalInMinutes <= 525599) {
-		return [NSString stringWithFormat:@"%d months ago", (NSInteger)ceilf((CGFloat)intervalInMinutes / 43200.0f)];
+		return [NSString stringWithFormat:@"%ld months ago", (long)ceilf((CGFloat)intervalInMinutes / 43200.0f)];
 	} else if (intervalInMinutes >= 525600 && intervalInMinutes <= 1051199) {
 		return @"1 year ago";
 	} else {
-		return [NSString stringWithFormat:@"%d years ago", (NSInteger)ceilf((CGFloat)intervalInMinutes / 525600.0f)];
+		return [NSString stringWithFormat:@"%ld years ago", (long)ceilf((CGFloat)intervalInMinutes / 525600.0f)];
 	}
 	return nil;
 }
