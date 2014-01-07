@@ -8,10 +8,21 @@
 
 #import "BTCAppDelegate.h"
 #import "BTCValueViewController.h"
+#import "LocalyticsUtilities.h"
+
+#if ANALYTICS_ENABLED
+#import <Crashlytics/Crashlytics.h>
+#endif
 
 @implementation BTCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+#if ANALYTICS_ENABLED
+	[Crashlytics startWithAPIKey:@"d719996ce2f7809259d6b116a1e5b1cf5d0f316d"];
+#endif
+
+	LLStartSession(@"987380b36bedad08c8468c1-1e2d6372-7443-11e3-1898-004a77f8b47f");
+
 	application.statusBarStyle = UIStatusBarStyleLightContent;
 
 	UINavigationBar *navigationBar = [UINavigationBar appearance];

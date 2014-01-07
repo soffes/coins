@@ -3,6 +3,8 @@ platform :ios, '7.0'
 pod 'SAMCache'
 pod 'SAMGradientView'
 
+pod 'Localytics-iOS-Client'
+
 post_install do |installer|
   require 'fileutils'
   dest = 'Resources/Settings.bundle/Acknowledgements.plist'
