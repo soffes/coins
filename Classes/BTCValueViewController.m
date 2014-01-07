@@ -480,7 +480,9 @@
 		numberFormatter.roundingMode = NSNumberFormatterRoundDown;
 	});
 
-	NSNumber *number = [userDefaults objectForKey:kBTCNumberOfCoinsKey];
+	// Ensure it's a double for backwards compatibility with 1.0
+	NSNumber *number = @([[userDefaults stringForKey:kBTCNumberOfCoinsKey] doubleValue]);
+
 	NSString *title = [numberFormatter stringFromNumber:number];
 	[self.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
 	[self viewDidLayoutSubviews];
@@ -502,8 +504,7 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	[self _update];
-	[textField resignFirstResponder];
+	[self toggleControls:textField];
 	return NO;
 }
 
