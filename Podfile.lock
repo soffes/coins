@@ -1,6 +1,6 @@
 PODS:
-  - Localytics-iOS-Client (2.21.0)
-  - SAMCache (0.2.0)
+  - Localytics-iOS-Client (2.22.0)
+  - SAMCache (0.3.0)
   - SAMGradientView (0.2.1)
   - SSPullToRefresh (1.2.0)
 
@@ -11,8 +11,8 @@ DEPENDENCIES:
   - SSPullToRefresh
 
 SPEC CHECKSUMS:
-  Localytics-iOS-Client: b3fa8102a426aab2421c13cd184d82c5c1a03e00
-  SAMCache: 0e89f0947169946b59063989d57c71587271d4c8
+  Localytics-iOS-Client: 4e3493917be172ebe4e2a7e2976f6d8793eda224
+  SAMCache: 82ab8d9c26319d7544a35c6eeafe574c3ba2f7d2
   SAMGradientView: ab5543a14a69ecf5fc10239091740291c50b328c
   SSPullToRefresh: ecdc6efdee5322bba8b57dc77c1263ef6b4170bf
 
