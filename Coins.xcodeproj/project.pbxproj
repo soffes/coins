@@ -29,6 +29,7 @@
 		2130E1A91864AD9E006D3470 /* CoinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1A61864AD96006D3470 /* CoinsTests.m */; };
 		2130E1AC1864AE1A006D3470 /* BTCValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */; };
 		2130E1AF1864AE40006D3470 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */; };
+		21951DB41908C40D00B8D5D1 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21951DB31908C40D00B8D5D1 /* BTCValueView.m */; };
 		219B3462187C7A0500F50D1F /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 219B3461187C7A0500F50D1F /* UIColor+Coins.m */; };
 		21F99A8618652DAF00C19618 /* Coins.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 21F99A8518652DAF00C19618 /* Coins.entitlements */; };
 		21F9D19C1876952A00F36678 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F9D1981876952A00F36678 /* Crashlytics.framework */; };
@@ -79,6 +80,8 @@
 		2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueViewController.m; sourceTree = "<group>"; };
 		2130E1AD1864AE40006D3470 /* BTCConversionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCConversionProvider.h; sourceTree = "<group>"; };
 		2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCConversionProvider.m; sourceTree = "<group>"; };
+		21951DB21908C40D00B8D5D1 /* BTCValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueView.h; sourceTree = "<group>"; };
+		21951DB31908C40D00B8D5D1 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
 		219B3460187C7A0500F50D1F /* UIColor+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Coins.h"; sourceTree = "<group>"; };
 		219B3461187C7A0500F50D1F /* UIColor+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Coins.m"; sourceTree = "<group>"; };
 		21F99A8518652DAF00C19618 /* Coins.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				2100A1871864EE4300C994C2 /* BTCTickingButton.m */,
 				2100A18F186519CB00C994C2 /* BTCTextField.h */,
 				2100A190186519CB00C994C2 /* BTCTextField.m */,
+				21951DB21908C40D00B8D5D1 /* BTCValueView.h */,
+				21951DB31908C40D00B8D5D1 /* BTCValueView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -314,7 +319,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BTC;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Nothing Magical, Inc.";
 				TargetAttributes = {
 					2130E1641864AD58006D3470 = {
@@ -425,6 +430,7 @@
 				2100A1881864EE4300C994C2 /* BTCTickingButton.m in Sources */,
 				2100A1781864BBCE00C994C2 /* BTCDefines.m in Sources */,
 				2100A16D1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m in Sources */,
+				21951DB41908C40D00B8D5D1 /* BTCValueView.m in Sources */,
 				2130E1A11864AD8B006D3470 /* main.m in Sources */,
 				2100A18C1864F5FE00C994C2 /* NSDate+Coins.m in Sources */,
 				219B3462187C7A0500F50D1F /* UIColor+Coins.m in Sources */,
@@ -466,7 +472,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -506,7 +511,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -581,7 +585,6 @@
 		2130E1951864AD58006D3470 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -604,7 +607,6 @@
 		2130E1961864AD58006D3470 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

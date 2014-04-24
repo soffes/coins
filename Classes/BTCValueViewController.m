@@ -11,6 +11,7 @@
 #import "BTCCurrencyPickerTableViewController.h"
 #import "BTCTickingButton.h"
 #import "BTCTextField.h"
+#import "BTCValueView.h"
 
 #import <QuartzCore/QuartzCore.h>
 #import <SAMGradientView/SAMGradientView.h>
@@ -18,10 +19,7 @@
 #import "UIColor+Coins.h"
 
 @interface BTCValueViewController () <UITextFieldDelegate, SSPullToRefreshViewDelegate>
-@property (nonatomic, readonly) UIButton *inputButton;
 @property (nonatomic, readonly) BTCTextField *textField;
-@property (nonatomic, readonly) UIButton *valueButton;
-@property (nonatomic, readonly) BTCTickingButton *updateButton;
 @property (nonatomic, readonly) UIButton *doneButton;
 @property (nonatomic) UIPopoverController *currencyPopover;
 @property (nonatomic) BOOL controlsHidden;
@@ -30,7 +28,10 @@
 @property (nonatomic) NSTimer *autoRefreshTimer;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, readonly) SSPullToRefreshView *pullToRefresh;
-@property (nonatomic, readonly) SAMGradientView *backgroundView;
+@property (nonatomic, readonly) BTCValueView *valueView;
+@property (nonatomic, readonly) BTCTickingButton *updateButton;
+@property (nonatomic, readonly) NSLayoutConstraint *doneButtonTopConstraint;
+@property (nonatomic, readonly) NSLayoutConstraint *textFieldTopConstraint;
 @end
 
 @implementation BTCValueViewController
@@ -38,17 +39,18 @@
 #pragma mark - Accessors
 
 @synthesize textField = _textField;
-@synthesize valueButton = _valueButton;
-@synthesize inputButton = _inputButton;
-@synthesize updateButton = _updateButton;
 @synthesize doneButton = _doneButton;
 @synthesize scrollView =_scrollView;
 @synthesize pullToRefresh = _pullToRefresh;
-@synthesize backgroundView = _backgroundView;
+@synthesize valueView = _valueView;
+@synthesize updateButton = _updateButton;
+@synthesize doneButtonTopConstraint = _doneButtonTopConstraint;
+@synthesize textFieldTopConstraint = _textFieldTopConstraint;
 
 - (BTCTextField *)textField {
 	if (!_textField) {
 		_textField = [[BTCTextField alloc] init];
+		_textField.translatesAutoresizingMaskIntoConstraints = NO;
 		_textField.delegate = self;
 		_textField.alpha = 0.0f;
 
@@ -59,52 +61,17 @@
 }
 
 
-- (UIButton *)valueButton {
-	if (!_valueButton) {
-		_valueButton = [[UIButton alloc] init];
-		_valueButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 80.0f : 50.0f];
-		_valueButton.titleLabel.adjustsFontSizeToFitWidth = YES;
-		_valueButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-		[_valueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-		[_valueButton addTarget:self action:@selector(pickCurrency:) forControlEvents:UIControlEventTouchUpInside];
-	}
-	return _valueButton;
-}
-
-
-- (UIButton *)inputButton {
-	if (!_inputButton) {
-		_inputButton = [[UIButton alloc] init];
-		_inputButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 30.0f : 20.0f];
-		[_inputButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
-		[_inputButton addTarget:self action:@selector(startEditing:) forControlEvents:UIControlEventTouchUpInside];
-	}
-	return _inputButton;
-}
-
-
-- (BTCTickingButton *)updateButton {
-	if (!_updateButton) {
-		_updateButton = [[BTCTickingButton alloc] init];
-		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.3f] forState:UIControlStateNormal];
-		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.8f] forState:UIControlStateHighlighted];
-		_updateButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
-		_updateButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-		[_updateButton addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
-	}
-	return _updateButton;
-}
-
-
 - (UIButton *)doneButton {
 	if (!_doneButton) {
 		_doneButton = [[UIButton alloc] init];
+		_doneButton.translatesAutoresizingMaskIntoConstraints = NO;
 		_doneButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:14.0f];
 		_doneButton.alpha = 0.0f;
 		[_doneButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
 		[_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 		[_doneButton addTarget:self action:@selector(toggleControls:) forControlEvents:UIControlEventTouchUpInside];
 		[_doneButton setTitle:NSLocalizedString(@"DONE", nil) forState:UIControlStateNormal];
+		_doneButton.contentEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
 
 		_doneButton.layer.borderColor = [UIColor colorWithWhite:1.0f alpha:0.5f].CGColor;
 		_doneButton.layer.borderWidth = 1.0f;
@@ -136,6 +103,31 @@
 }
 
 
+- (BTCValueView *)valueView {
+	if (!_valueView) {
+		_valueView = [[BTCValueView alloc] init];
+
+		[_valueView.valueButton addTarget:self action:@selector(pickCurrency:) forControlEvents:UIControlEventTouchUpInside];
+		[_valueView.inputButton addTarget:self action:@selector(startEditing:) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return _valueView;
+}
+
+
+- (BTCTickingButton *)updateButton {
+	if (!_updateButton) {
+		_updateButton = [[BTCTickingButton alloc] init];
+		_updateButton.translatesAutoresizingMaskIntoConstraints = NO;
+		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.3f] forState:UIControlStateNormal];
+		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.8f] forState:UIControlStateHighlighted];
+		_updateButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
+		_updateButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+		[_updateButton addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return _updateButton;
+}
+
+
 - (void)setLoading:(BOOL)loading {
 	_loading = loading;
 
@@ -152,6 +144,7 @@
 - (UIScrollView *)scrollView {
 	if (!_scrollView) {
 		_scrollView = [[UIScrollView alloc] init];
+		_scrollView.translatesAutoresizingMaskIntoConstraints = NO;
 		_scrollView.showsHorizontalScrollIndicator = NO;
 		_scrollView.showsVerticalScrollIndicator = NO;
 		_scrollView.alwaysBounceVertical = YES;
@@ -175,17 +168,21 @@
 }
 
 
-- (SAMGradientView *)backgroundView {
-	if (!_backgroundView) {
-		_backgroundView = [[SAMGradientView alloc] init];
-		_backgroundView.backgroundColor = [UIColor clearColor];
-		_backgroundView.gradientColors = @[
-			[UIColor btc_blueColor],
-			[UIColor btc_purpleColor]
-		];
-		_backgroundView.dimmedGradientColors = _backgroundView.gradientColors;
+- (NSLayoutConstraint *)doneButtonTopConstraint {
+	if (!_doneButtonTopConstraint) {
+		_doneButtonTopConstraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:36.0f];
+		_doneButtonTopConstraint.priority = UILayoutPriorityDefaultHigh;
 	}
-	return _backgroundView;
+	return _doneButtonTopConstraint;
+}
+
+
+- (NSLayoutConstraint *)textFieldTopConstraint {
+	if (!_textFieldTopConstraint) {
+		_textFieldTopConstraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f];
+		_textFieldTopConstraint.priority = UILayoutPriorityDefaultHigh;
+	}
+	return _textFieldTopConstraint;
 }
 
 
@@ -200,6 +197,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+	self.automaticallyAdjustsScrollViewInsets = NO;
+	self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
 
 	SAMGradientView *gradient = [[SAMGradientView alloc] initWithFrame:self.view.bounds];
 	gradient.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -225,15 +225,10 @@
 	gradient.dimmedGradientColors = gradient.gradientColors;
 	[self.view addSubview:gradient];
 
-	[self.scrollView addSubview:self.backgroundView];
-
-	self.automaticallyAdjustsScrollViewInsets = NO;
-
-	[self.scrollView addSubview:self.textField];
-	[self.scrollView addSubview:self.valueButton];
-	[self.scrollView addSubview:self.inputButton];
+	[self.scrollView addSubview:self.valueView];
 	[self.view addSubview:self.updateButton];
-	[self.scrollView addSubview:self.doneButton];
+	[self.view addSubview:self.textField];
+	[self.view addSubview:self.doneButton];
 
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
 	[self.scrollView addGestureRecognizer:tap];
@@ -251,26 +246,9 @@
 	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidBecomeActiveNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(refresh:) name:UIApplicationDidBecomeActiveNotification object:nil];
-}
+	[notificationCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 
-
-- (void)viewDidLayoutSubviews {
-	[super viewDidLayoutSubviews];
-
-	self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
-
-	CGSize size = self.view.bounds.size;
-	CGFloat offset = -20.0f;
-	CGSize labelSize = [self.valueButton sizeThatFits:CGSizeMake(size.width, 200.0f)];
-	labelSize.width = fminf(size.width - 20.0f, labelSize.width);
-
-	self.scrollView.frame = self.view.bounds;
-	self.scrollView.contentSize = self.view.bounds.size;
-	self.backgroundView.frame = self.view.bounds;
-
-	self.valueButton.frame = CGRectMake(roundf((size.width - labelSize.width) / 2.0f), roundf((size.height - labelSize.height) / 2.0f) + offset, labelSize.width, labelSize.height);
-	self.inputButton.frame = CGRectMake(20.0f, CGRectGetMaxY(self.valueButton.frame) + offset + 10.0f, size.width - 40.0f, 44.0f);
-	self.updateButton.frame = CGRectMake(44.0f, size.height - 44.0f, size.width - 88.0f, 44.0f);
+	[self setupViewConstraints];
 }
 
 
@@ -302,36 +280,23 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
 
-	BOOL statusBarHidden = [UIApplication sharedApplication].statusBarHidden;
-	CGSize size = self.view.bounds.size;
-	CGRect doneFrame = CGRectMake(size.width - 80.0f, 16.0f + (statusBarHidden ? 4.0f : 20.0f), 60.0f, 32.0f);
-	CGRect topDoneFrame = doneFrame;
-	topDoneFrame.origin.y -= 40.0f;
-
-	CGFloat inputWidth = fminf(size.width - 40.0f, 500.0f);
-	CGRect inputFrame = CGRectMake(roundf((size.width - inputWidth) / 2.0f), CGRectGetMinY(self.valueButton.frame) - 108.0f, inputWidth, 54.0f);
-	if (self.view.bounds.size.height < 500) {
-		inputFrame.origin.y += 14.0f;
-	}
-
-	CGRect downInputFrame = inputFrame;
-	downInputFrame.origin.y = self.inputButton.frame.origin.y;
-
 	if (editing) {
-		self.textField.frame = downInputFrame;
-		self.doneButton.frame = topDoneFrame;
+//		self.textFieldTopConstraint.constant = self.key
+
+		[self.view addConstraint:self.doneButtonTopConstraint];
+		[self.view addConstraint:self.textFieldTopConstraint];
+	} else {
+		[self.view removeConstraint:self.doneButtonTopConstraint];
+		[self.view removeConstraint:self.textFieldTopConstraint];
 	}
 
 	void (^animations)(void) = ^{
 		self.textField.alpha = editing ? 1.0f : 0.0f;
-		self.textField.frame = editing ? inputFrame : downInputFrame;
+		self.doneButton.alpha = self.textField.alpha;
+		self.valueView.valueButton.alpha = editing ? 0.0f : 1.0f;
+		self.valueView.inputButton.alpha = self.valueView.valueButton.alpha;
 
-		self.valueButton.alpha = editing ? 0.0f : 1.0f;
-		self.inputButton.alpha = editing ? 0.0f : 1.0f;
-
-		self.doneButton.frame = editing ? doneFrame : topDoneFrame;
-		self.doneButton.alpha = editing ? 1.0f : 0.0f;
-
+		[self.view layoutIfNeeded];
 	};
 
 	if (animated) {
@@ -382,7 +347,7 @@
 		};
 
 		self.currencyPopover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
-		[self.currencyPopover presentPopoverFromRect:self.valueButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+		[self.currencyPopover presentPopoverFromRect:self.valueView.valueButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
 		return;
 	}
 
@@ -407,6 +372,44 @@
 
 #pragma mark - Private
 
+- (void)setupViewConstraints {
+	NSDictionary *views = @{
+		@"scrollView": self.scrollView,
+		@"valueView": self.valueView,
+		@"updateButton": self.updateButton,
+		@"textField": self.textField,
+		@"doneButton": self.doneButton
+	};
+
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[scrollView]|" options:kNilOptions metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView]|" options:kNilOptions metrics:nil views:views]];
+
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
+
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[updateButton]-|" options:kNilOptions metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[updateButton]-10-|" options:kNilOptions metrics:nil views:views]];
+
+	NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:0.0f];
+	constraint.priority = UILayoutPriorityDefaultLow;
+	[self.view addConstraint:constraint];
+
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[doneButton]-|" options:kNilOptions metrics:nil views:views]];
+
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(20@500)-[textField(<=500@600)]-(20@500)-|" options:kNilOptions metrics:nil views:views]];
+	constraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.valueView.valueButton attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f];
+	constraint.priority = UILayoutPriorityDefaultLow;
+	[self.view addConstraint:constraint];
+
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+}
+
+
 - (void)setControlsHidden:(BOOL)controlsHidden animated:(BOOL)animated {
 	UIApplication *application = [UIApplication sharedApplication];
 
@@ -419,6 +422,7 @@
 	_controlsHidden = controlsHidden;
 
 	[application setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+	self.doneButtonTopConstraint.constant = _controlsHidden ? 20.0f : 36.0f;
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults setBool:_controlsHidden forKey:kBTCControlsHiddenKey];
@@ -426,7 +430,7 @@
 
 	void (^animations)(void) = ^{
 		self.updateButton.alpha = _controlsHidden ? 0.0f : 1.0f;
-		[self viewDidLayoutSubviews];
+		[self.view layoutIfNeeded];
 	};
 
 	if (animated) {
@@ -467,7 +471,7 @@
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	currencyFormatter.currencyCode = [userDefaults stringForKey:kBTCSelectedCurrencyKey];
 	CGFloat value = [self.textField.text floatValue] * [conversionRates[currencyFormatter.currencyCode] floatValue];
-	[self.valueButton setTitle:[currencyFormatter stringFromNumber:@(value)] forState:UIControlStateNormal];
+	[self.valueView.valueButton setTitle:[currencyFormatter stringFromNumber:@(value)] forState:UIControlStateNormal];
 
 	static NSNumberFormatter *numberFormatter = nil;
 	static dispatch_once_t numberOnceToken;
@@ -484,7 +488,7 @@
 	NSNumber *number = @([[userDefaults stringForKey:kBTCNumberOfCoinsKey] doubleValue]);
 
 	NSString *title = [numberFormatter stringFromNumber:number];
-	[self.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
+	[self.valueView.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
 	[self viewDidLayoutSubviews];
 }
 
@@ -501,11 +505,24 @@
 }
 
 
+- (void)keyboardWillChangeFrame:(NSNotification *)notification {
+	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	self.textFieldTopConstraint.constant = fminf(keyboardFrame.size.height, keyboardFrame.size.width) / -2.0f;
+}
+
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[self toggleControls:textField];
 	return NO;
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+	if (self.editing) {
+		[self setEditing:NO animated:YES];
+	}
 }
 
 
