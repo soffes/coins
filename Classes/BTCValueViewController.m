@@ -281,13 +281,13 @@
 	[super setEditing:editing animated:animated];
 
 	if (editing) {
-//		self.textFieldTopConstraint.constant = self.key
-
 		[self.view addConstraint:self.doneButtonTopConstraint];
 		[self.view addConstraint:self.textFieldTopConstraint];
+		[self.textField becomeFirstResponder];
 	} else {
 		[self.view removeConstraint:self.doneButtonTopConstraint];
 		[self.view removeConstraint:self.textFieldTopConstraint];
+		[self.textField resignFirstResponder];
 	}
 
 	void (^animations)(void) = ^{
@@ -295,20 +295,15 @@
 		self.doneButton.alpha = self.textField.alpha;
 		self.valueView.valueButton.alpha = editing ? 0.0f : 1.0f;
 		self.valueView.inputButton.alpha = self.valueView.valueButton.alpha;
-
-		[self.view layoutIfNeeded];
 	};
 
 	if (animated) {
-		[UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:1.0 options:1.0f animations:animations completion:nil];
+		[UIView animateWithDuration:0.3 delay:0.0 options:1.0f animations:animations completion:nil];
+		[UIView animateWithDuration:0.8 delay:0.0 usingSpringWithDamping:0.6f initialSpringVelocity:1.0f options:1.0f animations:^{
+			[self.view layoutIfNeeded];
+		} completion:nil];
 	} else {
 		animations();
-	}
-
-	if (editing) {
-		[self.textField becomeFirstResponder];
-	} else {
-		[self.textField resignFirstResponder];
 	}
 }
 
