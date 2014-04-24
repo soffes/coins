@@ -170,8 +170,9 @@
 
 - (NSLayoutConstraint *)doneButtonTopConstraint {
 	if (!_doneButtonTopConstraint) {
-		_doneButtonTopConstraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:36.0f];
-		_doneButtonTopConstraint.priority = UILayoutPriorityDefaultHigh;
+		_doneButtonTopConstraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:0.0f];
+		_doneButtonTopConstraint.priority = UILayoutPriorityRequired;
+		[self updateDoneButtonTopLayoutConstraint];
 	}
 	return _doneButtonTopConstraint;
 }
@@ -312,6 +313,7 @@
 	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 
 	[self.currencyPopover dismissPopoverAnimated:YES];
+	[self updateDoneButtonTopLayoutConstraint];
 }
 
 
@@ -402,6 +404,10 @@
 	[self.view addConstraint:constraint];
 
 	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+
+	constraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.doneButton attribute:NSLayoutAttributeBottom multiplier:1.0f constant:20.0f];
+	constraint.priority = UILayoutPriorityRequired;
+	[self.view addConstraint:constraint];
 }
 
 
@@ -417,7 +423,7 @@
 	_controlsHidden = controlsHidden;
 
 	[application setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
-	self.doneButtonTopConstraint.constant = _controlsHidden ? 20.0f : 36.0f;
+	[self updateDoneButtonTopLayoutConstraint];
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults setBool:_controlsHidden forKey:kBTCControlsHiddenKey];
@@ -503,6 +509,21 @@
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
 	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
 	self.textFieldTopConstraint.constant = fminf(keyboardFrame.size.height, keyboardFrame.size.width) / -2.0f;
+}
+
+
+- (void)updateDoneButtonTopLayoutConstraint {
+	CGFloat constant = 10.0f;
+
+	if (!self.controlsHidden) {
+		constant += 20.0f;
+	}
+
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+		constant += 6.0f;
+	}
+
+	self.doneButtonTopConstraint.constant = constant;
 }
 
 
