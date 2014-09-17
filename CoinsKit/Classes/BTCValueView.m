@@ -7,14 +7,49 @@
 //
 
 #import "BTCValueView.h"
+#import "BTCDefines.h"
 #import "UIColor+Coins.h"
 
 @implementation BTCValueView
 
 #pragma mark - Accessors
 
+@synthesize conversionRates = _conversionRates;
 @synthesize valueButton = _valueButton;
 @synthesize inputButton = _inputButton;
+
+- (void)setConversionRates:(NSDictionary *)conversionRates {
+	_conversionRates = conversionRates;
+
+	static NSNumberFormatter *currencyFormatter = nil;
+	static dispatch_once_t currencyOnceToken;
+	dispatch_once(&currencyOnceToken, ^{
+		currencyFormatter = [[NSNumberFormatter alloc] init];
+		currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+	});
+
+	NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"Coins"];
+	currencyFormatter.currencyCode = [userDefaults stringForKey:kBTCSelectedCurrencyKey];
+	double value = [userDefaults doubleForKey:kBTCNumberOfCoinsKey] * [conversionRates[currencyFormatter.currencyCode] doubleValue];
+	[self.valueButton setTitle:[currencyFormatter stringFromNumber:@(value)] forState:UIControlStateNormal];
+
+	static NSNumberFormatter *numberFormatter = nil;
+	static dispatch_once_t numberOnceToken;
+	dispatch_once(&numberOnceToken, ^{
+		numberFormatter = [[NSNumberFormatter alloc] init];
+		numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+		numberFormatter.currencySymbol = @"";
+		numberFormatter.minimumFractionDigits = 0;
+		numberFormatter.maximumFractionDigits = 10;
+		numberFormatter.roundingMode = NSNumberFormatterRoundDown;
+	});
+
+	// Ensure it's a double for backwards compatibility with 1.0
+	NSNumber *number = @([[userDefaults stringForKey:kBTCNumberOfCoinsKey] doubleValue]);
+
+	NSString *title = [numberFormatter stringFromNumber:number];
+	[self.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
+}
 
 - (UIButton *)valueButton {
 	if (!_valueButton) {
@@ -46,12 +81,6 @@
 	if ((self = [super initWithFrame:frame])) {
 		self.translatesAutoresizingMaskIntoConstraints = NO;
 		self.backgroundColor = [UIColor clearColor];
-		self.gradientColors = @[
-			[UIColor btc_blueColor],
-			[UIColor btc_purpleColor]
-		];
-		self.dimmedGradientColors = self.gradientColors;
-
 		
 		[self addSubview:self.valueButton];
 		[self addSubview:self.inputButton];

@@ -32,7 +32,7 @@
 		NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0f]
 	};
 
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
 	[userDefaults registerDefaults:@{
 		kBTCSelectedCurrencyKey: @"USD",
 		kBTCNumberOfCoinsKey: @0,
@@ -40,6 +40,12 @@
 		kBTCDisableSleepKey: @NO,
 		kBTCControlsHiddenKey: @NO
 	}];
+
+	NSUserDefaults *oldUserDefaults = [NSUserDefaults standardUserDefaults];
+	NSArray *keys = @[kBTCSelectedCurrencyKey, kBTCNumberOfCoinsKey, kBTCAutomaticallyRefreshKey, kBTCDisableSleepKey, kBTCControlsHiddenKey];
+	for (NSString *key in keys) {
+		[userDefaults setObject:[oldUserDefaults objectForKey:key] forKey:key];
+	}
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];

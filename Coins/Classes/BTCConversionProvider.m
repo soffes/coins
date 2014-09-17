@@ -42,7 +42,7 @@
 				}
 
 				NSString *key = [[longKey stringByReplacingOccurrencesOfString:@"btc_to_" withString:@""] uppercaseString];
-				dictionary[key] = @([JSON[longKey] floatValue]);
+				dictionary[key] = @([JSON[longKey] doubleValue]);
 			}
 
 			dictionary[@"updatedAt"] = [NSDate date];
@@ -63,7 +63,7 @@
 }
 
 
-- (NSDictionary *)lastConversionRates {
+- (NSDictionary *)latestConversionRates {
 	return [[SAMCache sharedCache] objectForKey:@"BTCConversion"];
 }
 

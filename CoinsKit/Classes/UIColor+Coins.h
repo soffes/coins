@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Nothing Magical, Inc. All rights reserved.
 //
 
+@import UIKit;
+
 @interface UIColor (Coins)
 
 + (instancetype)btc_blueColor;

@@ -29,7 +29,7 @@
 	NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 	self.currencies = JSON[@"currencies"];
 	self.currencyOrder = JSON[@"order"];
-	self.selectedKey = [[NSUserDefaults standardUserDefaults] objectForKey:kBTCSelectedCurrencyKey];
+	self.selectedKey = [[NSUserDefaults btc_sharedDefaults] objectForKey:kBTCSelectedCurrencyKey];
 }
 
 
@@ -67,7 +67,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSString *key = self.currencyOrder[indexPath.row];
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
 	[userDefaults setObject:key forKey:kBTCSelectedCurrencyKey];
 	[userDefaults synchronize];
 

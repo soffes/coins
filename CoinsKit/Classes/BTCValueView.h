@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 Nothing Magical, Inc. All rights reserved.
 //
 
-#import <SAMGradientView/SAMGradientView.h>
+@import UIKit;
 
-@interface BTCValueView : SAMGradientView
+@interface BTCValueView : UIView
+
+@property (nonatomic) NSDictionary *conversionRates;
 
 @property (nonatomic, readonly) UIButton *inputButton;
 @property (nonatomic, readonly) UIButton *valueButton;

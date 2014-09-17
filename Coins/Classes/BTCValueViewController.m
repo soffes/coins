@@ -28,6 +28,7 @@
 @property (nonatomic) NSTimer *autoRefreshTimer;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, readonly) SSPullToRefreshView *pullToRefresh;
+@property (nonatomic, readonly) SAMGradientView *backgroundView;
 @property (nonatomic, readonly) BTCValueView *valueView;
 @property (nonatomic, readonly) BTCTickingButton *updateButton;
 @property (nonatomic, readonly) NSLayoutConstraint *doneButtonTopConstraint;
@@ -42,8 +43,9 @@
 @synthesize doneButton = _doneButton;
 @synthesize scrollView =_scrollView;
 @synthesize pullToRefresh = _pullToRefresh;
+@synthesize backgroundView = _backgroundView;
 @synthesize valueView = _valueView;
-@synthesize updateButton = _updateButton;
+@synthesize updateButton = updateButton;
 @synthesize doneButtonTopConstraint = _doneButtonTopConstraint;
 @synthesize textFieldTopConstraint = _textFieldTopConstraint;
 
@@ -54,7 +56,7 @@
 		_textField.delegate = self;
 		_textField.alpha = 0.0f;
 
-		NSString *number = [[NSUserDefaults standardUserDefaults] stringForKey:kBTCNumberOfCoinsKey];
+		NSString *number = [[NSUserDefaults btc_sharedDefaults] stringForKey:kBTCNumberOfCoinsKey];
 		_textField.text = [number isEqualToString:@"0"] ? nil : number;
 	}
 	return _textField;
@@ -103,6 +105,20 @@
 }
 
 
+- (SAMGradientView *)backgroundView {
+	if (!_backgroundView) {
+		_backgroundView = [[SAMGradientView alloc] init];
+		_backgroundView.translatesAutoresizingMaskIntoConstraints = NO;
+		_backgroundView.gradientColors = @[
+			[UIColor btc_blueColor],
+			[UIColor btc_purpleColor]
+		];
+		_backgroundView.dimmedGradientColors = _backgroundView.gradientColors;
+	}
+	return _backgroundView;
+}
+
+
 - (BTCValueView *)valueView {
 	if (!_valueView) {
 		_valueView = [[BTCValueView alloc] init];
@@ -115,16 +131,16 @@
 
 
 - (BTCTickingButton *)updateButton {
-	if (!_updateButton) {
-		_updateButton = [[BTCTickingButton alloc] init];
-		_updateButton.translatesAutoresizingMaskIntoConstraints = NO;
-		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.3f] forState:UIControlStateNormal];
-		[_updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.8f] forState:UIControlStateHighlighted];
-		_updateButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
-		_updateButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-		[_updateButton addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
+	if (!updateButton) {
+		updateButton = [[BTCTickingButton alloc] init];
+		updateButton.translatesAutoresizingMaskIntoConstraints = NO;
+		[updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.3f] forState:UIControlStateNormal];
+		[updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.8f] forState:UIControlStateHighlighted];
+		updateButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
+		updateButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+		[updateButton addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
 	}
-	return _updateButton;
+	return updateButton;
 }
 
 
@@ -226,7 +242,8 @@
 	gradient.dimmedGradientColors = gradient.gradientColors;
 	[self.view addSubview:gradient];
 
-	[self.scrollView addSubview:self.valueView];
+	[self.scrollView addSubview:self.backgroundView];
+	[self.backgroundView addSubview:self.valueView];
 	[self.view addSubview:self.updateButton];
 	[self.view addSubview:self.textField];
 	[self.view addSubview:self.doneButton];
@@ -234,18 +251,18 @@
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleControls:)];
 	[self.scrollView addGestureRecognizer:tap];
 
-	[self _update];
+	[self update];
 	[self refresh:nil];
-	[self _preferencesDidChange];
+	[self preferencesDidChange];
 
-	[self setControlsHidden:[[NSUserDefaults standardUserDefaults] boolForKey:kBTCControlsHiddenKey] animated:NO];
+	[self setControlsHidden:[[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCControlsHiddenKey] animated:NO];
 
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-	[notificationCenter addObserver:self selector:@selector(_textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
-	[notificationCenter addObserver:self selector:@selector(_update) name:kBTCCurrencyDidChangeNotificationName object:nil];
-	[notificationCenter addObserver:self selector:@selector(_preferencesDidChange) name:NSUserDefaultsDidChangeNotification object:nil];
-	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidEnterBackgroundNotification object:nil];
-	[notificationCenter addObserver:self selector:@selector(_updateTimerPaused:) name:UIApplicationDidBecomeActiveNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(update) name:kBTCCurrencyDidChangeNotificationName object:nil];
+	[notificationCenter addObserver:self selector:@selector(preferencesDidChange) name:NSUserDefaultsDidChangeNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(updateTimerPaused:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+	[notificationCenter addObserver:self selector:@selector(updateTimerPaused:) name:UIApplicationDidBecomeActiveNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(refresh:) name:UIApplicationDidBecomeActiveNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 
@@ -256,14 +273,14 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 
-	[self _update];
+	[self update];
 	[self.navigationController setNavigationBarHidden:YES animated:animated];
 
 	[self.updateButton startTicking];
 
-	self.autoRefreshing = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
+	self.autoRefreshing = [[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 
-	if ([[NSUserDefaults standardUserDefaults] doubleForKey:kBTCNumberOfCoinsKey] == 0.0) {
+	if ([[NSUserDefaults btc_sharedDefaults] doubleForKey:kBTCNumberOfCoinsKey] == 0.0) {
 		[self setEditing:YES animated:animated];
 	}
 }
@@ -327,7 +344,7 @@
 	self.loading = YES;
 
 	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates) {
-		[self _update];
+		[self update];
 		self.loading = NO;
 	}];
 }
@@ -372,6 +389,7 @@
 - (void)setupViewConstraints {
 	NSDictionary *views = @{
 		@"scrollView": self.scrollView,
+		@"backgroundView": self.backgroundView,
 		@"valueView": self.valueView,
 		@"updateButton": self.updateButton,
 		@"textField": self.textField,
@@ -381,13 +399,19 @@
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[scrollView]|" options:kNilOptions metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView]|" options:kNilOptions metrics:nil views:views]];
 
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
 
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.backgroundView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.backgroundView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.backgroundView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.valueView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.backgroundView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+
 
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[updateButton]-|" options:kNilOptions metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[updateButton]-10-|" options:kNilOptions metrics:nil views:views]];
@@ -425,7 +449,7 @@
 	[application setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
 	[self updateDoneButtonTopLayoutConstraint];
 
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
 	[userDefaults setBool:_controlsHidden forKey:kBTCControlsHiddenKey];
 	[userDefaults synchronize];
 
@@ -442,67 +466,40 @@
 }
 
 
-- (void)_textFieldDidChange:(NSNotification *)notification {
+- (void)textFieldDidChange:(NSNotification *)notification {
 	NSString *string = [self.textField.text stringByReplacingOccurrencesOfString:@"," withString:@"."];
 
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
 	[userDefaults setObject:@([string doubleValue]) forKey:kBTCNumberOfCoinsKey];
 	[userDefaults synchronize];
 
-	[self _update];
+	[self update];
 }
 
 
-- (void)_update {
-	NSDictionary *conversionRates = [[BTCConversionProvider sharedProvider] lastConversionRates];
+- (void)update {
+	NSDictionary *conversionRates = [[BTCConversionProvider sharedProvider] latestConversionRates];
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self.currencyPopover dismissPopoverAnimated:YES];
 	}
 
 	self.updateButton.date = conversionRates[@"updatedAt"];
+	self.valueView.conversionRates = conversionRates;
 
-	static NSNumberFormatter *currencyFormatter = nil;
-	static dispatch_once_t currencyOnceToken;
-	dispatch_once(&currencyOnceToken, ^{
-		currencyFormatter = [[NSNumberFormatter alloc] init];
-		currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-	});
-
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	currencyFormatter.currencyCode = [userDefaults stringForKey:kBTCSelectedCurrencyKey];
-	CGFloat value = [self.textField.text floatValue] * [conversionRates[currencyFormatter.currencyCode] floatValue];
-	[self.valueView.valueButton setTitle:[currencyFormatter stringFromNumber:@(value)] forState:UIControlStateNormal];
-
-	static NSNumberFormatter *numberFormatter = nil;
-	static dispatch_once_t numberOnceToken;
-	dispatch_once(&numberOnceToken, ^{
-		numberFormatter = [[NSNumberFormatter alloc] init];
-		numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
-		numberFormatter.currencySymbol = @"";
-		numberFormatter.minimumFractionDigits = 0;
-		numberFormatter.maximumFractionDigits = 10;
-		numberFormatter.roundingMode = NSNumberFormatterRoundDown;
-	});
-
-	// Ensure it's a double for backwards compatibility with 1.0
-	NSNumber *number = @([[userDefaults stringForKey:kBTCNumberOfCoinsKey] doubleValue]);
-
-	NSString *title = [numberFormatter stringFromNumber:number];
-	[self.valueView.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
 	[self viewDidLayoutSubviews];
 }
 
 
-- (void)_preferencesDidChange {
-	[UIApplication sharedApplication].idleTimerDisabled = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCDisableSleepKey];
-	[self _updateTimerPaused:nil];
+- (void)preferencesDidChange {
+	[UIApplication sharedApplication].idleTimerDisabled = [[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCDisableSleepKey];
+	[self updateTimerPaused:nil];
 }
 
 
-- (void)_updateTimerPaused:(NSNotification *)notification {
+- (void)updateTimerPaused:(NSNotification *)notification {
 	BOOL active = [[UIApplication sharedApplication] applicationState] == UIApplicationStateActive;
-	self.autoRefreshing = active && [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
+	self.autoRefreshing = active && [[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 }
 
 

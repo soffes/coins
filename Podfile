@@ -1,11 +1,12 @@
 platform :ios, '7.0'
 
-pod 'HockeySDK'
-pod 'SAMCache'
-pod 'SAMGradientView'
-pod 'SSPullToRefresh'
-
-pod 'Localytics-iOS-Client'
+target 'Coins' do
+  pod 'HockeySDK'
+  pod 'SAMCache'
+  pod 'SAMGradientView'
+  pod 'SSPullToRefresh'
+  pod 'Localytics-iOS-Client'
+end
 
 post_install do |installer|
   require 'fileutils'

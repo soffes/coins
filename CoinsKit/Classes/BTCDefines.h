@@ -9,6 +9,8 @@
 #ifndef BTCDEFINES
 #define BTCDEFINES 1
 
+@import Foundation;
+
 extern NSString *const kBTCSelectedCurrencyKey;
 extern NSString *const kBTCNumberOfCoinsKey;
 extern NSString *const kBTCControlsHiddenKey;

@@ -11,6 +11,6 @@
 + (instancetype)sharedProvider;
 
 - (void)getConversionRates:(void(^)(NSDictionary *conversionRates))completion;
-- (NSDictionary *)lastConversionRates;
+- (NSDictionary *)latestConversionRates;
 
 @end
