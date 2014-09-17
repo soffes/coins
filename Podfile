@@ -1,5 +1,6 @@
 platform :ios, '7.0'
 
+pod 'HockeySDK'
 pod 'SAMCache'
 pod 'SAMGradientView'
 pod 'SSPullToRefresh'
@@ -8,7 +9,7 @@ pod 'Localytics-iOS-Client'
 
 post_install do |installer|
   require 'fileutils'
-  dest = 'Resources/Settings.bundle/Acknowledgements.plist'
+  dest = 'Coins/Resources/Settings.bundle/Acknowledgements.plist'
   FileUtils.cp_r('Pods/Pods-Acknowledgements.plist', dest, :remove_destination => true)
 
   # Strip CocoaPods

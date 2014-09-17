@@ -8,31 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		1C857B984FEC463AA5B2F2DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C733206B69A4AA88CE1C3A3 /* libPods.a */; };
-		2100A16D1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A16C1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m */; };
-		2100A1701864B64500C994C2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2100A16E1864B64500C994C2 /* Localizable.strings */; };
-		2100A1731864B66D00C994C2 /* BTCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1721864B66D00C994C2 /* BTCTableViewCell.m */; };
-		2100A1751864B81300C994C2 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 2100A1741864B81300C994C2 /* currencies.json */; };
-		2100A1781864BBCE00C994C2 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1771864BBCE00C994C2 /* BTCDefines.m */; };
-		2100A1881864EE4300C994C2 /* BTCTickingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A1871864EE4300C994C2 /* BTCTickingButton.m */; };
-		2100A18C1864F5FE00C994C2 /* NSDate+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A18B1864F5FE00C994C2 /* NSDate+Coins.m */; };
-		2100A18E1864F86D00C994C2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2100A18D1864F86D00C994C2 /* Settings.bundle */; };
-		2100A191186519CB00C994C2 /* BTCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100A190186519CB00C994C2 /* BTCTextField.m */; };
 		2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
 		2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16A1864AD58006D3470 /* CoreGraphics.framework */; };
 		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
 		2130E1821864AD58006D3470 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1811864AD58006D3470 /* XCTest.framework */; };
 		2130E1831864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
 		2130E1841864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
-		2130E1A01864AD8B006D3470 /* BTCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1991864AD8B006D3470 /* BTCAppDelegate.m */; };
-		2130E1A11864AD8B006D3470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E19C1864AD8B006D3470 /* main.m */; };
-		2130E1A31864AD8B006D3470 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2130E19F1864AD8B006D3470 /* Images.xcassets */; };
-		2130E1A91864AD9E006D3470 /* CoinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1A61864AD96006D3470 /* CoinsTests.m */; };
-		2130E1AC1864AE1A006D3470 /* BTCValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */; };
-		2130E1AF1864AE40006D3470 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */; };
-		21951DB41908C40D00B8D5D1 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21951DB31908C40D00B8D5D1 /* BTCValueView.m */; };
-		219B3462187C7A0500F50D1F /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 219B3461187C7A0500F50D1F /* UIColor+Coins.m */; };
-		21F99A8618652DAF00C19618 /* Coins.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 21F99A8518652DAF00C19618 /* Coins.entitlements */; };
-		21F9D19C1876952A00F36678 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F9D1981876952A00F36678 /* Crashlytics.framework */; };
+		21C14CED19C910F80011C908 /* BTCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCA19C910F80011C908 /* BTCAppDelegate.m */; };
+		21C14CEE19C910F80011C908 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCC19C910F80011C908 /* BTCConversionProvider.m */; };
+		21C14CEF19C910F80011C908 /* BTCCurrencyPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCE19C910F80011C908 /* BTCCurrencyPickerTableViewController.m */; };
+		21C14CF019C910F80011C908 /* BTCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD019C910F80011C908 /* BTCTableViewCell.m */; };
+		21C14CF119C910F80011C908 /* BTCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD219C910F80011C908 /* BTCTextField.m */; };
+		21C14CF219C910F80011C908 /* BTCTickingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD419C910F80011C908 /* BTCTickingButton.m */; };
+		21C14CF319C910F80011C908 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD619C910F80011C908 /* BTCValueView.m */; };
+		21C14CF419C910F80011C908 /* BTCValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD819C910F80011C908 /* BTCValueViewController.m */; };
+		21C14CF519C910F80011C908 /* NSDate+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CDA19C910F80011C908 /* NSDate+Coins.m */; };
+		21C14CF619C910F80011C908 /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CDC19C910F80011C908 /* UIColor+Coins.m */; };
+		21C14CF719C910F80011C908 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CDF19C910F80011C908 /* BTCDefines.m */; };
+		21C14CF819C910F80011C908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CE119C910F80011C908 /* main.m */; };
+		21C14CF919C910F80011C908 /* Coins-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE319C910F80011C908 /* Coins-Info.plist */; };
+		21C14CFA19C910F80011C908 /* Coins.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE419C910F80011C908 /* Coins.entitlements */; };
+		21C14CFB19C910F80011C908 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE519C910F80011C908 /* currencies.json */; };
+		21C14CFC19C910F80011C908 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE619C910F80011C908 /* Localizable.strings */; };
+		21C14CFD19C910F80011C908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE819C910F80011C908 /* Images.xcassets */; };
+		21C14CFE19C910F80011C908 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE919C910F80011C908 /* Settings.bundle */; };
+		21C14D0119C910FF0011C908 /* CoinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CEC19C910F80011C908 /* CoinsTests.m */; };
 		21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */; };
 /* End PBXBuildFile section */
 
@@ -47,44 +47,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2100A16B1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCCurrencyPickerTableViewController.h; sourceTree = "<group>"; };
-		2100A16C1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCCurrencyPickerTableViewController.m; sourceTree = "<group>"; };
-		2100A16F1864B64500C994C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2100A1711864B66D00C994C2 /* BTCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTableViewCell.h; sourceTree = "<group>"; };
-		2100A1721864B66D00C994C2 /* BTCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTableViewCell.m; sourceTree = "<group>"; };
-		2100A1741864B81300C994C2 /* currencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
-		2100A1761864BBCE00C994C2 /* BTCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCDefines.h; sourceTree = "<group>"; };
-		2100A1771864BBCE00C994C2 /* BTCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCDefines.m; sourceTree = "<group>"; };
-		2100A1861864EE4300C994C2 /* BTCTickingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTickingButton.h; sourceTree = "<group>"; };
-		2100A1871864EE4300C994C2 /* BTCTickingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTickingButton.m; sourceTree = "<group>"; };
-		2100A18A1864F5FE00C994C2 /* NSDate+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Coins.h"; sourceTree = "<group>"; };
-		2100A18B1864F5FE00C994C2 /* NSDate+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Coins.m"; sourceTree = "<group>"; };
-		2100A18D1864F86D00C994C2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		2100A18F186519CB00C994C2 /* BTCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTextField.h; sourceTree = "<group>"; };
-		2100A190186519CB00C994C2 /* BTCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTextField.m; sourceTree = "<group>"; };
 		2130E1651864AD58006D3470 /* Coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2130E1681864AD58006D3470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2130E16A1864AD58006D3470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2130E16C1864AD58006D3470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2130E1801864AD58006D3470 /* CoinsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2130E1811864AD58006D3470 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2130E1981864AD8B006D3470 /* BTCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCAppDelegate.h; sourceTree = "<group>"; };
-		2130E1991864AD8B006D3470 /* BTCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCAppDelegate.m; sourceTree = "<group>"; };
-		2130E19B1864AD8B006D3470 /* Coins-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coins-Prefix.pch"; sourceTree = "<group>"; };
-		2130E19C1864AD8B006D3470 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2130E19E1864AD8B006D3470 /* Coins-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Coins-Info.plist"; sourceTree = "<group>"; };
-		2130E19F1864AD8B006D3470 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2130E1A51864AD96006D3470 /* CoinsTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoinsTests-Info.plist"; sourceTree = "<group>"; };
-		2130E1A61864AD96006D3470 /* CoinsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinsTests.m; sourceTree = "<group>"; };
-		2130E1AA1864AE1A006D3470 /* BTCValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueViewController.h; sourceTree = "<group>"; };
-		2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueViewController.m; sourceTree = "<group>"; };
-		2130E1AD1864AE40006D3470 /* BTCConversionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCConversionProvider.h; sourceTree = "<group>"; };
-		2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCConversionProvider.m; sourceTree = "<group>"; };
-		21951DB21908C40D00B8D5D1 /* BTCValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueView.h; sourceTree = "<group>"; };
-		21951DB31908C40D00B8D5D1 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
-		219B3460187C7A0500F50D1F /* UIColor+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Coins.h"; sourceTree = "<group>"; };
-		219B3461187C7A0500F50D1F /* UIColor+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Coins.m"; sourceTree = "<group>"; };
-		21F99A8518652DAF00C19618 /* Coins.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
+		21C14CC919C910F80011C908 /* BTCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCAppDelegate.h; sourceTree = "<group>"; };
+		21C14CCA19C910F80011C908 /* BTCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCAppDelegate.m; sourceTree = "<group>"; };
+		21C14CCB19C910F80011C908 /* BTCConversionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCConversionProvider.h; sourceTree = "<group>"; };
+		21C14CCC19C910F80011C908 /* BTCConversionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCConversionProvider.m; sourceTree = "<group>"; };
+		21C14CCD19C910F80011C908 /* BTCCurrencyPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCCurrencyPickerTableViewController.h; sourceTree = "<group>"; };
+		21C14CCE19C910F80011C908 /* BTCCurrencyPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCCurrencyPickerTableViewController.m; sourceTree = "<group>"; };
+		21C14CCF19C910F80011C908 /* BTCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTableViewCell.h; sourceTree = "<group>"; };
+		21C14CD019C910F80011C908 /* BTCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTableViewCell.m; sourceTree = "<group>"; };
+		21C14CD119C910F80011C908 /* BTCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTextField.h; sourceTree = "<group>"; };
+		21C14CD219C910F80011C908 /* BTCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTextField.m; sourceTree = "<group>"; };
+		21C14CD319C910F80011C908 /* BTCTickingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTickingButton.h; sourceTree = "<group>"; };
+		21C14CD419C910F80011C908 /* BTCTickingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTickingButton.m; sourceTree = "<group>"; };
+		21C14CD519C910F80011C908 /* BTCValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueView.h; sourceTree = "<group>"; };
+		21C14CD619C910F80011C908 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
+		21C14CD719C910F80011C908 /* BTCValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueViewController.h; sourceTree = "<group>"; };
+		21C14CD819C910F80011C908 /* BTCValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueViewController.m; sourceTree = "<group>"; };
+		21C14CD919C910F80011C908 /* NSDate+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Coins.h"; sourceTree = "<group>"; };
+		21C14CDA19C910F80011C908 /* NSDate+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Coins.m"; sourceTree = "<group>"; };
+		21C14CDB19C910F80011C908 /* UIColor+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Coins.h"; sourceTree = "<group>"; };
+		21C14CDC19C910F80011C908 /* UIColor+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Coins.m"; sourceTree = "<group>"; };
+		21C14CDE19C910F80011C908 /* BTCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCDefines.h; sourceTree = "<group>"; };
+		21C14CDF19C910F80011C908 /* BTCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCDefines.m; sourceTree = "<group>"; };
+		21C14CE019C910F80011C908 /* Coins-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coins-Prefix.pch"; sourceTree = "<group>"; };
+		21C14CE119C910F80011C908 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21C14CE319C910F80011C908 /* Coins-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Coins-Info.plist"; sourceTree = "<group>"; };
+		21C14CE419C910F80011C908 /* Coins.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
+		21C14CE519C910F80011C908 /* currencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
+		21C14CE719C910F80011C908 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		21C14CE819C910F80011C908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		21C14CE919C910F80011C908 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		21C14CEB19C910F80011C908 /* CoinsTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoinsTests-Info.plist"; sourceTree = "<group>"; };
+		21C14CEC19C910F80011C908 /* CoinsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinsTests.m; sourceTree = "<group>"; };
 		21F9D1981876952A00F36678 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		21F9D19A1876952A00F36678 /* LocalyticsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsUtilities.h; sourceTree = "<group>"; };
 		21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUtilities.m; sourceTree = "<group>"; };
@@ -98,7 +98,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */,
-				21F9D19C1876952A00F36678 /* Crashlytics.framework in Frameworks */,
 				2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */,
 				2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */,
 				1C857B984FEC463AA5B2F2DB /* libPods.a in Frameworks */,
@@ -118,68 +117,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2100A17B1864D21A00C994C2 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				2130E1AA1864AE1A006D3470 /* BTCValueViewController.h */,
-				2130E1AB1864AE1A006D3470 /* BTCValueViewController.m */,
-				2100A16B1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.h */,
-				2100A16C1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		2100A17C1864D22300C994C2 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				2130E1981864AD8B006D3470 /* BTCAppDelegate.h */,
-				2130E1991864AD8B006D3470 /* BTCAppDelegate.m */,
-			);
-			name = Application;
-			sourceTree = "<group>";
-		};
-		2100A17E1864D27F00C994C2 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				2130E1AD1864AE40006D3470 /* BTCConversionProvider.h */,
-				2130E1AE1864AE40006D3470 /* BTCConversionProvider.m */,
-			);
-			name = Providers;
-			sourceTree = "<group>";
-		};
-		2100A1851864EE2A00C994C2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2100A1711864B66D00C994C2 /* BTCTableViewCell.h */,
-				2100A1721864B66D00C994C2 /* BTCTableViewCell.m */,
-				2100A1861864EE4300C994C2 /* BTCTickingButton.h */,
-				2100A1871864EE4300C994C2 /* BTCTickingButton.m */,
-				2100A18F186519CB00C994C2 /* BTCTextField.h */,
-				2100A190186519CB00C994C2 /* BTCTextField.m */,
-				21951DB21908C40D00B8D5D1 /* BTCValueView.h */,
-				21951DB31908C40D00B8D5D1 /* BTCValueView.m */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		2100A1891864F5C600C994C2 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				2100A18A1864F5FE00C994C2 /* NSDate+Coins.h */,
-				2100A18B1864F5FE00C994C2 /* NSDate+Coins.m */,
-				219B3460187C7A0500F50D1F /* UIColor+Coins.h */,
-				219B3461187C7A0500F50D1F /* UIColor+Coins.m */,
-			);
-			name = Categories;
-			sourceTree = "<group>";
-		};
 		2130E15C1864AD57006D3470 = {
 			isa = PBXGroup;
 			children = (
-				2130E1971864AD8B006D3470 /* Classes */,
-				2130E19A1864AD8B006D3470 /* Other Sources */,
-				2130E19D1864AD8B006D3470 /* Resources */,
-				2130E1A41864AD96006D3470 /* Tests */,
+				21C14CC719C910F80011C908 /* Coins */,
 				21F9D1971876952A00F36678 /* Vendor */,
 				2130E1671864AD58006D3470 /* Frameworks */,
 				2130E1661864AD58006D3470 /* Products */,
@@ -208,47 +149,73 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2130E1971864AD8B006D3470 /* Classes */ = {
+		21C14CC719C910F80011C908 /* Coins */ = {
 			isa = PBXGroup;
 			children = (
-				2100A1891864F5C600C994C2 /* Categories */,
-				2100A17C1864D22300C994C2 /* Application */,
-				2100A17B1864D21A00C994C2 /* View Controllers */,
-				2100A1851864EE2A00C994C2 /* Views */,
-				2100A17E1864D27F00C994C2 /* Providers */,
+				21C14CC819C910F80011C908 /* Classes */,
+				21C14CDD19C910F80011C908 /* Other Sources */,
+				21C14CE219C910F80011C908 /* Resources */,
+				21C14CEA19C910F80011C908 /* Tests */,
+			);
+			path = Coins;
+			sourceTree = "<group>";
+		};
+		21C14CC819C910F80011C908 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				21C14CC919C910F80011C908 /* BTCAppDelegate.h */,
+				21C14CCA19C910F80011C908 /* BTCAppDelegate.m */,
+				21C14CCB19C910F80011C908 /* BTCConversionProvider.h */,
+				21C14CCC19C910F80011C908 /* BTCConversionProvider.m */,
+				21C14CCD19C910F80011C908 /* BTCCurrencyPickerTableViewController.h */,
+				21C14CCE19C910F80011C908 /* BTCCurrencyPickerTableViewController.m */,
+				21C14CCF19C910F80011C908 /* BTCTableViewCell.h */,
+				21C14CD019C910F80011C908 /* BTCTableViewCell.m */,
+				21C14CD119C910F80011C908 /* BTCTextField.h */,
+				21C14CD219C910F80011C908 /* BTCTextField.m */,
+				21C14CD319C910F80011C908 /* BTCTickingButton.h */,
+				21C14CD419C910F80011C908 /* BTCTickingButton.m */,
+				21C14CD519C910F80011C908 /* BTCValueView.h */,
+				21C14CD619C910F80011C908 /* BTCValueView.m */,
+				21C14CD719C910F80011C908 /* BTCValueViewController.h */,
+				21C14CD819C910F80011C908 /* BTCValueViewController.m */,
+				21C14CD919C910F80011C908 /* NSDate+Coins.h */,
+				21C14CDA19C910F80011C908 /* NSDate+Coins.m */,
+				21C14CDB19C910F80011C908 /* UIColor+Coins.h */,
+				21C14CDC19C910F80011C908 /* UIColor+Coins.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		2130E19A1864AD8B006D3470 /* Other Sources */ = {
+		21C14CDD19C910F80011C908 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2130E19B1864AD8B006D3470 /* Coins-Prefix.pch */,
-				2130E19C1864AD8B006D3470 /* main.m */,
-				2100A1761864BBCE00C994C2 /* BTCDefines.h */,
-				2100A1771864BBCE00C994C2 /* BTCDefines.m */,
+				21C14CDE19C910F80011C908 /* BTCDefines.h */,
+				21C14CDF19C910F80011C908 /* BTCDefines.m */,
+				21C14CE019C910F80011C908 /* Coins-Prefix.pch */,
+				21C14CE119C910F80011C908 /* main.m */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
 		};
-		2130E19D1864AD8B006D3470 /* Resources */ = {
+		21C14CE219C910F80011C908 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				21F99A8518652DAF00C19618 /* Coins.entitlements */,
-				2100A1741864B81300C994C2 /* currencies.json */,
-				2130E19E1864AD8B006D3470 /* Coins-Info.plist */,
-				2130E19F1864AD8B006D3470 /* Images.xcassets */,
-				2100A16E1864B64500C994C2 /* Localizable.strings */,
-				2100A18D1864F86D00C994C2 /* Settings.bundle */,
+				21C14CE319C910F80011C908 /* Coins-Info.plist */,
+				21C14CE419C910F80011C908 /* Coins.entitlements */,
+				21C14CE519C910F80011C908 /* currencies.json */,
+				21C14CE619C910F80011C908 /* Localizable.strings */,
+				21C14CE819C910F80011C908 /* Images.xcassets */,
+				21C14CE919C910F80011C908 /* Settings.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		2130E1A41864AD96006D3470 /* Tests */ = {
+		21C14CEA19C910F80011C908 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2130E1A51864AD96006D3470 /* CoinsTests-Info.plist */,
-				2130E1A61864AD96006D3470 /* CoinsTests.m */,
+				21C14CEB19C910F80011C908 /* CoinsTests-Info.plist */,
+				21C14CEC19C910F80011C908 /* CoinsTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -283,7 +250,7 @@
 				2130E1621864AD58006D3470 /* Frameworks */,
 				2130E1631864AD58006D3470 /* Resources */,
 				1AD49CA55DB74066B7D523C0 /* Copy Pods Resources */,
-				21F9D1941876941900F36678 /* Crashlytics */,
+				21C14D0219C9196B0011C908 /* Hockey */,
 			);
 			buildRules = (
 			);
@@ -353,11 +320,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2130E1A31864AD8B006D3470 /* Images.xcassets in Resources */,
-				2100A1701864B64500C994C2 /* Localizable.strings in Resources */,
-				21F99A8618652DAF00C19618 /* Coins.entitlements in Resources */,
-				2100A18E1864F86D00C994C2 /* Settings.bundle in Resources */,
-				2100A1751864B81300C994C2 /* currencies.json in Resources */,
+				21C14CFA19C910F80011C908 /* Coins.entitlements in Resources */,
+				21C14CFD19C910F80011C908 /* Images.xcassets in Resources */,
+				21C14CFC19C910F80011C908 /* Localizable.strings in Resources */,
+				21C14CF919C910F80011C908 /* Coins-Info.plist in Resources */,
+				21C14CFE19C910F80011C908 /* Settings.bundle in Resources */,
+				21C14CFB19C910F80011C908 /* currencies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,19 +354,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		21F9D1941876941900F36678 /* Crashlytics */ = {
+		21C14D0219C9196B0011C908 /* Hockey */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Crashlytics;
+			name = Hockey;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/bin/env ruby";
-			shellScript = "if ENV[\"CONFIGURATION\"] == \"Release\" || ENV[\"CONFIGURATION\"] == \"Beta\"\nsystem \"./Vendor/Crashlytics.framework/run d719996ce2f7809259d6b116a1e5b1cf5d0f316d\"\nend";
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/Vendor/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 		35E3728C36FE40B491367BE5 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -422,19 +390,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2130E1AF1864AE40006D3470 /* BTCConversionProvider.m in Sources */,
+				21C14CF819C910F80011C908 /* main.m in Sources */,
+				21C14CF219C910F80011C908 /* BTCTickingButton.m in Sources */,
+				21C14CED19C910F80011C908 /* BTCAppDelegate.m in Sources */,
+				21C14CF719C910F80011C908 /* BTCDefines.m in Sources */,
+				21C14CF319C910F80011C908 /* BTCValueView.m in Sources */,
+				21C14CF119C910F80011C908 /* BTCTextField.m in Sources */,
+				21C14CEE19C910F80011C908 /* BTCConversionProvider.m in Sources */,
+				21C14CF019C910F80011C908 /* BTCTableViewCell.m in Sources */,
+				21C14CF419C910F80011C908 /* BTCValueViewController.m in Sources */,
+				21C14CEF19C910F80011C908 /* BTCCurrencyPickerTableViewController.m in Sources */,
 				21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */,
-				2100A1731864B66D00C994C2 /* BTCTableViewCell.m in Sources */,
-				2130E1AC1864AE1A006D3470 /* BTCValueViewController.m in Sources */,
-				2100A191186519CB00C994C2 /* BTCTextField.m in Sources */,
-				2100A1881864EE4300C994C2 /* BTCTickingButton.m in Sources */,
-				2100A1781864BBCE00C994C2 /* BTCDefines.m in Sources */,
-				2100A16D1864B5E000C994C2 /* BTCCurrencyPickerTableViewController.m in Sources */,
-				21951DB41908C40D00B8D5D1 /* BTCValueView.m in Sources */,
-				2130E1A11864AD8B006D3470 /* main.m in Sources */,
-				2100A18C1864F5FE00C994C2 /* NSDate+Coins.m in Sources */,
-				219B3462187C7A0500F50D1F /* UIColor+Coins.m in Sources */,
-				2130E1A01864AD8B006D3470 /* BTCAppDelegate.m in Sources */,
+				21C14CF619C910F80011C908 /* UIColor+Coins.m in Sources */,
+				21C14CF519C910F80011C908 /* NSDate+Coins.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2130E1A91864AD9E006D3470 /* CoinsTests.m in Sources */,
+				21C14D0119C910FF0011C908 /* CoinsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,10 +425,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2100A16E1864B64500C994C2 /* Localizable.strings */ = {
+		21C14CE619C910F80011C908 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2100A16F1864B64500C994C2 /* en */,
+				21C14CE719C910F80011C908 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -484,7 +452,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -523,7 +490,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -553,8 +519,8 @@
 					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/Coins-Prefix.pch";
-				INFOPLIST_FILE = "Resources/Coins-Info.plist";
+				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -566,7 +532,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Resources/Coins.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nothing Magical Inc. (UP9C8XM22A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,8 +539,8 @@
 					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/Coins-Prefix.pch";
-				INFOPLIST_FILE = "Resources/Coins-Info.plist";
+				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6ED8F51F-254B-4DC8-92C1-055FC7B1E6E8";
 				WRAPPER_EXTENSION = app;
@@ -592,12 +557,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/Coins-Prefix.pch";
+				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Tests/CoinsTests-Info.plist";
+				INFOPLIST_FILE = "Coins/Tests/CoinsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -614,8 +579,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/Coins-Prefix.pch";
-				INFOPLIST_FILE = "Tests/CoinsTests-Info.plist";
+				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
+				INFOPLIST_FILE = "Coins/Tests/CoinsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
