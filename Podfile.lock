@@ -1,21 +1,18 @@
 PODS:
   - HockeySDK (3.5.7)
   - Localytics-iOS-Client (2.23.0)
-  - SAMCache (0.3.0)
   - SAMGradientView (0.2.1)
   - SSPullToRefresh (1.2.0)
 
 DEPENDENCIES:
   - HockeySDK
   - Localytics-iOS-Client
-  - SAMCache
   - SAMGradientView
   - SSPullToRefresh
 
 SPEC CHECKSUMS:
   HockeySDK: f0e874d1c6833163ee0c4e423606faf33ad04071
   Localytics-iOS-Client: 3f878379d40c67945ea5972c1e1bf9762b5e5b9f
-  SAMCache: ab96161f1938a85b0fd426958fc7f36e29a9fe27
   SAMGradientView: 37ef027b0da8b5fd85bfdfef49801b5262160998
   SSPullToRefresh: bb513a1ccbf08fdd67e4139bc1bbe3fc2ed34228
 

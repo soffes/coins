@@ -30,14 +30,13 @@
 		21C14CFE19C910F80011C908 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE919C910F80011C908 /* Settings.bundle */; };
 		21C14D0919C91A370011C908 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C14D0819C91A370011C908 /* NotificationCenter.framework */; };
 		21C14D1419C91A370011C908 /* Coins Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21C14D0719C91A370011C908 /* Coins Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		21C14D2019C91B9F0011C908 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D1D19C91B9F0011C908 /* TodayViewController.m */; };
+		21C14D2019C91B9F0011C908 /* BTCTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D1D19C91B9F0011C908 /* BTCTodayViewController.m */; };
 		21C14D2819C91BBB0011C908 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2519C91BBB0011C908 /* BTCValueView.m */; };
 		21C14D2919C91BBB0011C908 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2519C91BBB0011C908 /* BTCValueView.m */; };
 		21C14D2A19C91BBB0011C908 /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2719C91BBB0011C908 /* UIColor+Coins.m */; };
 		21C14D2B19C91BBB0011C908 /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2719C91BBB0011C908 /* UIColor+Coins.m */; };
 		21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */; };
 		5A091C7B00FD4B889C81DEB8 /* libPods-Coins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 421E383A04144C6A8624166B /* libPods-Coins.a */; };
-		706A927C5A364F81883495D5 /* libPods-Coins Today.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F6998536F74DFE984E7C8A /* libPods-Coins Today.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +76,8 @@
 		2130E16A1864AD58006D3470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2130E16C1864AD58006D3470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2130E1811864AD58006D3470 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		21B148BA19C92DB200972BEF /* Coins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
+		21B148BB19C92DB900972BEF /* Coins Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Coins Today.entitlements"; sourceTree = "<group>"; };
 		21C103E819C91E4000CC5F36 /* NSUserDefaults+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Coins.h"; sourceTree = "<group>"; };
 		21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Coins.m"; sourceTree = "<group>"; };
 		21C103EC19C91EE700CC5F36 /* BTCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCDefines.h; sourceTree = "<group>"; };
@@ -106,8 +107,8 @@
 		21C14CE919C910F80011C908 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		21C14D0719C91A370011C908 /* Coins Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Coins Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C14D0819C91A370011C908 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		21C14D1C19C91B9F0011C908 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
-		21C14D1D19C91B9F0011C908 /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		21C14D1C19C91B9F0011C908 /* BTCTodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTodayViewController.h; sourceTree = "<group>"; };
+		21C14D1D19C91B9F0011C908 /* BTCTodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTodayViewController.m; sourceTree = "<group>"; };
 		21C14D1F19C91B9F0011C908 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C14D2419C91BBB0011C908 /* BTCValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueView.h; sourceTree = "<group>"; };
 		21C14D2519C91BBB0011C908 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
@@ -122,7 +123,6 @@
 		B7B206D3CD97420994DFC1B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D26F87DC0D5E4E1B989B2740 /* Pods-Coins.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coins.xcconfig"; path = "Pods/Pods-Coins.xcconfig"; sourceTree = "<group>"; };
 		E7F6998536F74DFE984E7C8A /* libPods-Coins Today.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coins Today.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coins Today.xcconfig"; path = "Pods/Pods-Coins Today.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				21C14D0919C91A370011C908 /* NotificationCenter.framework in Frameworks */,
-				706A927C5A364F81883495D5 /* libPods-Coins Today.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +159,6 @@
 				2130E1661864AD58006D3470 /* Products */,
 				B7B206D3CD97420994DFC1B1 /* Pods.xcconfig */,
 				D26F87DC0D5E4E1B989B2740 /* Pods-Coins.xcconfig */,
-				F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +229,7 @@
 		21C14CE219C910F80011C908 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				21B148BA19C92DB200972BEF /* Coins.entitlements */,
 				21C14CE319C910F80011C908 /* Coins-Info.plist */,
 				21C14CE519C910F80011C908 /* currencies.json */,
 				21C14CE619C910F80011C908 /* Localizable.strings */,
@@ -252,8 +251,8 @@
 		21C14D1B19C91B9F0011C908 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				21C14D1C19C91B9F0011C908 /* TodayViewController.h */,
-				21C14D1D19C91B9F0011C908 /* TodayViewController.m */,
+				21C14D1C19C91B9F0011C908 /* BTCTodayViewController.h */,
+				21C14D1D19C91B9F0011C908 /* BTCTodayViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -261,6 +260,7 @@
 		21C14D1E19C91B9F0011C908 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				21B148BB19C92DB900972BEF /* Coins Today.entitlements */,
 				21C14D1F19C91B9F0011C908 /* Info.plist */,
 			);
 			path = Resources;
@@ -340,11 +340,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21C14D1719C91A370011C908 /* Build configuration list for PBXNativeTarget "Coins Today" */;
 			buildPhases = (
-				C318B23F3C3D46C5B0AFD1AE /* Check Pods Manifest.lock */,
 				21C14D0319C91A370011C908 /* Sources */,
 				21C14D0419C91A370011C908 /* Frameworks */,
 				21C14D0519C91A370011C908 /* Resources */,
-				616A5DCDEF8248F4AFC7BB06 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,6 +366,9 @@
 					2130E1641864AD58006D3470 = {
 						DevelopmentTeam = UP9C8XM22A;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -376,6 +377,11 @@
 					21C14D0619C91A370011C908 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = UP9C8XM22A;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -463,36 +469,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		616A5DCDEF8248F4AFC7BB06 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Coins Today-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C318B23F3C3D46C5B0AFD1AE /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -524,7 +500,7 @@
 				21C103EB19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */,
 				21C14D2919C91BBB0011C908 /* BTCValueView.m in Sources */,
 				21C14D2B19C91BBB0011C908 /* UIColor+Coins.m in Sources */,
-				21C14D2019C91B9F0011C908 /* TodayViewController.m in Sources */,
+				21C14D2019C91B9F0011C908 /* BTCTodayViewController.m in Sources */,
 				21C103F319C921DD00CC5F36 /* BTCConversionProvider.m in Sources */,
 				21C103EF19C91EE700CC5F36 /* BTCDefines.m in Sources */,
 			);
@@ -635,7 +611,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Coins/Resources/Coins.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -645,6 +623,7 @@
 				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -655,7 +634,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nothing Magical Inc. (UP9C8XM22A)";
+				CODE_SIGN_ENTITLEMENTS = Coins/Resources/Coins.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -665,17 +646,18 @@
 				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6ED8F51F-254B-4DC8-92C1-055FC7B1E6E8";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		21C14D1819C91A370011C908 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Coins Today/Resources/Coins Today.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -687,16 +669,18 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
 		21C14D1919C91A370011C908 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nothing Magical Inc. (UP9C8XM22A)";
+				CODE_SIGN_ENTITLEMENTS = "Coins Today/Resources/Coins Today.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Coins Today/Resources/Info.plist";
@@ -704,6 +688,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

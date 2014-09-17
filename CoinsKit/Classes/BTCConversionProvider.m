@@ -7,8 +7,7 @@
 //
 
 #import "BTCConversionProvider.h"
-
-#import <SAMCache/SAMCache.h>
+#import "NSUserDefaults+Coins.h"
 
 @implementation BTCConversionProvider
 
@@ -29,7 +28,10 @@ static NSString *const BTCConversionProviderCacheKey = @"BTCConversion";
 	NSURL *URL = [[NSURL alloc] initWithString:@"https://coinbase.com/api/v1/currencies/exchange_rates"];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
 	NSURLSessionDownloadTask *task = [[NSURLSession sharedSession] downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-		NSMutableDictionary *dictionary;
+		NSUserDefaults *cache = [NSUserDefaults btc_sharedDefaults];
+		NSMutableDictionary *current = [[cache objectForKey:BTCConversionProviderCacheKey] mutableCopy];
+		NSDictionary *conversions = current;
+
 		UIBackgroundFetchResult result = UIBackgroundFetchResultFailed;
 
 		if (response && [(NSHTTPURLResponse *)response statusCode] == 200) {
@@ -46,19 +48,20 @@ static NSString *const BTCConversionProviderCacheKey = @"BTCConversion";
 				dictionary[key] = @([JSON[longKey] doubleValue]);
 			}
 
-			SAMCache *cache = [SAMCache sharedCache];
-			NSMutableDictionary *current = [[cache objectForKey:BTCConversionProviderCacheKey] mutableCopy];
 			[current removeObjectForKey:@"updatedAt"];
 
 			result = [current isEqualToDictionary:dictionary] ? UIBackgroundFetchResultNoData : UIBackgroundFetchResultNewData;
 
 			dictionary[@"updatedAt"] = [NSDate date];
 			[cache setObject:dictionary forKey:BTCConversionProviderCacheKey];
+			[cache synchronize];
+
+			conversions = dictionary;
 		}
 
 		dispatch_async(dispatch_get_main_queue(), ^{
 			if (completion) {
-				completion(dictionary, result);
+				completion(conversions, result);
 			}
 		});
 	}];
@@ -68,7 +71,7 @@ static NSString *const BTCConversionProviderCacheKey = @"BTCConversion";
 
 
 - (NSDictionary *)latestConversionRates {
-	return [[SAMCache sharedCache] objectForKey:BTCConversionProviderCacheKey];
+	return [[NSUserDefaults btc_sharedDefaults] objectForKey:BTCConversionProviderCacheKey];
 }
 
 @end

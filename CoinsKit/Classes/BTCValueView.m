@@ -8,7 +8,9 @@
 
 #import "BTCValueView.h"
 #import "BTCDefines.h"
+
 #import "UIColor+Coins.h"
+#import "NSUserDefaults+Coins.h"
 
 @implementation BTCValueView
 
@@ -28,7 +30,7 @@
 		currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
 	});
 
-	NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"Coins"];
+	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
 	currencyFormatter.currencyCode = [userDefaults stringForKey:kBTCSelectedCurrencyKey];
 	double value = [userDefaults doubleForKey:kBTCNumberOfCoinsKey] * [conversionRates[currencyFormatter.currencyCode] doubleValue];
 	[self.valueButton setTitle:[currencyFormatter stringFromNumber:@(value)] forState:UIControlStateNormal];

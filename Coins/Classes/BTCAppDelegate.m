@@ -41,19 +41,29 @@
 		NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0]
 	};
 
-	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
-	[userDefaults registerDefaults:@{
-		kBTCSelectedCurrencyKey: @"USD",
-		kBTCNumberOfCoinsKey: @0,
+	NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+	[standardDefaults registerDefaults:@{
 		kBTCAutomaticallyRefreshKey: @YES,
 		kBTCDisableSleepKey: @NO,
+		@"BTCMigrated": @NO
+	}];
+
+	NSUserDefaults *sharedDefaults = [NSUserDefaults btc_sharedDefaults];
+	[sharedDefaults registerDefaults:@{
+		kBTCSelectedCurrencyKey: @"USD",
+		kBTCNumberOfCoinsKey: @0,
 		kBTCControlsHiddenKey: @NO
 	}];
 
-	NSUserDefaults *oldUserDefaults = [NSUserDefaults standardUserDefaults];
-	NSArray *keys = @[kBTCSelectedCurrencyKey, kBTCNumberOfCoinsKey, kBTCAutomaticallyRefreshKey, kBTCDisableSleepKey, kBTCControlsHiddenKey];
-	for (NSString *key in keys) {
-		[userDefaults setObject:[oldUserDefaults objectForKey:key] forKey:key];
+	if (![standardDefaults boolForKey:@"BTCMigrated"]) {
+		NSArray *keys = @[kBTCSelectedCurrencyKey, kBTCNumberOfCoinsKey, kBTCControlsHiddenKey];
+		for (NSString *key in keys) {
+			[sharedDefaults setObject:[standardDefaults objectForKey:key] forKey:key];
+		}
+		[sharedDefaults synchronize];
+
+		[standardDefaults setBool:YES forKey:@"BTCMigrated"];
+		[standardDefaults synchronize];
 	}
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -67,8 +77,8 @@
 		NSString *versionString = [NSString stringWithFormat:@"%@ (%@)",
 								   info[@"CFBundleShortVersionString"],
 								   info[@"CFBundleVersion"]];
-		[userDefaults setObject:versionString forKey:@"BTCVersion"];
-		[userDefaults synchronize];
+		[standardDefaults setObject:versionString forKey:@"BTCVersion"];
+		[standardDefaults synchronize];
 	});
 
     return YES;

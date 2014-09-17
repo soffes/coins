@@ -14,7 +14,7 @@
 	static NSUserDefaults *defaults;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		defaults = [[self alloc] initWithSuiteName:@"Coins"];
+		defaults = [[self alloc] initWithSuiteName:@"group.com.nothingmagical.coins"];
 	});
 	return defaults;
 }

@@ -1,5 +1,5 @@
 //
-//  TodayViewController.h
+//  BTCTodayViewController.h
 //  Coins Today
 //
 //  Created by Sam Soffes on 9/17/14.
@@ -8,5 +8,5 @@
 
 @import UIKit;
 
-@interface TodayViewController : UIViewController
+@interface BTCTodayViewController : UIViewController
 @end

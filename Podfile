@@ -2,14 +2,9 @@ platform :ios, '7.0'
 
 target 'Coins' do
   pod 'HockeySDK'
-  pod 'SAMCache'
   pod 'SAMGradientView'
   pod 'SSPullToRefresh'
   pod 'Localytics-iOS-Client'
-end
-
-target 'Coins Today' do
-  pod 'SAMCache'
 end
 
 post_install do |installer|

@@ -39,6 +39,7 @@
 
 @synthesize textField = _textField;
 @synthesize doneButton = _doneButton;
+@synthesize currencyPopover = _currencyPopover;
 @synthesize scrollView =_scrollView;
 @synthesize pullToRefresh = _pullToRefresh;
 @synthesize backgroundView = _backgroundView;
@@ -83,11 +84,6 @@
 
 	}
 	return _doneButton;
-}
-
-
-- (void)setControlsHidden:(BOOL)controlsHidden {
-	[self setControlsHidden:controlsHidden animated:YES];
 }
 
 
@@ -282,7 +278,7 @@
 
 	[self.updateButton startTicking];
 
-	self.autoRefreshing = [[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
+	self.autoRefreshing = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 
 	if ([[NSUserDefaults btc_sharedDefaults] doubleForKey:kBTCNumberOfCoinsKey] == 0.0) {
 		[self setEditing:YES animated:animated];
@@ -379,7 +375,7 @@
 		return;
 	}
 
-	self.controlsHidden = !self.controlsHidden;
+	[self setControlsHidden:!self.controlsHidden animated:YES];
 }
 
 
@@ -442,23 +438,23 @@
 - (void)setControlsHidden:(BOOL)controlsHidden animated:(BOOL)animated {
 	UIApplication *application = [UIApplication sharedApplication];
 
-	if (_controlsHidden == controlsHidden) {
+	if (self.controlsHidden == controlsHidden) {
 		if (application.statusBarHidden != controlsHidden) {
 			[application setStatusBarHidden:controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
 		}
 		return;
 	}
-	_controlsHidden = controlsHidden;
+	self.controlsHidden = controlsHidden;
 
-	[application setStatusBarHidden:_controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
+	[application setStatusBarHidden:controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
 	[self updateDoneButtonTopLayoutConstraint];
 
 	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
-	[userDefaults setBool:_controlsHidden forKey:kBTCControlsHiddenKey];
+	[userDefaults setBool:controlsHidden forKey:kBTCControlsHiddenKey];
 	[userDefaults synchronize];
 
 	void (^animations)(void) = ^{
-		self.updateButton.alpha = _controlsHidden ? 0.0 : 1.0;
+		self.updateButton.alpha = controlsHidden ? 0.0 : 1.0;
 		[self.view layoutIfNeeded];
 	};
 
@@ -496,14 +492,14 @@
 
 
 - (void)preferencesDidChange {
-	[UIApplication sharedApplication].idleTimerDisabled = [[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCDisableSleepKey];
+	[UIApplication sharedApplication].idleTimerDisabled = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCDisableSleepKey];
 	[self updateTimerPaused:nil];
 }
 
 
 - (void)updateTimerPaused:(NSNotification *)notification {
 	BOOL active = [[UIApplication sharedApplication] applicationState] == UIApplicationStateActive;
-	self.autoRefreshing = active && [[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
+	self.autoRefreshing = active && [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 }
 
 
