@@ -11,9 +11,6 @@
 		2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
 		2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16A1864AD58006D3470 /* CoreGraphics.framework */; };
 		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
-		2130E1821864AD58006D3470 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1811864AD58006D3470 /* XCTest.framework */; };
-		2130E1831864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
-		2130E1841864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
 		21C14CED19C910F80011C908 /* BTCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCA19C910F80011C908 /* BTCAppDelegate.m */; };
 		21C14CEE19C910F80011C908 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCC19C910F80011C908 /* BTCConversionProvider.m */; };
 		21C14CEF19C910F80011C908 /* BTCCurrencyPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCE19C910F80011C908 /* BTCCurrencyPickerTableViewController.m */; };
@@ -32,26 +29,14 @@
 		21C14CFC19C910F80011C908 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE619C910F80011C908 /* Localizable.strings */; };
 		21C14CFD19C910F80011C908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE819C910F80011C908 /* Images.xcassets */; };
 		21C14CFE19C910F80011C908 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE919C910F80011C908 /* Settings.bundle */; };
-		21C14D0119C910FF0011C908 /* CoinsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CEC19C910F80011C908 /* CoinsTests.m */; };
 		21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2130E1851864AD58006D3470 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2130E1641864AD58006D3470;
-			remoteInfo = Coins;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2130E1651864AD58006D3470 /* Coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2130E1681864AD58006D3470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2130E16A1864AD58006D3470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2130E16C1864AD58006D3470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2130E1801864AD58006D3470 /* CoinsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2130E1811864AD58006D3470 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		21C14CC919C910F80011C908 /* BTCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCAppDelegate.h; sourceTree = "<group>"; };
 		21C14CCA19C910F80011C908 /* BTCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCAppDelegate.m; sourceTree = "<group>"; };
@@ -83,8 +68,6 @@
 		21C14CE719C910F80011C908 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C14CE819C910F80011C908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		21C14CE919C910F80011C908 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		21C14CEB19C910F80011C908 /* CoinsTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoinsTests-Info.plist"; sourceTree = "<group>"; };
-		21C14CEC19C910F80011C908 /* CoinsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinsTests.m; sourceTree = "<group>"; };
 		21F9D1981876952A00F36678 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		21F9D19A1876952A00F36678 /* LocalyticsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsUtilities.h; sourceTree = "<group>"; };
 		21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUtilities.m; sourceTree = "<group>"; };
@@ -101,16 +84,6 @@
 				2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */,
 				2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */,
 				1C857B984FEC463AA5B2F2DB /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2130E17D1864AD58006D3470 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2130E1821864AD58006D3470 /* XCTest.framework in Frameworks */,
-				2130E1841864AD58006D3470 /* UIKit.framework in Frameworks */,
-				2130E1831864AD58006D3470 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				2130E1651864AD58006D3470 /* Coins.app */,
-				2130E1801864AD58006D3470 /* CoinsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,7 +127,6 @@
 				21C14CC819C910F80011C908 /* Classes */,
 				21C14CDD19C910F80011C908 /* Other Sources */,
 				21C14CE219C910F80011C908 /* Resources */,
-				21C14CEA19C910F80011C908 /* Tests */,
 			);
 			path = Coins;
 			sourceTree = "<group>";
@@ -211,15 +182,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		21C14CEA19C910F80011C908 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				21C14CEB19C910F80011C908 /* CoinsTests-Info.plist */,
-				21C14CEC19C910F80011C908 /* CoinsTests.m */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		21F9D1971876952A00F36678 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,24 +223,6 @@
 			productReference = 2130E1651864AD58006D3470 /* Coins.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2130E17F1864AD58006D3470 /* CoinsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2130E1941864AD58006D3470 /* Build configuration list for PBXNativeTarget "CoinsTests" */;
-			buildPhases = (
-				2130E17C1864AD58006D3470 /* Sources */,
-				2130E17D1864AD58006D3470 /* Frameworks */,
-				2130E17E1864AD58006D3470 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2130E1861864AD58006D3470 /* PBXTargetDependency */,
-			);
-			name = CoinsTests;
-			productName = CoinsTests;
-			productReference = 2130E1801864AD58006D3470 /* CoinsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -291,9 +235,6 @@
 				TargetAttributes = {
 					2130E1641864AD58006D3470 = {
 						DevelopmentTeam = UP9C8XM22A;
-					};
-					2130E17F1864AD58006D3470 = {
-						TestTargetID = 2130E1641864AD58006D3470;
 					};
 				};
 			};
@@ -310,7 +251,6 @@
 			projectRoot = "";
 			targets = (
 				2130E1641864AD58006D3470 /* Coins */,
-				2130E17F1864AD58006D3470 /* CoinsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -326,13 +266,6 @@
 				21C14CF919C910F80011C908 /* Coins-Info.plist in Resources */,
 				21C14CFE19C910F80011C908 /* Settings.bundle in Resources */,
 				21C14CFB19C910F80011C908 /* currencies.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2130E17E1864AD58006D3470 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,23 +339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2130E17C1864AD58006D3470 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				21C14D0119C910FF0011C908 /* CoinsTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2130E1861864AD58006D3470 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2130E1641864AD58006D3470 /* Coins */;
-			targetProxy = 2130E1851864AD58006D3470 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		21C14CE619C910F80011C908 /* Localizable.strings */ = {
@@ -547,46 +464,6 @@
 			};
 			name = Release;
 		};
-		2130E1951864AD58006D3470 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Coins/Tests/CoinsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		2130E1961864AD58006D3470 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
-				INFOPLIST_FILE = "Coins/Tests/CoinsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -604,15 +481,6 @@
 			buildConfigurations = (
 				2130E1921864AD58006D3470 /* Debug */,
 				2130E1931864AD58006D3470 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2130E1941864AD58006D3470 /* Build configuration list for PBXNativeTarget "CoinsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2130E1951864AD58006D3470 /* Debug */,
-				2130E1961864AD58006D3470 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
