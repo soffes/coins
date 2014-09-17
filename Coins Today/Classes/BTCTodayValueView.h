@@ -9,5 +9,4 @@
 #import "BTCValueView.h"
 
 @interface BTCTodayValueView : BTCValueView
-
 @end

@@ -53,7 +53,7 @@
 
 
 - (CGSize)preferredContentSize {
-	return CGSizeMake(self.view.bounds.size.width, 100.0);
+	return CGSizeMake(self.view.bounds.size.width, 88.0);
 }
 
 
@@ -79,8 +79,8 @@
 
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
 	defaultMarginInsets.top = 8.0;
-	defaultMarginInsets.bottom = 0.0;
-	defaultMarginInsets.left -= 6.0;
+	defaultMarginInsets.bottom = 8.0;
+	defaultMarginInsets.left += 2.0;
 	return defaultMarginInsets;
 }
 

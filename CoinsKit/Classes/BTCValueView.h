@@ -16,5 +16,7 @@
 @property (nonatomic, readonly) UIButton *quantityButton;
 
 - (CGFloat)verticalSpacing;
+- (void)setupViews;
+- (void)setupConstraints;
 
 @end

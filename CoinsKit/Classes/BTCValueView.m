@@ -83,10 +83,8 @@
 	if ((self = [super initWithFrame:frame])) {
 		self.translatesAutoresizingMaskIntoConstraints = NO;
 		self.backgroundColor = [UIColor clearColor];
-		
-		[self addSubview:self.valueButton];
-		[self addSubview:self.quantityButton];
 
+		[self setupViews];
 		[self setupConstraints];
 	}
 	return self;
@@ -100,12 +98,18 @@
 }
 
 
+- (void)setupViews {
+	[self addSubview:self.valueButton];
+	[self addSubview:self.quantityButton];
+}
+
+
 #pragma mark - Private
 
 - (void)setupConstraints {
 	NSDictionary *views = @{
 		@"valueButton": self.valueButton,
-		@"quantityButton": self.quantityButton
+		@"quantityView": self.quantityButton
 	};
 
 	CGFloat verticalSpacing = [self verticalSpacing];
@@ -113,7 +117,7 @@
 	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[valueButton]-|" options:kNilOptions metrics:nil views:views]];
 	[self addConstraint:[NSLayoutConstraint constraintWithItem:self.valueButton attribute:NSLayoutAttributeBaseline relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:-verticalSpacing]];
 
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[quantityButton]-|" options:kNilOptions metrics:nil views:views]];
+	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[quantityView]-|" options:kNilOptions metrics:nil views:views]];
 	[self addConstraint:[NSLayoutConstraint constraintWithItem:self.quantityButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.valueButton attribute:NSLayoutAttributeBaseline multiplier:1.0 constant:verticalSpacing / 2.0]];
 }
 
