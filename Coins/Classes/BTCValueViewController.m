@@ -59,7 +59,7 @@
 		_textField.delegate = self;
 		_textField.alpha = 0.0;
 
-		NSString *number = [[NSUserDefaults btc_sharedDefaults] stringForKey:kBTCNumberOfCoinsKey];
+		NSString *number = [[[BTCPreferences sharedPreferences] objectForKey:kBTCNumberOfCoinsKey] description];
 		_textField.text = [number isEqualToString:@"0"] ? nil : number;
 	}
 	return _textField;
@@ -255,7 +255,7 @@
 	[self refresh:nil];
 	[self preferencesDidChange];
 
-	[self setControlsHidden:[[NSUserDefaults btc_sharedDefaults] boolForKey:kBTCControlsHiddenKey] animated:NO];
+	[self setControlsHidden:[[NSUserDefaults standardUserDefaults] boolForKey:kBTCControlsHiddenKey] animated:NO];
 
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 	[notificationCenter addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
@@ -280,7 +280,7 @@
 
 	self.autoRefreshing = [[NSUserDefaults standardUserDefaults] boolForKey:kBTCAutomaticallyRefreshKey];
 
-	if ([[NSUserDefaults btc_sharedDefaults] doubleForKey:kBTCNumberOfCoinsKey] == 0.0) {
+	if ([[[BTCPreferences sharedPreferences] objectForKey:kBTCNumberOfCoinsKey] doubleValue] == 0.0) {
 		[self setEditing:YES animated:animated];
 	}
 }
@@ -356,7 +356,7 @@
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 		navigationController.navigationBar.titleTextAttributes = @{
-			NSForegroundColorAttributeName: [UIColor btc_blueColor],
+			NSForegroundColorAttributeName: [UIColor whiteColor],
 			NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0]
 		};
 
@@ -449,7 +449,7 @@
 	[application setStatusBarHidden:controlsHidden withAnimation:animated ? UIStatusBarAnimationFade : UIStatusBarAnimationNone];
 	[self updateDoneButtonTopLayoutConstraint];
 
-	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 	[userDefaults setBool:controlsHidden forKey:kBTCControlsHiddenKey];
 	[userDefaults synchronize];
 
@@ -469,9 +469,9 @@
 - (void)textFieldDidChange:(NSNotification *)notification {
 	NSString *string = [self.textField.text stringByReplacingOccurrencesOfString:@"," withString:@"."];
 
-	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
-	[userDefaults setObject:@([string doubleValue]) forKey:kBTCNumberOfCoinsKey];
-	[userDefaults synchronize];
+	BTCPreferences *preferences = [BTCPreferences sharedPreferences];
+	[preferences setObject:@([string doubleValue]) forKey:kBTCNumberOfCoinsKey];
+	[preferences synchronize];
 
 	[self update];
 }

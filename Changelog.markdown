@@ -3,9 +3,15 @@
 *Unreleased*
 
 * Added support for iPhone 6 & iPhone 6 Plus
-* Improved support for iOS 8
+* New today widget for iOS 8
 * Automatically refresh in the background
-* New today widget
+
+
+# Version 1.0.3
+
+*Released April 24, 2014*
+
+Bug fixes
 
 
 # Version 1.0.1

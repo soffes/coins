@@ -7,10 +7,10 @@
 //
 
 #import "BTCValueView.h"
+#import "BTCPreferences.h"
 #import "BTCDefines.h"
 
 #import "UIColor+Coins.h"
-#import "NSUserDefaults+Coins.h"
 
 @implementation BTCValueView
 
@@ -30,9 +30,9 @@
 		currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
 	});
 
-	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
-	currencyFormatter.currencyCode = [userDefaults stringForKey:kBTCSelectedCurrencyKey];
-	double value = [userDefaults doubleForKey:kBTCNumberOfCoinsKey] * [conversionRates[currencyFormatter.currencyCode] doubleValue];
+	BTCPreferences *preferences = [BTCPreferences sharedPreferences];
+	currencyFormatter.currencyCode = [preferences objectForKey:kBTCSelectedCurrencyKey];
+	double value = [[preferences objectForKey:kBTCNumberOfCoinsKey] doubleValue] * [conversionRates[currencyFormatter.currencyCode] doubleValue];
 	[self.valueButton setTitle:[currencyFormatter stringFromNumber:@(value)] forState:UIControlStateNormal];
 
 	static NSNumberFormatter *numberFormatter = nil;
@@ -46,8 +46,7 @@
 		numberFormatter.roundingMode = NSNumberFormatterRoundDown;
 	});
 
-	// Ensure it's a double for backwards compatibility with 1.0
-	NSNumber *number = @([[userDefaults stringForKey:kBTCNumberOfCoinsKey] doubleValue]);
+	NSNumber *number = [preferences objectForKey:kBTCNumberOfCoinsKey];
 
 	NSString *title = [numberFormatter stringFromNumber:number];
 	[self.quantityButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];

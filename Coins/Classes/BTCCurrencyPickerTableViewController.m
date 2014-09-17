@@ -36,7 +36,7 @@
 	NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingOptions)kNilOptions error:nil];
 	self.currencies = JSON[@"currencies"];
 	self.currencyOrder = JSON[@"order"];
-	self.selectedKey = [[NSUserDefaults btc_sharedDefaults] objectForKey:kBTCSelectedCurrencyKey];
+	self.selectedKey = [[BTCPreferences sharedPreferences] objectForKey:kBTCSelectedCurrencyKey];
 }
 
 
@@ -74,9 +74,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSString *key = self.currencyOrder[indexPath.row];
-	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
-	[userDefaults setObject:key forKey:kBTCSelectedCurrencyKey];
-	[userDefaults synchronize];
+	BTCPreferences *preferences = [BTCPreferences sharedPreferences];
+	[preferences setObject:key forKey:kBTCSelectedCurrencyKey];
+	[preferences synchronize];
 
 	[[NSNotificationCenter defaultCenter] postNotificationName:kBTCCurrencyDidChangeNotificationName object:key];
 	[self.navigationController popViewControllerAnimated:YES];

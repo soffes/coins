@@ -48,8 +48,9 @@
 		@"BTCMigrated": @NO
 	}];
 
-	NSUserDefaults *sharedDefaults = [NSUserDefaults btc_sharedDefaults];
-	[sharedDefaults registerDefaults:@{
+	
+	BTCPreferences *preferences = [BTCPreferences sharedPreferences];
+	[preferences registerDefaults:@{
 		kBTCSelectedCurrencyKey: @"USD",
 		kBTCNumberOfCoinsKey: @0,
 		kBTCControlsHiddenKey: @NO
@@ -58,9 +59,9 @@
 	if (![standardDefaults boolForKey:@"BTCMigrated"]) {
 		NSArray *keys = @[kBTCSelectedCurrencyKey, kBTCNumberOfCoinsKey, kBTCControlsHiddenKey];
 		for (NSString *key in keys) {
-			[sharedDefaults setObject:[standardDefaults objectForKey:key] forKey:key];
+			[preferences setObject:[standardDefaults objectForKey:key] forKey:key];
 		}
-		[sharedDefaults synchronize];
+		[preferences synchronize];
 
 		[standardDefaults setBool:YES forKey:@"BTCMigrated"];
 		[standardDefaults synchronize];

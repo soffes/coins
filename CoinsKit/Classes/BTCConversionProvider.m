@@ -7,7 +7,7 @@
 //
 
 #import "BTCConversionProvider.h"
-#import "NSUserDefaults+Coins.h"
+#import "BTCPreferences.h"
 
 @implementation BTCConversionProvider
 
@@ -28,8 +28,8 @@ static NSString *const BTCConversionProviderCacheKey = @"BTCConversion";
 	NSURL *URL = [[NSURL alloc] initWithString:@"https://coinbase.com/api/v1/currencies/exchange_rates"];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
 	NSURLSessionDownloadTask *task = [[NSURLSession sharedSession] downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-		NSUserDefaults *cache = [NSUserDefaults btc_sharedDefaults];
-		NSMutableDictionary *current = [[cache objectForKey:BTCConversionProviderCacheKey] mutableCopy];
+		BTCPreferences *preferences = [BTCPreferences sharedPreferences];
+		NSMutableDictionary *current = [[preferences objectForKey:BTCConversionProviderCacheKey] mutableCopy];
 		NSDictionary *conversions = current;
 
 		UIBackgroundFetchResult result = UIBackgroundFetchResultFailed;
@@ -53,8 +53,8 @@ static NSString *const BTCConversionProviderCacheKey = @"BTCConversion";
 			result = [current isEqualToDictionary:dictionary] ? UIBackgroundFetchResultNoData : UIBackgroundFetchResultNewData;
 
 			dictionary[@"updatedAt"] = [NSDate date];
-			[cache setObject:dictionary forKey:BTCConversionProviderCacheKey];
-			[cache synchronize];
+			[preferences setObject:dictionary forKey:BTCConversionProviderCacheKey];
+			[preferences synchronize];
 
 			conversions = dictionary;
 		}
@@ -71,7 +71,7 @@ static NSString *const BTCConversionProviderCacheKey = @"BTCConversion";
 
 
 - (NSDictionary *)latestConversionRates {
-	return [[NSUserDefaults btc_sharedDefaults] objectForKey:BTCConversionProviderCacheKey];
+	return [[BTCPreferences sharedPreferences] objectForKey:BTCConversionProviderCacheKey];
 }
 
 @end
