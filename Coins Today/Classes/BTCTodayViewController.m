@@ -41,6 +41,19 @@
 	NSDictionary *views = @{ @"valueView": self.valueView };
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[valueView]|" options:kNilOptions metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[valueView(120)]|" options:kNilOptions metrics:nil views:views]];
+
+	UIControl *control = [[UIControl alloc] init];
+	control.frame = self.view.bounds;
+	control.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	[control addTarget:self action:@selector(openCoins:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:control];
+}
+
+
+#pragma mark - Actions
+
+- (void)openCoins:(id)sender {
+	[self.extensionContext openURL:[NSURL URLWithString:@"coins://open?ref=today"] completionHandler:nil];
 }
 
 
