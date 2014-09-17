@@ -24,6 +24,8 @@
 
 	application.statusBarStyle = UIStatusBarStyleLightContent;
 
+	[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+
 	UINavigationBar *navigationBar = [UINavigationBar appearance];
 	navigationBar.barTintColor = [UIColor btc_blueColor];
 	navigationBar.tintColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
@@ -63,6 +65,17 @@
 	});
 
     return YES;
+}
+
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+	if (!completionHandler) {
+		return;
+	}
+
+	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates, UIBackgroundFetchResult result) {
+		completionHandler(result);
+	}];
 }
 
 @end

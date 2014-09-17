@@ -6,13 +6,13 @@
 //  Copyright (c) 2013-2014 Nothing Magical, Inc. All rights reserved.
 //
 
-@import Foundation;
+@import UIKit;
 
 @interface BTCConversionProvider : NSObject
 
 + (instancetype)sharedProvider;
 
-- (void)getConversionRates:(void(^)(NSDictionary *conversionRates))completion;
+- (void)getConversionRates:(void(^)(NSDictionary *conversionRates, UIBackgroundFetchResult result))completion;
 - (NSDictionary *)latestConversionRates;
 
 @end

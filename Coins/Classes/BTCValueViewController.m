@@ -345,7 +345,7 @@
 
 	self.loading = YES;
 
-	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates) {
+	[[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates, UIBackgroundFetchResult result) {
 		[self update];
 		self.loading = NO;
 	}];

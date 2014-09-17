@@ -1,1870 +1,742 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>1AD49CA55DB74066B7D523C0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-Coins-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>2130E15C1864AD57006D3470</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14CC719C910F80011C908</string>
-				<string>21C14D0A19C91A370011C908</string>
-				<string>21C14D2219C91BBB0011C908</string>
-				<string>21F9D1971876952A00F36678</string>
-				<string>2130E1671864AD58006D3470</string>
-				<string>2130E1661864AD58006D3470</string>
-				<string>B7B206D3CD97420994DFC1B1</string>
-				<string>D26F87DC0D5E4E1B989B2740</string>
-				<string>F84CB9346C5345429EB77252</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2130E15D1864AD57006D3470</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>BTC</string>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Nothing Magical, Inc.</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>2130E1641864AD58006D3470</key>
-					<dict>
-						<key>DevelopmentTeam</key>
-						<string>UP9C8XM22A</string>
-					</dict>
-					<key>21C14D0619C91A370011C908</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-						<key>DevelopmentTeam</key>
-						<string>UP9C8XM22A</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2130E1601864AD57006D3470</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>2130E15C1864AD57006D3470</string>
-			<key>productRefGroup</key>
-			<string>2130E1661864AD58006D3470</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>2130E1641864AD58006D3470</string>
-				<string>21C14D0619C91A370011C908</string>
-			</array>
-		</dict>
-		<key>2130E1601864AD57006D3470</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>2130E18F1864AD58006D3470</string>
-				<string>2130E1901864AD58006D3470</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2130E1611864AD58006D3470</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>21C14CF819C910F80011C908</string>
-				<string>21C14CF219C910F80011C908</string>
-				<string>21C14CED19C910F80011C908</string>
-				<string>21C14CF119C910F80011C908</string>
-				<string>21C103F219C921DD00CC5F36</string>
-				<string>21C14D2819C91BBB0011C908</string>
-				<string>21C14D2A19C91BBB0011C908</string>
-				<string>21C103EA19C91E4000CC5F36</string>
-				<string>21C14CF019C910F80011C908</string>
-				<string>21C14CF419C910F80011C908</string>
-				<string>21C103EE19C91EE700CC5F36</string>
-				<string>21C14CEF19C910F80011C908</string>
-				<string>21F9D19D1876952A00F36678</string>
-				<string>21C14CF519C910F80011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2130E1621864AD58006D3470</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>2130E16B1864AD58006D3470</string>
-				<string>2130E16D1864AD58006D3470</string>
-				<string>2130E1691864AD58006D3470</string>
-				<string>5A091C7B00FD4B889C81DEB8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2130E1631864AD58006D3470</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>21C14CFD19C910F80011C908</string>
-				<string>21C14CFC19C910F80011C908</string>
-				<string>21C14CFE19C910F80011C908</string>
-				<string>21C14CFB19C910F80011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2130E1641864AD58006D3470</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>2130E1911864AD58006D3470</string>
-			<key>buildPhases</key>
-			<array>
-				<string>35E3728C36FE40B491367BE5</string>
-				<string>2130E1611864AD58006D3470</string>
-				<string>2130E1621864AD58006D3470</string>
-				<string>2130E1631864AD58006D3470</string>
-				<string>1AD49CA55DB74066B7D523C0</string>
-				<string>21C14D0219C9196B0011C908</string>
-				<string>21C14D1A19C91A370011C908</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>21C14D1319C91A370011C908</string>
-				<string>21C14D1619C91A370011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Coins</string>
-			<key>productName</key>
-			<string>Coins</string>
-			<key>productReference</key>
-			<string>2130E1651864AD58006D3470</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>2130E1651864AD58006D3470</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Coins.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>2130E1661864AD58006D3470</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2130E1651864AD58006D3470</string>
-				<string>21C14D0719C91A370011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2130E1671864AD58006D3470</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2130E1681864AD58006D3470</string>
-				<string>2130E16A1864AD58006D3470</string>
-				<string>2130E16C1864AD58006D3470</string>
-				<string>2130E1811864AD58006D3470</string>
-				<string>7C733206B69A4AA88CE1C3A3</string>
-				<string>21C14D0819C91A370011C908</string>
-				<string>421E383A04144C6A8624166B</string>
-				<string>E7F6998536F74DFE984E7C8A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2130E1681864AD58006D3470</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>2130E1691864AD58006D3470</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2130E1681864AD58006D3470</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2130E16A1864AD58006D3470</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>2130E16B1864AD58006D3470</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2130E16A1864AD58006D3470</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2130E16C1864AD58006D3470</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>2130E16D1864AD58006D3470</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2130E16C1864AD58006D3470</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2130E1811864AD58006D3470</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>2130E18F1864AD58006D3470</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>2130E1901864AD58006D3470</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>2130E1911864AD58006D3470</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>2130E1921864AD58006D3470</string>
-				<string>2130E1931864AD58006D3470</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2130E1921864AD58006D3470</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D26F87DC0D5E4E1B989B2740</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)</string>
-					<string>$(PROJECT_DIR)/Vendor</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Coins/Other Sources/Coins-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>$(SRCROOT)/Coins/Resources/Coins-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>2130E1931864AD58006D3470</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D26F87DC0D5E4E1B989B2740</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Distribution: Nothing Magical Inc. (UP9C8XM22A)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)</string>
-					<string>$(PROJECT_DIR)/Vendor</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Coins/Other Sources/Coins-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>$(SRCROOT)/Coins/Resources/Coins-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string>6ED8F51F-254B-4DC8-92C1-055FC7B1E6E8</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>21C103E819C91E4000CC5F36</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSUserDefaults+Coins.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C103E919C91E4000CC5F36</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSUserDefaults+Coins.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C103EA19C91E4000CC5F36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C103E919C91E4000CC5F36</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C103EB19C91E4000CC5F36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C103E919C91E4000CC5F36</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C103EC19C91EE700CC5F36</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCDefines.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C103ED19C91EE700CC5F36</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCDefines.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C103EE19C91EE700CC5F36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C103ED19C91EE700CC5F36</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C103EF19C91EE700CC5F36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C103ED19C91EE700CC5F36</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C103F019C921DD00CC5F36</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCConversionProvider.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C103F119C921DD00CC5F36</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCConversionProvider.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C103F219C921DD00CC5F36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C103F119C921DD00CC5F36</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C103F319C921DD00CC5F36</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C103F119C921DD00CC5F36</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CC719C910F80011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14CC819C910F80011C908</string>
-				<string>21C14CDD19C910F80011C908</string>
-				<string>21C14CE219C910F80011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Coins</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CC819C910F80011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14CC919C910F80011C908</string>
-				<string>21C14CCA19C910F80011C908</string>
-				<string>21C14CCD19C910F80011C908</string>
-				<string>21C14CCE19C910F80011C908</string>
-				<string>21C14CCF19C910F80011C908</string>
-				<string>21C14CD019C910F80011C908</string>
-				<string>21C14CD119C910F80011C908</string>
-				<string>21C14CD219C910F80011C908</string>
-				<string>21C14CD319C910F80011C908</string>
-				<string>21C14CD419C910F80011C908</string>
-				<string>21C14CD719C910F80011C908</string>
-				<string>21C14CD819C910F80011C908</string>
-				<string>21C14CD919C910F80011C908</string>
-				<string>21C14CDA19C910F80011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Classes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CC919C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CCA19C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CCD19C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCCurrencyPickerTableViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CCE19C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCCurrencyPickerTableViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CCF19C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD019C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD119C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCTextField.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD219C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCTextField.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD319C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCTickingButton.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD419C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCTickingButton.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD719C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCValueViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD819C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCValueViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CD919C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSDate+Coins.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CDA19C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSDate+Coins.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CDD19C910F80011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14CE019C910F80011C908</string>
-				<string>21C14CE119C910F80011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Other Sources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE019C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Coins-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE119C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE219C910F80011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14CE319C910F80011C908</string>
-				<string>21C14CE519C910F80011C908</string>
-				<string>21C14CE619C910F80011C908</string>
-				<string>21C14CE819C910F80011C908</string>
-				<string>21C14CE919C910F80011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE319C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Coins-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE519C910F80011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.json</string>
-			<key>path</key>
-			<string>currencies.json</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE619C910F80011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14CE719C910F80011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Localizable.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE719C910F80011C908</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/Localizable.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE819C910F80011C908</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CE919C910F80011C908</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.plug-in</string>
-			<key>path</key>
-			<string>Settings.bundle</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14CED19C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CCA19C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CEF19C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CCE19C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CF019C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CD019C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CF119C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CD219C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CF219C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CD419C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CF419C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CD819C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CF519C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CDA19C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CF819C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CE119C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CFB19C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CE519C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CFC19C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CE619C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CFD19C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CE819C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14CFE19C910F80011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14CE919C910F80011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14D0219C9196B0011C908</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Hockey</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>FILE="${SRCROOT}/Vendor/HockeySDK-iOS/BuildAgent"
-if [ -f "$FILE" ]; then
-"$FILE"
-fi</string>
-		</dict>
-		<key>21C14D0319C91A370011C908</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>21C103EB19C91E4000CC5F36</string>
-				<string>21C14D2919C91BBB0011C908</string>
-				<string>21C14D2B19C91BBB0011C908</string>
-				<string>21C14D2019C91B9F0011C908</string>
-				<string>21C103F319C921DD00CC5F36</string>
-				<string>21C103EF19C91EE700CC5F36</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>21C14D0419C91A370011C908</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>21C14D0919C91A370011C908</string>
-				<string>706A927C5A364F81883495D5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>21C14D0519C91A370011C908</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>21C14D0619C91A370011C908</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>21C14D1719C91A370011C908</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C318B23F3C3D46C5B0AFD1AE</string>
-				<string>21C14D0319C91A370011C908</string>
-				<string>21C14D0419C91A370011C908</string>
-				<string>21C14D0519C91A370011C908</string>
-				<string>616A5DCDEF8248F4AFC7BB06</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Coins Today</string>
-			<key>productName</key>
-			<string>Coins Today</string>
-			<key>productReference</key>
-			<string>21C14D0719C91A370011C908</string>
-			<key>productType</key>
-			<string>com.apple.product-type.app-extension</string>
-		</dict>
-		<key>21C14D0719C91A370011C908</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.app-extension</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Coins Today.appex</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>21C14D0819C91A370011C908</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>NotificationCenter.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/NotificationCenter.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>21C14D0919C91A370011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14D0819C91A370011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14D0A19C91A370011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14D1B19C91B9F0011C908</string>
-				<string>21C14D1E19C91B9F0011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Coins Today</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D1219C91A370011C908</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>2130E15D1864AD57006D3470</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>21C14D0619C91A370011C908</string>
-			<key>remoteInfo</key>
-			<string>Coins Today</string>
-		</dict>
-		<key>21C14D1319C91A370011C908</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>21C14D0619C91A370011C908</string>
-			<key>targetProxy</key>
-			<string>21C14D1219C91A370011C908</string>
-		</dict>
-		<key>21C14D1419C91A370011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14D0719C91A370011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>RemoveHeadersOnCopy</string>
-				</array>
-			</dict>
-		</dict>
-		<key>21C14D1519C91A370011C908</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>2130E15D1864AD57006D3470</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>21C14D0619C91A370011C908</string>
-			<key>remoteInfo</key>
-			<string>Coins Today</string>
-		</dict>
-		<key>21C14D1619C91A370011C908</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>21C14D0619C91A370011C908</string>
-			<key>targetProxy</key>
-			<string>21C14D1519C91A370011C908</string>
-		</dict>
-		<key>21C14D1719C91A370011C908</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>21C14D1819C91A370011C908</string>
-				<string>21C14D1919C91A370011C908</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>21C14D1819C91A370011C908</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F84CB9346C5345429EB77252</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>INFOPLIST_FILE</key>
-				<string>$(SRCROOT)/Coins Today/Resources/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>21C14D1919C91A370011C908</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F84CB9346C5345429EB77252</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Distribution: Nothing Magical Inc. (UP9C8XM22A)</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>INFOPLIST_FILE</key>
-				<string>$(SRCROOT)/Coins Today/Resources/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>21C14D1A19C91A370011C908</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string></string>
-			<key>dstSubfolderSpec</key>
-			<string>13</string>
-			<key>files</key>
-			<array>
-				<string>21C14D1419C91A370011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>name</key>
-			<string>Embed App Extensions</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>21C14D1B19C91B9F0011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14D1C19C91B9F0011C908</string>
-				<string>21C14D1D19C91B9F0011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Classes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D1C19C91B9F0011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TodayViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D1D19C91B9F0011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TodayViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D1E19C91B9F0011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14D1F19C91B9F0011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D1F19C91B9F0011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D2019C91B9F0011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14D1D19C91B9F0011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14D2219C91BBB0011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14D2319C91BBB0011C908</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>CoinsKit</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D2319C91BBB0011C908</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21C14D2C19C91BCA0011C908</string>
-				<string>21C103F019C921DD00CC5F36</string>
-				<string>21C103F119C921DD00CC5F36</string>
-				<string>21C14D2419C91BBB0011C908</string>
-				<string>21C14D2519C91BBB0011C908</string>
-				<string>21C103EC19C91EE700CC5F36</string>
-				<string>21C103ED19C91EE700CC5F36</string>
-				<string>21C14D2619C91BBB0011C908</string>
-				<string>21C14D2719C91BBB0011C908</string>
-				<string>21C103E819C91E4000CC5F36</string>
-				<string>21C103E919C91E4000CC5F36</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Classes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D2419C91BBB0011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BTCValueView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D2519C91BBB0011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BTCValueView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D2619C91BBB0011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>UIColor+Coins.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D2719C91BBB0011C908</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>UIColor+Coins.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21C14D2819C91BBB0011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14D2519C91BBB0011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14D2919C91BBB0011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14D2519C91BBB0011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14D2A19C91BBB0011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14D2719C91BBB0011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14D2B19C91BBB0011C908</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21C14D2719C91BBB0011C908</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>21C14D2C19C91BCA0011C908</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>CoinsKit.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21F9D1971876952A00F36678</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21F9D1981876952A00F36678</string>
-				<string>21F9D1991876952A00F36678</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Vendor</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21F9D1981876952A00F36678</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>path</key>
-			<string>Crashlytics.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21F9D1991876952A00F36678</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>21F9D19A1876952A00F36678</string>
-				<string>21F9D19B1876952A00F36678</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Localytics</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21F9D19A1876952A00F36678</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>LocalyticsUtilities.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21F9D19B1876952A00F36678</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>LocalyticsUtilities.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>21F9D19D1876952A00F36678</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21F9D19B1876952A00F36678</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>35E3728C36FE40B491367BE5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>421E383A04144C6A8624166B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Coins.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>5A091C7B00FD4B889C81DEB8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>421E383A04144C6A8624166B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>616A5DCDEF8248F4AFC7BB06</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-Coins Today-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>706A927C5A364F81883495D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E7F6998536F74DFE984E7C8A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>7C733206B69A4AA88CE1C3A3</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>B7B206D3CD97420994DFC1B1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C318B23F3C3D46C5B0AFD1AE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>D26F87DC0D5E4E1B989B2740</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Coins.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-Coins.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E7F6998536F74DFE984E7C8A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Coins Today.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F84CB9346C5345429EB77252</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Coins Today.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-Coins Today.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>2130E15D1864AD57006D3470</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
+		2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16A1864AD58006D3470 /* CoreGraphics.framework */; };
+		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
+		21C103EA19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */; };
+		21C103EB19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */; };
+		21C103EE19C91EE700CC5F36 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103ED19C91EE700CC5F36 /* BTCDefines.m */; };
+		21C103EF19C91EE700CC5F36 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103ED19C91EE700CC5F36 /* BTCDefines.m */; };
+		21C103F219C921DD00CC5F36 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */; };
+		21C103F319C921DD00CC5F36 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */; };
+		21C14CED19C910F80011C908 /* BTCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCA19C910F80011C908 /* BTCAppDelegate.m */; };
+		21C14CEF19C910F80011C908 /* BTCCurrencyPickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCE19C910F80011C908 /* BTCCurrencyPickerTableViewController.m */; };
+		21C14CF019C910F80011C908 /* BTCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD019C910F80011C908 /* BTCTableViewCell.m */; };
+		21C14CF119C910F80011C908 /* BTCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD219C910F80011C908 /* BTCTextField.m */; };
+		21C14CF219C910F80011C908 /* BTCTickingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD419C910F80011C908 /* BTCTickingButton.m */; };
+		21C14CF419C910F80011C908 /* BTCValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD819C910F80011C908 /* BTCValueViewController.m */; };
+		21C14CF519C910F80011C908 /* NSDate+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CDA19C910F80011C908 /* NSDate+Coins.m */; };
+		21C14CF819C910F80011C908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CE119C910F80011C908 /* main.m */; };
+		21C14CFB19C910F80011C908 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE519C910F80011C908 /* currencies.json */; };
+		21C14CFC19C910F80011C908 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE619C910F80011C908 /* Localizable.strings */; };
+		21C14CFD19C910F80011C908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE819C910F80011C908 /* Images.xcassets */; };
+		21C14CFE19C910F80011C908 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE919C910F80011C908 /* Settings.bundle */; };
+		21C14D0919C91A370011C908 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C14D0819C91A370011C908 /* NotificationCenter.framework */; };
+		21C14D1419C91A370011C908 /* Coins Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21C14D0719C91A370011C908 /* Coins Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		21C14D2019C91B9F0011C908 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D1D19C91B9F0011C908 /* TodayViewController.m */; };
+		21C14D2819C91BBB0011C908 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2519C91BBB0011C908 /* BTCValueView.m */; };
+		21C14D2919C91BBB0011C908 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2519C91BBB0011C908 /* BTCValueView.m */; };
+		21C14D2A19C91BBB0011C908 /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2719C91BBB0011C908 /* UIColor+Coins.m */; };
+		21C14D2B19C91BBB0011C908 /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2719C91BBB0011C908 /* UIColor+Coins.m */; };
+		21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */; };
+		5A091C7B00FD4B889C81DEB8 /* libPods-Coins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 421E383A04144C6A8624166B /* libPods-Coins.a */; };
+		706A927C5A364F81883495D5 /* libPods-Coins Today.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F6998536F74DFE984E7C8A /* libPods-Coins Today.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21C14D1219C91A370011C908 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21C14D0619C91A370011C908;
+			remoteInfo = "Coins Today";
+		};
+		21C14D1519C91A370011C908 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21C14D0619C91A370011C908;
+			remoteInfo = "Coins Today";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		21C14D1A19C91A370011C908 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				21C14D1419C91A370011C908 /* Coins Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2130E1651864AD58006D3470 /* Coins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coins.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2130E1681864AD58006D3470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2130E16A1864AD58006D3470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2130E16C1864AD58006D3470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2130E1811864AD58006D3470 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		21C103E819C91E4000CC5F36 /* NSUserDefaults+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Coins.h"; sourceTree = "<group>"; };
+		21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Coins.m"; sourceTree = "<group>"; };
+		21C103EC19C91EE700CC5F36 /* BTCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCDefines.h; sourceTree = "<group>"; };
+		21C103ED19C91EE700CC5F36 /* BTCDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCDefines.m; sourceTree = "<group>"; };
+		21C103F019C921DD00CC5F36 /* BTCConversionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCConversionProvider.h; sourceTree = "<group>"; };
+		21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCConversionProvider.m; sourceTree = "<group>"; };
+		21C14CC919C910F80011C908 /* BTCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCAppDelegate.h; sourceTree = "<group>"; };
+		21C14CCA19C910F80011C908 /* BTCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCAppDelegate.m; sourceTree = "<group>"; };
+		21C14CCD19C910F80011C908 /* BTCCurrencyPickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCCurrencyPickerTableViewController.h; sourceTree = "<group>"; };
+		21C14CCE19C910F80011C908 /* BTCCurrencyPickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCCurrencyPickerTableViewController.m; sourceTree = "<group>"; };
+		21C14CCF19C910F80011C908 /* BTCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTableViewCell.h; sourceTree = "<group>"; };
+		21C14CD019C910F80011C908 /* BTCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTableViewCell.m; sourceTree = "<group>"; };
+		21C14CD119C910F80011C908 /* BTCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTextField.h; sourceTree = "<group>"; };
+		21C14CD219C910F80011C908 /* BTCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTextField.m; sourceTree = "<group>"; };
+		21C14CD319C910F80011C908 /* BTCTickingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTickingButton.h; sourceTree = "<group>"; };
+		21C14CD419C910F80011C908 /* BTCTickingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTickingButton.m; sourceTree = "<group>"; };
+		21C14CD719C910F80011C908 /* BTCValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueViewController.h; sourceTree = "<group>"; };
+		21C14CD819C910F80011C908 /* BTCValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueViewController.m; sourceTree = "<group>"; };
+		21C14CD919C910F80011C908 /* NSDate+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Coins.h"; sourceTree = "<group>"; };
+		21C14CDA19C910F80011C908 /* NSDate+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Coins.m"; sourceTree = "<group>"; };
+		21C14CE019C910F80011C908 /* Coins-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coins-Prefix.pch"; sourceTree = "<group>"; };
+		21C14CE119C910F80011C908 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21C14CE319C910F80011C908 /* Coins-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Coins-Info.plist"; sourceTree = "<group>"; };
+		21C14CE519C910F80011C908 /* currencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
+		21C14CE719C910F80011C908 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		21C14CE819C910F80011C908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		21C14CE919C910F80011C908 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		21C14D0719C91A370011C908 /* Coins Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Coins Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21C14D0819C91A370011C908 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		21C14D1C19C91B9F0011C908 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		21C14D1D19C91B9F0011C908 /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		21C14D1F19C91B9F0011C908 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C14D2419C91BBB0011C908 /* BTCValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueView.h; sourceTree = "<group>"; };
+		21C14D2519C91BBB0011C908 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
+		21C14D2619C91BBB0011C908 /* UIColor+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Coins.h"; sourceTree = "<group>"; };
+		21C14D2719C91BBB0011C908 /* UIColor+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Coins.m"; sourceTree = "<group>"; };
+		21C14D2C19C91BCA0011C908 /* CoinsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinsKit.h; sourceTree = "<group>"; };
+		21F9D1981876952A00F36678 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		21F9D19A1876952A00F36678 /* LocalyticsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsUtilities.h; sourceTree = "<group>"; };
+		21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUtilities.m; sourceTree = "<group>"; };
+		421E383A04144C6A8624166B /* libPods-Coins.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coins.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C733206B69A4AA88CE1C3A3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B206D3CD97420994DFC1B1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D26F87DC0D5E4E1B989B2740 /* Pods-Coins.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coins.xcconfig"; path = "Pods/Pods-Coins.xcconfig"; sourceTree = "<group>"; };
+		E7F6998536F74DFE984E7C8A /* libPods-Coins Today.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coins Today.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coins Today.xcconfig"; path = "Pods/Pods-Coins Today.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2130E1621864AD58006D3470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */,
+				2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */,
+				2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */,
+				5A091C7B00FD4B889C81DEB8 /* libPods-Coins.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21C14D0419C91A370011C908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21C14D0919C91A370011C908 /* NotificationCenter.framework in Frameworks */,
+				706A927C5A364F81883495D5 /* libPods-Coins Today.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2130E15C1864AD57006D3470 = {
+			isa = PBXGroup;
+			children = (
+				21C14CC719C910F80011C908 /* Coins */,
+				21C14D0A19C91A370011C908 /* Coins Today */,
+				21C14D2219C91BBB0011C908 /* CoinsKit */,
+				21F9D1971876952A00F36678 /* Vendor */,
+				2130E1671864AD58006D3470 /* Frameworks */,
+				2130E1661864AD58006D3470 /* Products */,
+				B7B206D3CD97420994DFC1B1 /* Pods.xcconfig */,
+				D26F87DC0D5E4E1B989B2740 /* Pods-Coins.xcconfig */,
+				F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		2130E1661864AD58006D3470 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2130E1651864AD58006D3470 /* Coins.app */,
+				21C14D0719C91A370011C908 /* Coins Today.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2130E1671864AD58006D3470 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2130E1681864AD58006D3470 /* Foundation.framework */,
+				2130E16A1864AD58006D3470 /* CoreGraphics.framework */,
+				2130E16C1864AD58006D3470 /* UIKit.framework */,
+				2130E1811864AD58006D3470 /* XCTest.framework */,
+				7C733206B69A4AA88CE1C3A3 /* libPods.a */,
+				21C14D0819C91A370011C908 /* NotificationCenter.framework */,
+				421E383A04144C6A8624166B /* libPods-Coins.a */,
+				E7F6998536F74DFE984E7C8A /* libPods-Coins Today.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21C14CC719C910F80011C908 /* Coins */ = {
+			isa = PBXGroup;
+			children = (
+				21C14CC819C910F80011C908 /* Classes */,
+				21C14CDD19C910F80011C908 /* Other Sources */,
+				21C14CE219C910F80011C908 /* Resources */,
+			);
+			path = Coins;
+			sourceTree = "<group>";
+		};
+		21C14CC819C910F80011C908 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				21C14CC919C910F80011C908 /* BTCAppDelegate.h */,
+				21C14CCA19C910F80011C908 /* BTCAppDelegate.m */,
+				21C14CCD19C910F80011C908 /* BTCCurrencyPickerTableViewController.h */,
+				21C14CCE19C910F80011C908 /* BTCCurrencyPickerTableViewController.m */,
+				21C14CCF19C910F80011C908 /* BTCTableViewCell.h */,
+				21C14CD019C910F80011C908 /* BTCTableViewCell.m */,
+				21C14CD119C910F80011C908 /* BTCTextField.h */,
+				21C14CD219C910F80011C908 /* BTCTextField.m */,
+				21C14CD319C910F80011C908 /* BTCTickingButton.h */,
+				21C14CD419C910F80011C908 /* BTCTickingButton.m */,
+				21C14CD719C910F80011C908 /* BTCValueViewController.h */,
+				21C14CD819C910F80011C908 /* BTCValueViewController.m */,
+				21C14CD919C910F80011C908 /* NSDate+Coins.h */,
+				21C14CDA19C910F80011C908 /* NSDate+Coins.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		21C14CDD19C910F80011C908 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				21C14CE019C910F80011C908 /* Coins-Prefix.pch */,
+				21C14CE119C910F80011C908 /* main.m */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		21C14CE219C910F80011C908 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21C14CE319C910F80011C908 /* Coins-Info.plist */,
+				21C14CE519C910F80011C908 /* currencies.json */,
+				21C14CE619C910F80011C908 /* Localizable.strings */,
+				21C14CE819C910F80011C908 /* Images.xcassets */,
+				21C14CE919C910F80011C908 /* Settings.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21C14D0A19C91A370011C908 /* Coins Today */ = {
+			isa = PBXGroup;
+			children = (
+				21C14D1B19C91B9F0011C908 /* Classes */,
+				21C14D1E19C91B9F0011C908 /* Resources */,
+			);
+			path = "Coins Today";
+			sourceTree = "<group>";
+		};
+		21C14D1B19C91B9F0011C908 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				21C14D1C19C91B9F0011C908 /* TodayViewController.h */,
+				21C14D1D19C91B9F0011C908 /* TodayViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		21C14D1E19C91B9F0011C908 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21C14D1F19C91B9F0011C908 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21C14D2219C91BBB0011C908 /* CoinsKit */ = {
+			isa = PBXGroup;
+			children = (
+				21C14D2319C91BBB0011C908 /* Classes */,
+			);
+			path = CoinsKit;
+			sourceTree = "<group>";
+		};
+		21C14D2319C91BBB0011C908 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				21C14D2C19C91BCA0011C908 /* CoinsKit.h */,
+				21C103F019C921DD00CC5F36 /* BTCConversionProvider.h */,
+				21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */,
+				21C14D2419C91BBB0011C908 /* BTCValueView.h */,
+				21C14D2519C91BBB0011C908 /* BTCValueView.m */,
+				21C103EC19C91EE700CC5F36 /* BTCDefines.h */,
+				21C103ED19C91EE700CC5F36 /* BTCDefines.m */,
+				21C14D2619C91BBB0011C908 /* UIColor+Coins.h */,
+				21C14D2719C91BBB0011C908 /* UIColor+Coins.m */,
+				21C103E819C91E4000CC5F36 /* NSUserDefaults+Coins.h */,
+				21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		21F9D1971876952A00F36678 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				21F9D1981876952A00F36678 /* Crashlytics.framework */,
+				21F9D1991876952A00F36678 /* Localytics */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		21F9D1991876952A00F36678 /* Localytics */ = {
+			isa = PBXGroup;
+			children = (
+				21F9D19A1876952A00F36678 /* LocalyticsUtilities.h */,
+				21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */,
+			);
+			path = Localytics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2130E1641864AD58006D3470 /* Coins */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2130E1911864AD58006D3470 /* Build configuration list for PBXNativeTarget "Coins" */;
+			buildPhases = (
+				35E3728C36FE40B491367BE5 /* Check Pods Manifest.lock */,
+				2130E1611864AD58006D3470 /* Sources */,
+				2130E1621864AD58006D3470 /* Frameworks */,
+				2130E1631864AD58006D3470 /* Resources */,
+				1AD49CA55DB74066B7D523C0 /* Copy Pods Resources */,
+				21C14D0219C9196B0011C908 /* Hockey */,
+				21C14D1A19C91A370011C908 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21C14D1319C91A370011C908 /* PBXTargetDependency */,
+				21C14D1619C91A370011C908 /* PBXTargetDependency */,
+			);
+			name = Coins;
+			productName = Coins;
+			productReference = 2130E1651864AD58006D3470 /* Coins.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21C14D0619C91A370011C908 /* Coins Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21C14D1719C91A370011C908 /* Build configuration list for PBXNativeTarget "Coins Today" */;
+			buildPhases = (
+				C318B23F3C3D46C5B0AFD1AE /* Check Pods Manifest.lock */,
+				21C14D0319C91A370011C908 /* Sources */,
+				21C14D0419C91A370011C908 /* Frameworks */,
+				21C14D0519C91A370011C908 /* Resources */,
+				616A5DCDEF8248F4AFC7BB06 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Coins Today";
+			productName = "Coins Today";
+			productReference = 21C14D0719C91A370011C908 /* Coins Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2130E15D1864AD57006D3470 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BTC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Nothing Magical, Inc.";
+				TargetAttributes = {
+					2130E1641864AD58006D3470 = {
+						DevelopmentTeam = UP9C8XM22A;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					21C14D0619C91A370011C908 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = UP9C8XM22A;
+					};
+				};
+			};
+			buildConfigurationList = 2130E1601864AD57006D3470 /* Build configuration list for PBXProject "Coins" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2130E15C1864AD57006D3470;
+			productRefGroup = 2130E1661864AD58006D3470 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2130E1641864AD58006D3470 /* Coins */,
+				21C14D0619C91A370011C908 /* Coins Today */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2130E1631864AD58006D3470 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21C14CFD19C910F80011C908 /* Images.xcassets in Resources */,
+				21C14CFC19C910F80011C908 /* Localizable.strings in Resources */,
+				21C14CFE19C910F80011C908 /* Settings.bundle in Resources */,
+				21C14CFB19C910F80011C908 /* currencies.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21C14D0519C91A370011C908 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AD49CA55DB74066B7D523C0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Coins-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21C14D0219C9196B0011C908 /* Hockey */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Hockey;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/Vendor/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
+		35E3728C36FE40B491367BE5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		616A5DCDEF8248F4AFC7BB06 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Coins Today-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C318B23F3C3D46C5B0AFD1AE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2130E1611864AD58006D3470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21C14CF819C910F80011C908 /* main.m in Sources */,
+				21C14CF219C910F80011C908 /* BTCTickingButton.m in Sources */,
+				21C14CED19C910F80011C908 /* BTCAppDelegate.m in Sources */,
+				21C14CF119C910F80011C908 /* BTCTextField.m in Sources */,
+				21C103F219C921DD00CC5F36 /* BTCConversionProvider.m in Sources */,
+				21C14D2819C91BBB0011C908 /* BTCValueView.m in Sources */,
+				21C14D2A19C91BBB0011C908 /* UIColor+Coins.m in Sources */,
+				21C103EA19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */,
+				21C14CF019C910F80011C908 /* BTCTableViewCell.m in Sources */,
+				21C14CF419C910F80011C908 /* BTCValueViewController.m in Sources */,
+				21C103EE19C91EE700CC5F36 /* BTCDefines.m in Sources */,
+				21C14CEF19C910F80011C908 /* BTCCurrencyPickerTableViewController.m in Sources */,
+				21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */,
+				21C14CF519C910F80011C908 /* NSDate+Coins.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21C14D0319C91A370011C908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21C103EB19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */,
+				21C14D2919C91BBB0011C908 /* BTCValueView.m in Sources */,
+				21C14D2B19C91BBB0011C908 /* UIColor+Coins.m in Sources */,
+				21C14D2019C91B9F0011C908 /* TodayViewController.m in Sources */,
+				21C103F319C921DD00CC5F36 /* BTCConversionProvider.m in Sources */,
+				21C103EF19C91EE700CC5F36 /* BTCDefines.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21C14D1319C91A370011C908 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21C14D0619C91A370011C908 /* Coins Today */;
+			targetProxy = 21C14D1219C91A370011C908 /* PBXContainerItemProxy */;
+		};
+		21C14D1619C91A370011C908 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21C14D0619C91A370011C908 /* Coins Today */;
+			targetProxy = 21C14D1519C91A370011C908 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		21C14CE619C910F80011C908 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21C14CE719C910F80011C908 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2130E18F1864AD58006D3470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2130E1901864AD58006D3470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2130E1921864AD58006D3470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26F87DC0D5E4E1B989B2740 /* Pods-Coins.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2130E1931864AD58006D3470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26F87DC0D5E4E1B989B2740 /* Pods-Coins.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nothing Magical Inc. (UP9C8XM22A)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Vendor",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6ED8F51F-254B-4DC8-92C1-055FC7B1E6E8";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		21C14D1819C91A370011C908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Coins Today/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		21C14D1919C91A370011C908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F84CB9346C5345429EB77252 /* Pods-Coins Today.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nothing Magical Inc. (UP9C8XM22A)";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "$(SRCROOT)/Coins Today/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2130E1601864AD57006D3470 /* Build configuration list for PBXProject "Coins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2130E18F1864AD58006D3470 /* Debug */,
+				2130E1901864AD58006D3470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2130E1911864AD58006D3470 /* Build configuration list for PBXNativeTarget "Coins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2130E1921864AD58006D3470 /* Debug */,
+				2130E1931864AD58006D3470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21C14D1719C91A370011C908 /* Build configuration list for PBXNativeTarget "Coins Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21C14D1819C91A370011C908 /* Debug */,
+				21C14D1919C91A370011C908 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2130E15D1864AD57006D3470 /* Project object */;
+}
