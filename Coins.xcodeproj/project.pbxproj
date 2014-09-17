@@ -10,6 +10,7 @@
 		2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
 		2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16A1864AD58006D3470 /* CoreGraphics.framework */; };
 		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
+		21363FF519C9434A0073FA6C /* BTCTodayValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21363FF419C9434A0073FA6C /* BTCTodayValueView.m */; };
 		21C103EA19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */; };
 		21C103EB19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */; };
 		21C103EE19C91EE700CC5F36 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103ED19C91EE700CC5F36 /* BTCDefines.m */; };
@@ -76,6 +77,8 @@
 		2130E16A1864AD58006D3470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2130E16C1864AD58006D3470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2130E1811864AD58006D3470 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		21363FF319C9434A0073FA6C /* BTCTodayValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCTodayValueView.h; sourceTree = "<group>"; };
+		21363FF419C9434A0073FA6C /* BTCTodayValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTodayValueView.m; sourceTree = "<group>"; };
 		21B148BA19C92DB200972BEF /* Coins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
 		21B148BB19C92DB900972BEF /* Coins Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Coins Today.entitlements"; sourceTree = "<group>"; };
 		21C103E819C91E4000CC5F36 /* NSUserDefaults+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Coins.h"; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 			children = (
 				21C14D1C19C91B9F0011C908 /* BTCTodayViewController.h */,
 				21C14D1D19C91B9F0011C908 /* BTCTodayViewController.m */,
+				21363FF319C9434A0073FA6C /* BTCTodayValueView.h */,
+				21363FF419C9434A0073FA6C /* BTCTodayValueView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21C103EB19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */,
+				21363FF519C9434A0073FA6C /* BTCTodayValueView.m in Sources */,
 				21C14D2919C91BBB0011C908 /* BTCValueView.m in Sources */,
 				21C14D2B19C91BBB0011C908 /* UIColor+Coins.m in Sources */,
 				21C14D2019C91B9F0011C908 /* BTCTodayViewController.m in Sources */,

@@ -18,7 +18,7 @@
 
 @synthesize conversionRates = _conversionRates;
 @synthesize valueButton = _valueButton;
-@synthesize inputButton = _inputButton;
+@synthesize quantityButton = _quantityButton;
 
 - (void)setConversionRates:(NSDictionary *)conversionRates {
 	_conversionRates = conversionRates;
@@ -50,7 +50,7 @@
 	NSNumber *number = @([[userDefaults stringForKey:kBTCNumberOfCoinsKey] doubleValue]);
 
 	NSString *title = [numberFormatter stringFromNumber:number];
-	[self.inputButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
+	[self.quantityButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
 }
 
 - (UIButton *)valueButton {
@@ -66,14 +66,14 @@
 }
 
 
-- (UIButton *)inputButton {
-	if (!_inputButton) {
-		_inputButton = [[UIButton alloc] init];
-		_inputButton.translatesAutoresizingMaskIntoConstraints = NO;
-		_inputButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 30.0 : 20.0];
-		[_inputButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5f] forState:UIControlStateNormal];
+- (UIButton *)quantityButton {
+	if (!_quantityButton) {
+		_quantityButton = [[UIButton alloc] init];
+		_quantityButton.translatesAutoresizingMaskIntoConstraints = NO;
+		_quantityButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 30.0 : 20.0];
+		[_quantityButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5f] forState:UIControlStateNormal];
 	}
-	return _inputButton;
+	return _quantityButton;
 }
 
 
@@ -85,11 +85,18 @@
 		self.backgroundColor = [UIColor clearColor];
 		
 		[self addSubview:self.valueButton];
-		[self addSubview:self.inputButton];
+		[self addSubview:self.quantityButton];
 
 		[self setupConstraints];
 	}
 	return self;
+}
+
+
+#pragma mark - Configuration
+
+- (CGFloat)verticalSpacing {
+	return 16.0;
 }
 
 
@@ -98,14 +105,16 @@
 - (void)setupConstraints {
 	NSDictionary *views = @{
 		@"valueButton": self.valueButton,
-		@"inputButton": self.inputButton
+		@"quantityButton": self.quantityButton
 	};
 
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[valueButton]-|" options:kNilOptions metrics:nil views:views]];
-	[self addConstraint:[NSLayoutConstraint constraintWithItem:self.valueButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:-20.0]];
+	CGFloat verticalSpacing = [self verticalSpacing];
 
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[inputButton]-|" options:kNilOptions metrics:nil views:views]];
-	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[valueButton]-(-15)-[inputButton]" options:kNilOptions metrics:nil views:views]];
+	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[valueButton]-|" options:kNilOptions metrics:nil views:views]];
+	[self addConstraint:[NSLayoutConstraint constraintWithItem:self.valueButton attribute:NSLayoutAttributeBaseline relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:-verticalSpacing]];
+
+	[self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[quantityButton]-|" options:kNilOptions metrics:nil views:views]];
+	[self addConstraint:[NSLayoutConstraint constraintWithItem:self.quantityButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.valueButton attribute:NSLayoutAttributeBaseline multiplier:1.0 constant:verticalSpacing / 2.0]];
 }
 
 @end

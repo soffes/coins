@@ -12,7 +12,9 @@
 
 @property (nonatomic) NSDictionary *conversionRates;
 
-@property (nonatomic, readonly) UIButton *inputButton;
 @property (nonatomic, readonly) UIButton *valueButton;
+@property (nonatomic, readonly) UIButton *quantityButton;
+
+- (CGFloat)verticalSpacing;
 
 @end

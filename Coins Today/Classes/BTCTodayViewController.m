@@ -7,6 +7,8 @@
 //
 
 #import "BTCTodayViewController.h"
+#import "BTCTodayValueView.h"
+
 #import "CoinsKit.h"
 
 @import NotificationCenter;
@@ -23,7 +25,7 @@
 
 - (BTCValueView *)valueView {
 	if (!_valueView) {
-		_valueView = [[BTCValueView alloc] init];
+		_valueView = [[BTCTodayValueView alloc] init];
 		_valueView.translatesAutoresizingMaskIntoConstraints = NO;
 		_valueView.conversionRates = [[BTCConversionProvider sharedProvider] latestConversionRates];
 	}
@@ -50,6 +52,11 @@
 }
 
 
+- (CGSize)preferredContentSize {
+	return CGSizeMake(self.view.bounds.size.width, 100.0);
+}
+
+
 #pragma mark - Actions
 
 - (void)openCoins:(id)sender {
@@ -73,6 +80,7 @@
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
 	defaultMarginInsets.top = 8.0;
 	defaultMarginInsets.bottom = 0.0;
+	defaultMarginInsets.left -= 6.0;
 	return defaultMarginInsets;
 }
 

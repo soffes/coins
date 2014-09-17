@@ -122,7 +122,7 @@
 		_valueView = [[BTCValueView alloc] init];
 
 		[_valueView.valueButton addTarget:self action:@selector(pickCurrency:) forControlEvents:UIControlEventTouchUpInside];
-		[_valueView.inputButton addTarget:self action:@selector(startEditing:) forControlEvents:UIControlEventTouchUpInside];
+		[_valueView.quantityButton addTarget:self action:@selector(startEditing:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _valueView;
 }
@@ -312,7 +312,7 @@
 		self.textField.alpha = editing ? 1.0 : 0.0;
 		self.doneButton.alpha = self.textField.alpha;
 		self.valueView.valueButton.alpha = editing ? 0.0 : 1.0;
-		self.valueView.inputButton.alpha = self.valueView.valueButton.alpha;
+		self.valueView.quantityButton.alpha = self.valueView.valueButton.alpha;
 	};
 
 	if (animated) {
