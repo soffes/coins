@@ -147,6 +147,8 @@
 - (void)setLoading:(BOOL)loading {
 	_loading = loading;
 
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:_loading];
+
 	if (loading) {
 		self.updateButton.format = NSLocalizedString(@"UPDATING", nil);
 		[self.pullToRefresh startLoading];

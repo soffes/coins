@@ -8,6 +8,10 @@ target 'Coins' do
   pod 'Localytics-iOS-Client'
 end
 
+target 'Coins Today' do
+  pod 'SAMCache'
+end
+
 post_install do |installer|
   require 'fileutils'
   dest = 'Coins/Resources/Settings.bundle/Acknowledgements.plist'

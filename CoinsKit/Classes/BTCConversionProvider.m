@@ -24,8 +24,6 @@
 
 
 - (void)getConversionRates:(void (^)(NSDictionary *))completion {
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-
 	NSURL *URL = [[NSURL alloc] initWithString:@"https://coinbase.com/api/v1/currencies/exchange_rates"];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
 	NSURLSessionDownloadTask *task = [[NSURLSession sharedSession] downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
@@ -51,8 +49,6 @@
 		}
 
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-
 			if (completion) {
 				completion(dictionary);
 			}

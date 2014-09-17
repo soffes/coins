@@ -6,6 +6,8 @@
 //  Copyright (c) 2013-2014 Nothing Magical, Inc. All rights reserved.
 //
 
+@import Foundation;
+
 @interface BTCConversionProvider : NSObject
 
 + (instancetype)sharedProvider;

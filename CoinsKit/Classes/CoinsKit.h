@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Nothing Magical, Inc. All rights reserved.
 //
 
+#import "BTCConversionProvider.h"
 #import "BTCValueView.h"
 #import "BTCDefines.h"
 
