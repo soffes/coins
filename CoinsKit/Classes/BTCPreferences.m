@@ -9,7 +9,52 @@
 #import "BTCPreferences.h"
 #import "NSUserDefaults+Coins.h"
 
+@interface BTCPreferences ()
+@property (nonatomic) NSDictionary *defaults;
+@end
+
 @implementation BTCPreferences
+
+#pragma mark - Accessors
+
+@synthesize defaults = _defaults;
+
+- (void)registerDefaults:(NSDictionary *)defaults {
+	self.defaults = defaults;
+}
+
+
+- (id)objectForKey:(NSString *)key {
+	id value = [[self iCloudStore] objectForKey:key];
+	if (!value) {
+		value = [[self defaultsStore] objectForKey:key];
+	}
+	if (!value) {
+		value = self.defaults[key];
+	}
+	return value;
+}
+
+
+- (void)setObject:(id<NSCoding>)object forKey:(NSString *)key {
+	[[self defaultsStore] setObject:object forKey:key];
+	[[self iCloudStore] setObject:object forKey:key];
+}
+
+
+- (void)removeObjectForKey:(NSString *)key {
+	[[self defaultsStore] removeObjectForKey:key];
+	[[self iCloudStore] removeObjectForKey:key];
+}
+
+
+- (void)synchronize {
+	[[self defaultsStore] synchronize];
+	[[self iCloudStore] synchronize];
+}
+
+
+#pragma mark - Singleton
 
 + (instancetype)sharedPreferences {
 	static BTCPreferences *preferences;
@@ -21,28 +66,15 @@
 }
 
 
-- (void)registerDefaults:(NSDictionary *)defaults {
-	[[NSUserDefaults btc_sharedDefaults] registerDefaults:defaults];
+#pragma mark - Private
+
+- (NSUserDefaults *)defaultsStore {
+	return [NSUserDefaults btc_sharedDefaults];
 }
 
 
-- (id)objectForKey:(NSString *)key {
-	return [[NSUserDefaults btc_sharedDefaults] objectForKey:key];
-}
-
-
-- (void)setObject:(id<NSCoding>)object forKey:(NSString *)key {
-	[[NSUserDefaults btc_sharedDefaults] setObject:object forKey:key];
-}
-
-
-- (void)removeObjectForKey:(NSString *)key {
-	[[NSUserDefaults btc_sharedDefaults] removeObjectForKey:key];
-}
-
-
-- (void)synchronize {
-	[[NSUserDefaults btc_sharedDefaults] synchronize];
+- (NSUbiquitousKeyValueStore *)iCloudStore {
+	return [NSUbiquitousKeyValueStore defaultStore];
 }
 
 @end

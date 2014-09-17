@@ -4,6 +4,7 @@
 
 * Added support for iPhone 6 & iPhone 6 Plus
 * New today widget for iOS 8
+* New iCloud sync
 * Automatically refresh in the background
 
 

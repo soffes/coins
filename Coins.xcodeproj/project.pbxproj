@@ -383,6 +383,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 					21C14D0619C91A370011C908 = {
@@ -390,6 +393,9 @@
 						DevelopmentTeam = UP9C8XM22A;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -636,7 +642,7 @@
 				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0b2f4c1c-b8b3-4c8a-b260-b3199be66b6b";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -680,7 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e752a1e4-2079-4bce-ae8b-3dbb1bc5efd4";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;

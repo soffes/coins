@@ -45,6 +45,7 @@
 	[standardDefaults registerDefaults:@{
 		kBTCAutomaticallyRefreshKey: @YES,
 		kBTCDisableSleepKey: @NO,
+		kBTCControlsHiddenKey: @NO,
 		@"BTCMigrated": @NO
 	}];
 
@@ -52,12 +53,11 @@
 	BTCPreferences *preferences = [BTCPreferences sharedPreferences];
 	[preferences registerDefaults:@{
 		kBTCSelectedCurrencyKey: @"USD",
-		kBTCNumberOfCoinsKey: @0,
-		kBTCControlsHiddenKey: @NO
+		kBTCNumberOfCoinsKey: @0
 	}];
 
 	if (![standardDefaults boolForKey:@"BTCMigrated"]) {
-		NSArray *keys = @[kBTCSelectedCurrencyKey, kBTCNumberOfCoinsKey, kBTCControlsHiddenKey];
+		NSArray *keys = @[kBTCSelectedCurrencyKey, kBTCNumberOfCoinsKey];
 		for (NSString *key in keys) {
 			[preferences setObject:[standardDefaults objectForKey:key] forKey:key];
 		}

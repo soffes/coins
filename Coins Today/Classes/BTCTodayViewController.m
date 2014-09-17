@@ -33,6 +33,13 @@
 }
 
 
+#pragma mark - NSObject
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -49,6 +56,8 @@
 	control.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	[control addTarget:self action:@selector(openCoins:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:control];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
 }
 
 
@@ -64,11 +73,18 @@
 }
 
 
+#pragma mark - Private
+
+- (void)update {
+	self.valueView.conversionRates = [[BTCConversionProvider sharedProvider] latestConversionRates];
+}
+
+
 #pragma mark - NCWidgetProviding
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     [[BTCConversionProvider sharedProvider] getConversionRates:^(NSDictionary *conversionRates, UIBackgroundFetchResult result) {
-		self.valueView.conversionRates = conversionRates;
+		[self update];
 		
 		if (completionHandler) {
 			completionHandler((NCUpdateResult)result);

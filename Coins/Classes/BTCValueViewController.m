@@ -58,9 +58,6 @@
 		_textField.translatesAutoresizingMaskIntoConstraints = NO;
 		_textField.delegate = self;
 		_textField.alpha = 0.0;
-
-		NSString *number = [[[BTCPreferences sharedPreferences] objectForKey:kBTCNumberOfCoinsKey] description];
-		_textField.text = [number isEqualToString:@"0"] ? nil : number;
 	}
 	return _textField;
 }
@@ -260,6 +257,7 @@
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 	[notificationCenter addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(update) name:kBTCCurrencyDidChangeNotificationName object:nil];
+	[notificationCenter addObserver:self selector:@selector(update) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(preferencesDidChange) name:NSUserDefaultsDidChangeNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(updateTimerPaused:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 	[notificationCenter addObserver:self selector:@selector(updateTimerPaused:) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -306,6 +304,7 @@
 		[self.view removeConstraint:self.doneButtonTopConstraint];
 		[self.view removeConstraint:self.textFieldTopConstraint];
 		[self.textField resignFirstResponder];
+		[[BTCPreferences sharedPreferences] synchronize];
 	}
 
 	void (^animations)(void) = ^{
@@ -486,6 +485,9 @@
 
 	self.updateButton.date = conversionRates[@"updatedAt"];
 	self.valueView.conversionRates = conversionRates;
+
+	NSString *number = [[[BTCPreferences sharedPreferences] objectForKey:kBTCNumberOfCoinsKey] description];
+	self.textField.text = [number isEqualToString:@"0"] ? nil : number;
 
 	[self viewDidLayoutSubviews];
 }
