@@ -13,10 +13,8 @@
 #import "BTCTextField.h"
 #import "BTCValueView.h"
 
-#import <QuartzCore/QuartzCore.h>
 #import <SAMGradientView/SAMGradientView.h>
 #import <SSPullToRefresh/SSPullToRefresh.h>
-#import "UIColor+Coins.h"
 
 @interface BTCValueViewController () <UITextFieldDelegate, SSPullToRefreshViewDelegate>
 @property (nonatomic, readonly) BTCTextField *textField;
@@ -48,13 +46,17 @@
 @synthesize updateButton = updateButton;
 @synthesize doneButtonTopConstraint = _doneButtonTopConstraint;
 @synthesize textFieldTopConstraint = _textFieldTopConstraint;
+@synthesize controlsHidden = _controlsHidden;
+@synthesize loading = _loading;
+@synthesize autoRefreshing = _autoRefreshing;
+@synthesize autoRefreshTimer = _autoRefreshTimer;
 
 - (BTCTextField *)textField {
 	if (!_textField) {
 		_textField = [[BTCTextField alloc] init];
 		_textField.translatesAutoresizingMaskIntoConstraints = NO;
 		_textField.delegate = self;
-		_textField.alpha = 0.0f;
+		_textField.alpha = 0.0;
 
 		NSString *number = [[NSUserDefaults btc_sharedDefaults] stringForKey:kBTCNumberOfCoinsKey];
 		_textField.text = [number isEqualToString:@"0"] ? nil : number;
@@ -67,17 +69,17 @@
 	if (!_doneButton) {
 		_doneButton = [[UIButton alloc] init];
 		_doneButton.translatesAutoresizingMaskIntoConstraints = NO;
-		_doneButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:14.0f];
-		_doneButton.alpha = 0.0f;
-		[_doneButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
+		_doneButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:14.0];
+		_doneButton.alpha = 0.0;
+		[_doneButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5f] forState:UIControlStateNormal];
 		[_doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 		[_doneButton addTarget:self action:@selector(toggleControls:) forControlEvents:UIControlEventTouchUpInside];
 		[_doneButton setTitle:NSLocalizedString(@"DONE", nil) forState:UIControlStateNormal];
-		_doneButton.contentEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
+		_doneButton.contentEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0);
 
-		_doneButton.layer.borderColor = [UIColor colorWithWhite:1.0f alpha:0.5f].CGColor;
-		_doneButton.layer.borderWidth = 1.0f;
-		_doneButton.layer.cornerRadius = 5.0f;
+		_doneButton.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.5f].CGColor;
+		_doneButton.layer.borderWidth = 1.0;
+		_doneButton.layer.cornerRadius = 5.0;
 
 	}
 	return _doneButton;
@@ -134,9 +136,9 @@
 	if (!updateButton) {
 		updateButton = [[BTCTickingButton alloc] init];
 		updateButton.translatesAutoresizingMaskIntoConstraints = NO;
-		[updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.3f] forState:UIControlStateNormal];
-		[updateButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.8f] forState:UIControlStateHighlighted];
-		updateButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
+		[updateButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.3f] forState:UIControlStateNormal];
+		[updateButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.8f] forState:UIControlStateHighlighted];
+		updateButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0];
 		updateButton.titleLabel.textAlignment = NSTextAlignmentCenter;
 		[updateButton addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
 	}
@@ -174,11 +176,11 @@
 - (SSPullToRefreshView *)pullToRefresh {
 	if (!_pullToRefresh) {
 		_pullToRefresh = [[SSPullToRefreshView alloc] initWithScrollView:self.scrollView delegate:self];
-		_pullToRefresh.defaultContentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+		_pullToRefresh.defaultContentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0);
 
 		SSPullToRefreshSimpleContentView *contentView = [[SSPullToRefreshSimpleContentView alloc] init];
-		contentView.statusLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.8f];
-		contentView.statusLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0f];
+		contentView.statusLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.8f];
+		contentView.statusLabel.font = [UIFont fontWithName:@"Avenir-Light" size:12.0];
 		contentView.activityIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
 		_pullToRefresh.contentView = contentView;
 	}
@@ -188,7 +190,7 @@
 
 - (NSLayoutConstraint *)doneButtonTopConstraint {
 	if (!_doneButtonTopConstraint) {
-		_doneButtonTopConstraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:0.0f];
+		_doneButtonTopConstraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0];
 		_doneButtonTopConstraint.priority = UILayoutPriorityRequired;
 		[self updateDoneButtonTopLayoutConstraint];
 	}
@@ -198,7 +200,7 @@
 
 - (NSLayoutConstraint *)textFieldTopConstraint {
 	if (!_textFieldTopConstraint) {
-		_textFieldTopConstraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f];
+		_textFieldTopConstraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
 		_textFieldTopConstraint.priority = UILayoutPriorityDefaultHigh;
 	}
 	return _textFieldTopConstraint;
@@ -233,12 +235,12 @@
 	[self.view addSubview:self.scrollView];
 	[self pullToRefresh];
 
-	gradient = [[SAMGradientView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.bounds.size.width, 30.0f)];
+	gradient = [[SAMGradientView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, 30.0)];
 	gradient.backgroundColor = [UIColor clearColor];
 	gradient.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
 	gradient.gradientColors = @[
 		[UIColor btc_blueColor],
-		[[UIColor btc_blueColor] colorWithAlphaComponent:0.0f]
+		[[UIColor btc_blueColor] colorWithAlphaComponent:0.0]
 	];
 	gradient.gradientLocations = @[@0.6f, @1];
 	gradient.dimmedGradientColors = gradient.gradientColors;
@@ -311,15 +313,15 @@
 	}
 
 	void (^animations)(void) = ^{
-		self.textField.alpha = editing ? 1.0f : 0.0f;
+		self.textField.alpha = editing ? 1.0 : 0.0;
 		self.doneButton.alpha = self.textField.alpha;
-		self.valueView.valueButton.alpha = editing ? 0.0f : 1.0f;
+		self.valueView.valueButton.alpha = editing ? 0.0 : 1.0;
 		self.valueView.inputButton.alpha = self.valueView.valueButton.alpha;
 	};
 
 	if (animated) {
-		[UIView animateWithDuration:0.3 delay:0.0 options:1.0f animations:animations completion:nil];
-		[UIView animateWithDuration:0.8 delay:0.0 usingSpringWithDamping:0.6f initialSpringVelocity:1.0f options:1.0f animations:^{
+		[UIView animateWithDuration:0.3 delay:0.0 options:1.0 animations:animations completion:nil];
+		[UIView animateWithDuration:0.8 delay:0.0 usingSpringWithDamping:0.6f initialSpringVelocity:1.0 options:1.0 animations:^{
 			[self.view layoutIfNeeded];
 		} completion:nil];
 	} else {
@@ -359,7 +361,7 @@
 		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 		navigationController.navigationBar.titleTextAttributes = @{
 			NSForegroundColorAttributeName: [UIColor btc_blueColor],
-			NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0f]
+			NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0]
 		};
 
 		self.currencyPopover = [[UIPopoverController alloc] initWithContentViewController:navigationController];
@@ -418,20 +420,20 @@
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[updateButton]-|" options:kNilOptions metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[updateButton]-10-|" options:kNilOptions metrics:nil views:views]];
 
-	NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0f constant:0.0f];
+	NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.doneButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0];
 	constraint.priority = UILayoutPriorityDefaultLow;
 	[self.view addConstraint:constraint];
 
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[doneButton]-|" options:kNilOptions metrics:nil views:views]];
 
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(20@500)-[textField(<=500@600)]-(20@500)-|" options:kNilOptions metrics:nil views:views]];
-	constraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.valueView.valueButton attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f];
+	constraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.valueView.valueButton attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
 	constraint.priority = UILayoutPriorityDefaultLow;
 	[self.view addConstraint:constraint];
 
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
+	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
 
-	constraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.doneButton attribute:NSLayoutAttributeBottom multiplier:1.0f constant:20.0f];
+	constraint = [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.doneButton attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20.0];
 	constraint.priority = UILayoutPriorityRequired;
 	[self.view addConstraint:constraint];
 }
@@ -456,7 +458,7 @@
 	[userDefaults synchronize];
 
 	void (^animations)(void) = ^{
-		self.updateButton.alpha = _controlsHidden ? 0.0f : 1.0f;
+		self.updateButton.alpha = _controlsHidden ? 0.0 : 1.0;
 		[self.view layoutIfNeeded];
 	};
 
@@ -507,19 +509,19 @@
 
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
 	CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-	self.textFieldTopConstraint.constant = fminf(keyboardFrame.size.height, keyboardFrame.size.width) / -2.0f;
+	self.textFieldTopConstraint.constant = fminf(keyboardFrame.size.height, keyboardFrame.size.width) / -2.0;
 }
 
 
 - (void)updateDoneButtonTopLayoutConstraint {
-	CGFloat constant = 10.0f;
+	CGFloat constant = 10.0;
 
 	if (!self.controlsHidden) {
-		constant += 20.0f;
+		constant += 20.0;
 	}
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
-		constant += 6.0f;
+		constant += 6.0;
 	}
 
 	self.doneButtonTopConstraint.constant = constant;

@@ -17,6 +17,13 @@
 
 @implementation BTCCurrencyPickerTableViewController
 
+#pragma mark - Accessors
+
+@synthesize currencies = _currencies;
+@synthesize currencyOrder = _currencyOrder;
+@synthesize selectedKey = _selectedKey;
+
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -26,7 +33,7 @@
 	[self.tableView registerClass:[BTCTableViewCell class] forCellReuseIdentifier:@"Cell"];
 
 	NSData *data = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"currencies" ofType:@"json"]];
-	NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+	NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingOptions)kNilOptions error:nil];
 	self.currencies = JSON[@"currencies"];
 	self.currencyOrder = JSON[@"order"];
 	self.selectedKey = [[NSUserDefaults btc_sharedDefaults] objectForKey:kBTCSelectedCurrencyKey];

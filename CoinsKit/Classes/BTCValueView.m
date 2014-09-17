@@ -55,7 +55,7 @@
 	if (!_valueButton) {
 		_valueButton = [[UIButton alloc] init];
 		_valueButton.translatesAutoresizingMaskIntoConstraints = NO;
-		_valueButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 80.0f : 50.0f];
+		_valueButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Heavy" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 80.0 : 50.0];
 		_valueButton.titleLabel.adjustsFontSizeToFitWidth = YES;
 		_valueButton.titleLabel.textAlignment = NSTextAlignmentCenter;
 		[_valueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -68,8 +68,8 @@
 	if (!_inputButton) {
 		_inputButton = [[UIButton alloc] init];
 		_inputButton.translatesAutoresizingMaskIntoConstraints = NO;
-		_inputButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 30.0f : 20.0f];
-		[_inputButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:0.5f] forState:UIControlStateNormal];
+		_inputButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Light" size:UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 30.0 : 20.0];
+		[_inputButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5f] forState:UIControlStateNormal];
 	}
 	return _inputButton;
 }

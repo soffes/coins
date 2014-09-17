@@ -16,6 +16,13 @@
 
 @implementation BTCTickingButton
 
+#pragma mark - Accessors
+
+@synthesize ticking = _ticking;
+@synthesize date = _date;
+@synthesize format = _format;
+@synthesize timer = _timer;
+
 - (void)setDate:(NSDate *)date {
 	_date = date;
 	[self tick];
@@ -59,7 +66,10 @@
 
 
 - (void)tick {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wformat-nonliteral"
 	NSString *title = self.date ? [NSString stringWithFormat:self.format, [self.date coins_timeAgoInWords]] : @"Never updated";
+#pragma clang diagnostic pop
 	[self setTitle:title forState:UIControlStateNormal];
 }
 

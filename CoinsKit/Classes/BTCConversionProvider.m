@@ -34,7 +34,7 @@ static NSString *const BTCConversionProviderCacheKey = @"BTCConversion";
 
 		if (response && [(NSHTTPURLResponse *)response statusCode] == 200) {
 			NSData *data = [[NSData alloc] initWithContentsOfURL:location];
-			NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+			NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingOptions)kNilOptions error:nil];
 
 			NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
 			for (NSString *longKey in JSON) {

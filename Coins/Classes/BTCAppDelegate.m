@@ -15,6 +15,13 @@
 
 @implementation BTCAppDelegate
 
+#pragma mark - Accessors
+
+@synthesize window = _window;
+
+
+#pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	[[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"d0d82a50debc14c4fde0cb3430893bd6"];
 	[[BITHockeyManager sharedHockeyManager] startManager];
@@ -28,10 +35,10 @@
 
 	UINavigationBar *navigationBar = [UINavigationBar appearance];
 	navigationBar.barTintColor = [UIColor btc_blueColor];
-	navigationBar.tintColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
+	navigationBar.tintColor = [UIColor colorWithWhite:1.0 alpha:0.5f];
 	navigationBar.titleTextAttributes = @{
 		NSForegroundColorAttributeName: [UIColor whiteColor],
-		NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0f]
+		NSFontAttributeName: [UIFont fontWithName:@"Avenir-Heavy" size:20.0]
 	};
 
 	NSUserDefaults *userDefaults = [NSUserDefaults btc_sharedDefaults];
