@@ -486,8 +486,10 @@
 	self.updateButton.date = conversionRates[@"updatedAt"];
 	self.valueView.conversionRates = conversionRates;
 
-	NSString *number = [[[BTCPreferences sharedPreferences] objectForKey:kBTCNumberOfCoinsKey] description];
-	self.textField.text = [number isEqualToString:@"0"] ? nil : number;
+	if (![self.textField isEditing]) {
+		NSString *number = [[[BTCPreferences sharedPreferences] objectForKey:kBTCNumberOfCoinsKey] description];
+		self.textField.text = [number isEqualToString:@"0"] ? nil : number;
+	}
 
 	[self viewDidLayoutSubviews];
 }

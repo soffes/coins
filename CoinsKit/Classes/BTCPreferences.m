@@ -25,9 +25,9 @@
 
 
 - (id)objectForKey:(NSString *)key {
-	id value = [[self iCloudStore] objectForKey:key];
+	id value = [[self defaultsStore] objectForKey:key];
 	if (!value) {
-		value = [[self defaultsStore] objectForKey:key];
+		value = [[self iCloudStore] objectForKey:key];
 	}
 	if (!value) {
 		value = self.defaults[key];
@@ -49,8 +49,13 @@
 
 
 - (void)synchronize {
-	[[self defaultsStore] synchronize];
 	[[self iCloudStore] synchronize];
+
+	NSDictionary *iCloud = [[self iCloudStore] dictionaryRepresentation];
+	for (NSString *key in iCloud) {
+		[[self defaultsStore] setObject:iCloud[key] forKey:key];
+	}
+	[[self defaultsStore] synchronize];
 }
 
 
