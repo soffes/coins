@@ -1,3 +1,11 @@
+# Version 1.1.1
+
+*Unreleased*
+
+* Fix typing decimals
+* Other bug fixes
+
+
 # Version 1.1
 
 *Unreleased*
