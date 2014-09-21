@@ -49,7 +49,7 @@
 	NSNumber *number = [preferences objectForKey:kBTCNumberOfCoinsKey];
 
 	NSString *title = [numberFormatter stringFromNumber:number];
-	[self.quantityButton setTitle:[NSString stringWithFormat:@"%@ BTC", title] forState:UIControlStateNormal];
+	[self.quantityButton setTitle:[NSString stringWithFormat:@"%@ BTC", title ? title : @"0"] forState:UIControlStateNormal];
 }
 
 - (UIButton *)valueButton {
