@@ -1,6 +1,13 @@
-# Version 1.1.1
+# Version 1.1.2
 
 *Unreleased*
+
+Bug fixes for today widget
+
+
+# Version 1.1.1
+
+*Released October 6, 2014*
 
 * Fix typing decimals
 * Other bug fixes
@@ -8,7 +15,7 @@
 
 # Version 1.1
 
-*Unreleased*
+*Released September 19, 2014*
 
 * Added support for iPhone 6 & iPhone 6 Plus
 * New today widget for iOS 8

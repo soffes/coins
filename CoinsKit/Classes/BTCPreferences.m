@@ -27,9 +27,6 @@
 - (id)objectForKey:(NSString *)key {
 	id value = [[self defaultsStore] objectForKey:key];
 	if (!value) {
-		value = [[self iCloudStore] objectForKey:key];
-	}
-	if (!value) {
 		value = self.defaults[key];
 	}
 	return value;
@@ -50,11 +47,6 @@
 
 - (void)synchronize {
 	[[self iCloudStore] synchronize];
-
-	NSDictionary *iCloud = [[self iCloudStore] dictionaryRepresentation];
-	for (NSString *key in iCloud) {
-		[[self defaultsStore] setObject:iCloud[key] forKey:key];
-	}
 	[[self defaultsStore] synchronize];
 }
 
@@ -71,6 +63,21 @@
 }
 
 
+#pragma mark - NSObject
+
+- (instancetype)init {
+	if ((self = [super init])) {
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudStoreDidChange:) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
+	}
+	return self;
+}
+
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 #pragma mark - Private
 
 - (NSUserDefaults *)defaultsStore {
@@ -80,6 +87,14 @@
 
 - (NSUbiquitousKeyValueStore *)iCloudStore {
 	return [NSUbiquitousKeyValueStore defaultStore];
+}
+
+
+- (void)iCloudStoreDidChange:(NSNotification *)notification {
+	NSDictionary *iCloud = [[self iCloudStore] dictionaryRepresentation];
+	for (NSString *key in iCloud) {
+		[[self defaultsStore] setObject:iCloud[key] forKey:key];
+	}
 }
 
 @end
