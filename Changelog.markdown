@@ -1,20 +1,22 @@
-# Version 1.1.2
+# Coins Changelog
 
-*Unreleased*
+Version history for [Coins for iOS](http://getcoinsapp.com).
+
+
+## Version 1.1.2
+*Released October 23, 2014*
 
 Bug fixes for today widget
 
 
-# Version 1.1.1
-
+## Version 1.1.1
 *Released October 6, 2014*
 
 * Fix typing decimals
 * Other bug fixes
 
 
-# Version 1.1
-
+## Version 1.1
 *Released September 19, 2014*
 
 * Added support for iPhone 6 & iPhone 6 Plus
@@ -23,15 +25,13 @@ Bug fixes for today widget
 * Automatically refresh in the background
 
 
-# Version 1.0.3
-
+## Version 1.0.3
 *Released April 24, 2014*
 
 Bug fixes
 
 
-# Version 1.0.1
-
+## Version 1.0.1
 *Released January 11, 2014*
 
 * Automatically refresh when you come back to the app
@@ -42,8 +42,7 @@ Bug fixes
 * Fixed a bug that would prompt you to enter your BTC if you have less than one.
 
 
-# Version 1.0
-
+## Version 1.0
 *Released January 3, 2014*
 
 Initial release.
