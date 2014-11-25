@@ -8,16 +8,14 @@
 
 #import "BTCValueViewController.h"
 #import "BTCConversionProvider.h"
-#import "BTCCurrencyPickerTableViewController.h"
 #import "BTCTickingButton.h"
-#import "BTCTextField.h"
 #import "BTCValueView.h"
 
 #import <SAMGradientView/SAMGradientView.h>
 #import <SSPullToRefresh/SSPullToRefresh.h>
 
 @interface BTCValueViewController () <UITextFieldDelegate, SSPullToRefreshViewDelegate>
-@property (nonatomic, readonly) BTCTextField *textField;
+@property (nonatomic, readonly) TextField *textField;
 @property (nonatomic, readonly) UIButton *doneButton;
 @property (nonatomic) UIPopoverController *currencyPopover;
 @property (nonatomic) BOOL controlsHidden;
@@ -52,9 +50,9 @@
 @synthesize autoRefreshing = _autoRefreshing;
 @synthesize autoRefreshTimer = _autoRefreshTimer;
 
-- (BTCTextField *)textField {
+- (TextField *)textField {
 	if (!_textField) {
-		_textField = [[BTCTextField alloc] init];
+		_textField = [[TextField alloc] init];
 		_textField.translatesAutoresizingMaskIntoConstraints = NO;
 		_textField.delegate = self;
 		_textField.alpha = 0.0;
@@ -350,7 +348,7 @@
 
 
 - (void)pickCurrency:(id)sender {
-	BTCCurrencyPickerTableViewController *viewController = [[BTCCurrencyPickerTableViewController alloc] init];
+	CurrencyPickerTableViewController *viewController = [[CurrencyPickerTableViewController alloc] init];
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];

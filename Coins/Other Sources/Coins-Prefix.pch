@@ -16,3 +16,4 @@
 #endif
 
 #import "CoinsKit.h"
+#import "Coins-Swift.h"
