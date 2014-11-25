@@ -650,7 +650,6 @@
 				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "23cb93eb-241c-40ba-86ed-7a7df85bd5c1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -672,7 +671,6 @@
 				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b105fb28-bef1-4a01-80ab-438708b06901";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -694,7 +692,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b48e880f-fb69-47ae-ad28-39c89772f04c";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -712,7 +709,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c5f058be-41df-4da4-99f7-e3e8a661b379";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
