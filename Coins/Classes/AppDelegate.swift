@@ -25,17 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	// MARK: - Private
 
 	private func configureAnalytics() {
-		if AmIBeingDebugged() {
-			return
-		}
-
+#if !DEBUG
+		// Hockey
 		BITHockeyManager.sharedHockeyManager().configureWithIdentifier("d0d82a50debc14c4fde0cb3430893bd6")
 		BITHockeyManager.sharedHockeyManager().startManager()
 		BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
 
+		// Mixpanel
 		let mixpanel = Mixpanel.sharedInstanceWithToken("a487667944fcb1107bcaa025b3ca744c")
 		mixpanel.showNetworkActivityIndicator = false
 		mixpanel.track("App Open")
+#endif
 	}
 
 	private func configureAppearance() {
