@@ -8,7 +8,6 @@
 
 #import "BTCValueViewController.h"
 #import "BTCConversionProvider.h"
-#import "BTCTickingButton.h"
 #import "BTCValueView.h"
 
 #import <SAMGradientView/SAMGradientView.h>
@@ -26,7 +25,7 @@
 @property (nonatomic, readonly) SSPullToRefreshView *pullToRefresh;
 @property (nonatomic, readonly) SAMGradientView *backgroundView;
 @property (nonatomic, readonly) BTCValueView *valueView;
-@property (nonatomic, readonly) BTCTickingButton *updateButton;
+@property (nonatomic, readonly) TickingButton *updateButton;
 @property (nonatomic, readonly) NSLayoutConstraint *doneButtonTopConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *textFieldTopConstraint;
 @end
@@ -123,9 +122,9 @@
 }
 
 
-- (BTCTickingButton *)updateButton {
+- (TickingButton *)updateButton {
 	if (!updateButton) {
-		updateButton = [[BTCTickingButton alloc] init];
+		updateButton = [[TickingButton alloc] init];
 		updateButton.translatesAutoresizingMaskIntoConstraints = NO;
 		[updateButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.3f] forState:UIControlStateNormal];
 		[updateButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.8f] forState:UIControlStateHighlighted];

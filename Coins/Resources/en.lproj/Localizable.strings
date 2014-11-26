@@ -10,3 +10,4 @@
 "DONE" = "Done";
 "UPDATING" = "Updating…";
 "UPDATED_FORMAT" = "Updated %@";
+"NEVER_UPDATED" = "Never updated";
