@@ -32,6 +32,7 @@
 		213D0A891A25FF5D00FA254B /* CoinsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21104E601A253E3F009B0D3C /* CoinsKit.swift */; };
 		213D0A8A1A25FFFD00FA254B /* CoinsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; };
 		213D0A8F1A26002D00FA254B /* CoinsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		216DF4D41A269D1700622D11 /* amibeingdebugged.c in Sources */ = {isa = PBXBuildFile; fileRef = 216DF4D21A269D1700622D11 /* amibeingdebugged.c */; };
 		21900F5E1A254DE300C0CA2C /* TickingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21900F5D1A254DE300C0CA2C /* TickingButton.swift */; };
 		21900F601A25506C00C0CA2C /* NSDate+Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */; };
 		21C14CEF19C910F80011C908 /* CurrencyPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCE19C910F80011C908 /* CurrencyPickerTableViewController.swift */; };
@@ -44,11 +45,6 @@
 		21C14D1419C91A370011C908 /* Coins Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21C14D0719C91A370011C908 /* Coins Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21C14D2019C91B9F0011C908 /* BTCTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D1D19C91B9F0011C908 /* BTCTodayViewController.m */; };
 		21FD2C4C1A26085700F8615D /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD2C4B1A26085700F8615D /* PullToRefreshView.swift */; };
-		21FD2C611A264FAC00F8615D /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C601A264FAC00F8615D /* libGoogleAnalyticsServices.a */; };
-		21FD2C631A26500100F8615D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C621A26500100F8615D /* CoreData.framework */; };
-		21FD2C651A26500A00F8615D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C641A26500A00F8615D /* SystemConfiguration.framework */; };
-		21FD2C671A26500E00F8615D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C661A26500E00F8615D /* libz.dylib */; };
-		21FD2C691A2650E000F8615D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C681A2650E000F8615D /* libsqlite3.dylib */; };
 		32A93DCF17EE721A2B4BF684 /* libPods-Coins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 421E383A04144C6A8624166B /* libPods-Coins.a */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +134,8 @@
 		213D0A541A25FEE900FA254B /* GradientView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GradientView.framework; path = ../Carthage.build/iOS/GradientView.framework; sourceTree = "<group>"; };
 		213D0A5B1A25FF0500FA254B /* CoinsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		213D0A5E1A25FF0500FA254B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		216DF4D21A269D1700622D11 /* amibeingdebugged.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amibeingdebugged.c; sourceTree = "<group>"; };
+		216DF4D31A269D1700622D11 /* amibeingdebugged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amibeingdebugged.h; sourceTree = "<group>"; };
 		21900F5D1A254DE300C0CA2C /* TickingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickingButton.swift; sourceTree = "<group>"; };
 		21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Coins.swift"; sourceTree = "<group>"; };
 		21B148BA19C92DB200972BEF /* Coins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
@@ -164,13 +162,6 @@
 		21C14D2519C91BBB0011C908 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
 		21C14D2C19C91BCA0011C908 /* CoinsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinsKit.h; sourceTree = "<group>"; };
 		21FD2C4B1A26085700F8615D /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
-		21FD2C561A264FAC00F8615D /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		21FD2C571A264FAC00F8615D /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		21FD2C5C1A264FAC00F8615D /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		21FD2C5D1A264FAC00F8615D /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		21FD2C5E1A264FAC00F8615D /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		21FD2C5F1A264FAC00F8615D /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		21FD2C601A264FAC00F8615D /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		21FD2C621A26500100F8615D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		21FD2C641A26500A00F8615D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		21FD2C661A26500E00F8615D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -187,14 +178,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21FD2C691A2650E000F8615D /* libsqlite3.dylib in Frameworks */,
-				21FD2C671A26500E00F8615D /* libz.dylib in Frameworks */,
-				21FD2C651A26500A00F8615D /* SystemConfiguration.framework in Frameworks */,
-				21FD2C631A26500100F8615D /* CoreData.framework in Frameworks */,
 				2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */,
 				2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */,
 				213D0A721A25FF0500FA254B /* CoinsKit.framework in Frameworks */,
-				21FD2C611A264FAC00F8615D /* libGoogleAnalyticsServices.a in Frameworks */,
 				2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */,
 				32A93DCF17EE721A2B4BF684 /* libPods-Coins.a in Frameworks */,
 				213D0A551A25FEE900FA254B /* GradientView.framework in Frameworks */,
@@ -372,8 +358,9 @@
 		21F9D1971876952A00F36678 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				216DF4D21A269D1700622D11 /* amibeingdebugged.c */,
+				216DF4D31A269D1700622D11 /* amibeingdebugged.h */,
 				213D0A541A25FEE900FA254B /* GradientView.framework */,
-				21FD2C531A264FAC00F8615D /* GoogleAnalyticsServicesiOS_3.10 */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -412,36 +399,6 @@
 				21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		21FD2C531A264FAC00F8615D /* GoogleAnalyticsServicesiOS_3.10 */ = {
-			isa = PBXGroup;
-			children = (
-				21FD2C541A264FAC00F8615D /* GoogleAnalytics */,
-				21FD2C601A264FAC00F8615D /* libGoogleAnalyticsServices.a */,
-			);
-			path = GoogleAnalyticsServicesiOS_3.10;
-			sourceTree = "<group>";
-		};
-		21FD2C541A264FAC00F8615D /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				21FD2C551A264FAC00F8615D /* Library */,
-			);
-			path = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
-		21FD2C551A264FAC00F8615D /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				21FD2C561A264FAC00F8615D /* GAI.h */,
-				21FD2C571A264FAC00F8615D /* GAIDictionaryBuilder.h */,
-				21FD2C5C1A264FAC00F8615D /* GAIFields.h */,
-				21FD2C5D1A264FAC00F8615D /* GAILogger.h */,
-				21FD2C5E1A264FAC00F8615D /* GAITrackedViewController.h */,
-				21FD2C5F1A264FAC00F8615D /* GAITracker.h */,
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		9625555A56EE5EEE4742E258 /* Pods */ = {
@@ -682,6 +639,7 @@
 				21104E5C1A253C67009B0D3C /* AppDelegate.swift in Sources */,
 				21FD2C4C1A26085700F8615D /* PullToRefreshView.swift in Sources */,
 				21C14CF419C910F80011C908 /* ValueViewController.swift in Sources */,
+				216DF4D41A269D1700622D11 /* amibeingdebugged.c in Sources */,
 				21C14CEF19C910F80011C908 /* CurrencyPickerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

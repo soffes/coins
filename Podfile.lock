@@ -1,13 +1,18 @@
 PODS:
   - HockeySDK (3.6.1)
+  - Mixpanel (2.6.0):
+    - Mixpanel/MPCategoryHelpers (= 2.6.0)
+  - Mixpanel/MPCategoryHelpers (2.6.0)
   - SSPullToRefresh (1.2.0)
 
 DEPENDENCIES:
   - HockeySDK
+  - Mixpanel
   - SSPullToRefresh
 
 SPEC CHECKSUMS:
   HockeySDK: 15b24068466aa5ee421eed0cc1d58428d698edf6
+  Mixpanel: e919d14f07a34ee01f81f97e535b7a240af2f793
   SSPullToRefresh: bb513a1ccbf08fdd67e4139bc1bbe3fc2ed34228
 
 COCOAPODS: 0.35.0

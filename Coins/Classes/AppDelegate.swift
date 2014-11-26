@@ -24,6 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	// MARK: - Private
 
+	private func configureAnalytics() {
+		if AmIBeingDebugged() {
+			return
+		}
+
+		BITHockeyManager.sharedHockeyManager().configureWithIdentifier("d0d82a50debc14c4fde0cb3430893bd6")
+		BITHockeyManager.sharedHockeyManager().startManager()
+		BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
+
+		let mixpanel = Mixpanel.sharedInstanceWithToken("a487667944fcb1107bcaa025b3ca744c")
+		mixpanel.showNetworkActivityIndicator = false
+		mixpanel.track("App Open")
+	}
+
 	private func configureAppearance() {
 		let navigationBar = UINavigationBar.appearance()
 		navigationBar.barTintColor = CoinsKit.blueColor
@@ -68,12 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	// MARK: - UIApplicationDelegate
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-		BITHockeyManager.sharedHockeyManager().configureWithIdentifier("d0d82a50debc14c4fde0cb3430893bd6")
-		BITHockeyManager.sharedHockeyManager().startManager()
-		BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
-
-		GAI.sharedInstance().trackerWithTrackingId("UA-39514643-5")
-		GAI.sharedInstance().dispatchInterval = 60
+		configureAnalytics()
 
 		application.statusBarStyle = .LightContent
 		application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)

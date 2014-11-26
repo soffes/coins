@@ -3,5 +3,6 @@
 //
 
 #import <HockeySDK/HockeySDK.h>
+#import <Mixpanel/Mixpanel.h>
 #import <SSPullToRefresh/SSPullToRefresh.h>
-#import "GAI.h"
+#include "amibeingdebugged.h"
