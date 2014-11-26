@@ -72,7 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		BITHockeyManager.sharedHockeyManager().startManager()
 		BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
 
-		LLStartSession("987380b36bedad08c8468c1-1e2d6372-7443-11e3-1898-004a77f8b47f")
+		GAI.sharedInstance().trackerWithTrackingId("UA-39514643-5")
+		GAI.sharedInstance().dispatchInterval = 60
 
 		application.statusBarStyle = .LightContent
 		application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)

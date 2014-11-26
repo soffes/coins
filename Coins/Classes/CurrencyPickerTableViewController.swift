@@ -73,7 +73,7 @@ class CurrencyPickerTableViewController: UITableViewController {
 
 		let key = order[indexPath.row]
 
-		cell.textLabel?.text = currencies[key]
+		cell.textLabel.text = currencies[key]
 		cell.detailTextLabel?.text = key
 
 		return cell

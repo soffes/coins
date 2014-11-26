@@ -4,4 +4,4 @@
 
 #import <HockeySDK/HockeySDK.h>
 #import <SSPullToRefresh/SSPullToRefresh.h>
-#import "LocalyticsUtilities.h"
+#import "GAI.h"

@@ -5,7 +5,6 @@ platform :ios, '7.0'
 target 'Coins' do
   pod 'HockeySDK'
   pod 'SSPullToRefresh'
-  pod 'Localytics-iOS-Client'
 end
 
 post_install do |installer|

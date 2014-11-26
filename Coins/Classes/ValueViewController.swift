@@ -146,6 +146,8 @@ class BTCValueViewController: UIViewController, UITextFieldDelegate, SSPullToRef
 		view.addSubview(textField)
 		view.addSubview(doneButton)
 
+		setupViewConstraints()
+
 		let tap = UITapGestureRecognizer(target: self, action: "toggleControls")
 		scrollView.addGestureRecognizer(tap)
 
@@ -166,8 +168,6 @@ class BTCValueViewController: UIViewController, UITextFieldDelegate, SSPullToRef
 		preferencesDidChange()
 
 		setControlsHidden(NSUserDefaults.standardUserDefaults().boolForKey(kBTCControlsHiddenKey), animated: false)
-
-		setupViewConstraints()
 	}
 
 	override func viewWillAppear(animated: Bool) {
@@ -344,7 +344,7 @@ class BTCValueViewController: UIViewController, UITextFieldDelegate, SSPullToRef
 			valueView.conversionRates = conversionRates
 		}
 
-		if textField.editing {
+		if !textField.editing {
 			let number = BTCPreferences.sharedPreferences().objectForKey(kBTCNumberOfCoinsKey).description
 			textField.text = number == "0" ? nil : number
 		}

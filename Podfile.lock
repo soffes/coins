@@ -1,16 +1,13 @@
 PODS:
   - HockeySDK (3.6.1)
-  - Localytics-iOS-Client (2.71.0)
   - SSPullToRefresh (1.2.0)
 
 DEPENDENCIES:
   - HockeySDK
-  - Localytics-iOS-Client
   - SSPullToRefresh
 
 SPEC CHECKSUMS:
   HockeySDK: 15b24068466aa5ee421eed0cc1d58428d698edf6
-  Localytics-iOS-Client: 3553cabdfcd6255364ec9eb3ecfe9ec4f74d7be4
   SSPullToRefresh: bb513a1ccbf08fdd67e4139bc1bbe3fc2ed34228
 
 COCOAPODS: 0.35.0

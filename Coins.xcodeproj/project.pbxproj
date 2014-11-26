@@ -15,8 +15,6 @@
 		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
 		21363FF519C9434A0073FA6C /* BTCTodayValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21363FF419C9434A0073FA6C /* BTCTodayValueView.m */; };
 		213D0A551A25FEE900FA254B /* GradientView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A541A25FEE900FA254B /* GradientView.framework */; };
-		213D0A661A25FF0500FA254B /* CoinsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; };
-		213D0A6F1A25FF0500FA254B /* CoinsKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D0A6E1A25FF0500FA254B /* CoinsKitTests.swift */; };
 		213D0A721A25FF0500FA254B /* CoinsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; };
 		213D0A741A25FF0500FA254B /* CoinsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		213D0A7B1A25FF1000FA254B /* GradientView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A541A25FEE900FA254B /* GradientView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -45,26 +43,16 @@
 		21C14D0919C91A370011C908 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C14D0819C91A370011C908 /* NotificationCenter.framework */; };
 		21C14D1419C91A370011C908 /* Coins Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21C14D0719C91A370011C908 /* Coins Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21C14D2019C91B9F0011C908 /* BTCTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D1D19C91B9F0011C908 /* BTCTodayViewController.m */; };
-		21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */; };
 		21FD2C4C1A26085700F8615D /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD2C4B1A26085700F8615D /* PullToRefreshView.swift */; };
+		21FD2C611A264FAC00F8615D /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C601A264FAC00F8615D /* libGoogleAnalyticsServices.a */; };
+		21FD2C631A26500100F8615D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C621A26500100F8615D /* CoreData.framework */; };
+		21FD2C651A26500A00F8615D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C641A26500A00F8615D /* SystemConfiguration.framework */; };
+		21FD2C671A26500E00F8615D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C661A26500E00F8615D /* libz.dylib */; };
+		21FD2C691A2650E000F8615D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FD2C681A2650E000F8615D /* libsqlite3.dylib */; };
 		32A93DCF17EE721A2B4BF684 /* libPods-Coins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 421E383A04144C6A8624166B /* libPods-Coins.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		213D0A671A25FF0500FA254B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 213D0A5A1A25FF0500FA254B;
-			remoteInfo = CoinsKit;
-		};
-		213D0A691A25FF0500FA254B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2130E1641864AD58006D3470;
-			remoteInfo = Coins;
-		};
 		213D0A701A25FF0500FA254B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
@@ -150,9 +138,6 @@
 		213D0A541A25FEE900FA254B /* GradientView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GradientView.framework; path = ../Carthage.build/iOS/GradientView.framework; sourceTree = "<group>"; };
 		213D0A5B1A25FF0500FA254B /* CoinsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		213D0A5E1A25FF0500FA254B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		213D0A651A25FF0500FA254B /* CoinsKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinsKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		213D0A6D1A25FF0500FA254B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		213D0A6E1A25FF0500FA254B /* CoinsKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsKitTests.swift; sourceTree = "<group>"; };
 		21900F5D1A254DE300C0CA2C /* TickingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickingButton.swift; sourceTree = "<group>"; };
 		21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Coins.swift"; sourceTree = "<group>"; };
 		21B148BA19C92DB200972BEF /* Coins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
@@ -178,9 +163,18 @@
 		21C14D2419C91BBB0011C908 /* BTCValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueView.h; sourceTree = "<group>"; };
 		21C14D2519C91BBB0011C908 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
 		21C14D2C19C91BCA0011C908 /* CoinsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinsKit.h; sourceTree = "<group>"; };
-		21F9D19A1876952A00F36678 /* LocalyticsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsUtilities.h; sourceTree = "<group>"; };
-		21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUtilities.m; sourceTree = "<group>"; };
 		21FD2C4B1A26085700F8615D /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
+		21FD2C561A264FAC00F8615D /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		21FD2C571A264FAC00F8615D /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		21FD2C5C1A264FAC00F8615D /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		21FD2C5D1A264FAC00F8615D /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		21FD2C5E1A264FAC00F8615D /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		21FD2C5F1A264FAC00F8615D /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		21FD2C601A264FAC00F8615D /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		21FD2C621A26500100F8615D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		21FD2C641A26500A00F8615D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		21FD2C661A26500E00F8615D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		21FD2C681A2650E000F8615D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		421E383A04144C6A8624166B /* libPods-Coins.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coins.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C733206B69A4AA88CE1C3A3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BD2968FA93A53EDFA565AD /* Pods-Coins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coins.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coins/Pods-Coins.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,9 +187,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21FD2C691A2650E000F8615D /* libsqlite3.dylib in Frameworks */,
+				21FD2C671A26500E00F8615D /* libz.dylib in Frameworks */,
+				21FD2C651A26500A00F8615D /* SystemConfiguration.framework in Frameworks */,
+				21FD2C631A26500100F8615D /* CoreData.framework in Frameworks */,
 				2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */,
 				2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */,
 				213D0A721A25FF0500FA254B /* CoinsKit.framework in Frameworks */,
+				21FD2C611A264FAC00F8615D /* libGoogleAnalyticsServices.a in Frameworks */,
 				2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */,
 				32A93DCF17EE721A2B4BF684 /* libPods-Coins.a in Frameworks */,
 				213D0A551A25FEE900FA254B /* GradientView.framework in Frameworks */,
@@ -206,14 +205,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		213D0A621A25FF0500FA254B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				213D0A661A25FF0500FA254B /* CoinsKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +226,6 @@
 				21C14CC719C910F80011C908 /* Coins */,
 				21C14D0A19C91A370011C908 /* Coins Today */,
 				21C14D2219C91BBB0011C908 /* CoinsKit */,
-				213D0A6B1A25FF0500FA254B /* CoinsKitTests */,
 				21F9D1971876952A00F36678 /* Vendor */,
 				2130E1671864AD58006D3470 /* Frameworks */,
 				2130E1661864AD58006D3470 /* Products */,
@@ -249,7 +239,6 @@
 				2130E1651864AD58006D3470 /* Coins.app */,
 				21C14D0719C91A370011C908 /* Coins Today.appex */,
 				213D0A5B1A25FF0500FA254B /* CoinsKit.framework */,
-				213D0A651A25FF0500FA254B /* CoinsKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +246,10 @@
 		2130E1671864AD58006D3470 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21FD2C681A2650E000F8615D /* libsqlite3.dylib */,
+				21FD2C661A26500E00F8615D /* libz.dylib */,
+				21FD2C641A26500A00F8615D /* SystemConfiguration.framework */,
+				21FD2C621A26500100F8615D /* CoreData.framework */,
 				2130E1681864AD58006D3470 /* Foundation.framework */,
 				2130E16A1864AD58006D3470 /* CoreGraphics.framework */,
 				2130E16C1864AD58006D3470 /* UIKit.framework */,
@@ -273,23 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				213D0A5E1A25FF0500FA254B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		213D0A6B1A25FF0500FA254B /* CoinsKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				213D0A6E1A25FF0500FA254B /* CoinsKitTests.swift */,
-				213D0A6C1A25FF0500FA254B /* Supporting Files */,
-			);
-			path = CoinsKitTests;
-			sourceTree = "<group>";
-		};
-		213D0A6C1A25FF0500FA254B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				213D0A6D1A25FF0500FA254B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -397,18 +373,9 @@
 			isa = PBXGroup;
 			children = (
 				213D0A541A25FEE900FA254B /* GradientView.framework */,
-				21F9D1991876952A00F36678 /* Localytics */,
+				21FD2C531A264FAC00F8615D /* GoogleAnalyticsServicesiOS_3.10 */,
 			);
 			path = Vendor;
-			sourceTree = "<group>";
-		};
-		21F9D1991876952A00F36678 /* Localytics */ = {
-			isa = PBXGroup;
-			children = (
-				21F9D19A1876952A00F36678 /* LocalyticsUtilities.h */,
-				21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */,
-			);
-			path = Localytics;
 			sourceTree = "<group>";
 		};
 		21FD2C4D1A2619E100F8615D /* Application */ = {
@@ -445,6 +412,36 @@
 				21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		21FD2C531A264FAC00F8615D /* GoogleAnalyticsServicesiOS_3.10 */ = {
+			isa = PBXGroup;
+			children = (
+				21FD2C541A264FAC00F8615D /* GoogleAnalytics */,
+				21FD2C601A264FAC00F8615D /* libGoogleAnalyticsServices.a */,
+			);
+			path = GoogleAnalyticsServicesiOS_3.10;
+			sourceTree = "<group>";
+		};
+		21FD2C541A264FAC00F8615D /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				21FD2C551A264FAC00F8615D /* Library */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		21FD2C551A264FAC00F8615D /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				21FD2C561A264FAC00F8615D /* GAI.h */,
+				21FD2C571A264FAC00F8615D /* GAIDictionaryBuilder.h */,
+				21FD2C5C1A264FAC00F8615D /* GAIFields.h */,
+				21FD2C5D1A264FAC00F8615D /* GAILogger.h */,
+				21FD2C5E1A264FAC00F8615D /* GAITrackedViewController.h */,
+				21FD2C5F1A264FAC00F8615D /* GAITracker.h */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		9625555A56EE5EEE4742E258 /* Pods */ = {
@@ -518,25 +515,6 @@
 			productReference = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		213D0A641A25FF0500FA254B /* CoinsKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 213D0A781A25FF0500FA254B /* Build configuration list for PBXNativeTarget "CoinsKitTests" */;
-			buildPhases = (
-				213D0A611A25FF0500FA254B /* Sources */,
-				213D0A621A25FF0500FA254B /* Frameworks */,
-				213D0A631A25FF0500FA254B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				213D0A681A25FF0500FA254B /* PBXTargetDependency */,
-				213D0A6A1A25FF0500FA254B /* PBXTargetDependency */,
-			);
-			name = CoinsKitTests;
-			productName = CoinsKitTests;
-			productReference = 213D0A651A25FF0500FA254B /* CoinsKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		21C14D0619C91A370011C908 /* Coins Today */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21C14D1719C91A370011C908 /* Build configuration list for PBXNativeTarget "Coins Today" */;
@@ -584,10 +562,6 @@
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = UP9C8XM22A;
 					};
-					213D0A641A25FF0500FA254B = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 2130E1641864AD58006D3470;
-					};
 					21C14D0619C91A370011C908 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = UP9C8XM22A;
@@ -617,7 +591,6 @@
 				2130E1641864AD58006D3470 /* Coins */,
 				21C14D0619C91A370011C908 /* Coins Today */,
 				213D0A5A1A25FF0500FA254B /* CoinsKit */,
-				213D0A641A25FF0500FA254B /* CoinsKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -635,13 +608,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		213D0A591A25FF0500FA254B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		213D0A631A25FF0500FA254B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -717,7 +683,6 @@
 				21FD2C4C1A26085700F8615D /* PullToRefreshView.swift in Sources */,
 				21C14CF419C910F80011C908 /* ValueViewController.swift in Sources */,
 				21C14CEF19C910F80011C908 /* CurrencyPickerTableViewController.swift in Sources */,
-				21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,14 +699,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		213D0A611A25FF0500FA254B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				213D0A6F1A25FF0500FA254B /* CoinsKitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		21C14D0319C91A370011C908 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -754,16 +711,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		213D0A681A25FF0500FA254B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 213D0A5A1A25FF0500FA254B /* CoinsKit */;
-			targetProxy = 213D0A671A25FF0500FA254B /* PBXContainerItemProxy */;
-		};
-		213D0A6A1A25FF0500FA254B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2130E1641864AD58006D3470 /* Coins */;
-			targetProxy = 213D0A691A25FF0500FA254B /* PBXContainerItemProxy */;
-		};
 		213D0A711A25FF0500FA254B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 213D0A5A1A25FF0500FA254B /* CoinsKit */;
@@ -887,6 +834,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/GoogleAnalyticsServicesiOS_3.10",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Coins/Other Sources/Coins-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -902,7 +853,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Coins/Resources/Coins.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -911,6 +862,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/GoogleAnalyticsServicesiOS_3.10",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Coins/Other Sources/Coins-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
@@ -922,7 +877,6 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -936,7 +890,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = CoinsKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -956,7 +909,6 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -966,7 +918,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = CoinsKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -977,48 +928,6 @@
 					"-Weverything",
 					"-Wno-missing-variable-declarations",
 				);
-			};
-			name = Release;
-		};
-		213D0A791A25FF0500FA254B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = CoinsKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
-			};
-			name = Debug;
-		};
-		213D0A7A1A25FF0500FA254B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = CoinsKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
 			};
 			name = Release;
 		};
@@ -1048,7 +957,7 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Coins Today/Resources/Coins Today.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "$(SRCROOT)/Coins Today/Resources/Info.plist";
@@ -1086,15 +995,6 @@
 			buildConfigurations = (
 				213D0A761A25FF0500FA254B /* Debug */,
 				213D0A771A25FF0500FA254B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		213D0A781A25FF0500FA254B /* Build configuration list for PBXNativeTarget "CoinsKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				213D0A791A25FF0500FA254B /* Debug */,
-				213D0A7A1A25FF0500FA254B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
