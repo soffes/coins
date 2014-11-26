@@ -3,6 +3,5 @@
 //
 
 #import <HockeySDK/HockeySDK.h>
-
-#import "BTCValueViewController.h"
-#import "CoinsKit.h"
+#import <SSPullToRefresh/SSPullToRefresh.h>
+#import "LocalyticsUtilities.h"

@@ -7,16 +7,9 @@
 //
 
 import UIKit
+import CoinsKit
 
 class TickingButton: UIButton {
-
-//	@property (nonatomic, readwrite, getter = isTicking) BOOL ticking;
-//	@property (nonatomic) NSTimer *timer;
-//	@property (nonatomic) NSDate *date;
-//	@property (nonatomic) NSString *format;
-//
-//	- (void)startTicking;
-//	- (void)stopTicking;
 
 	// MARK: - Properties
 

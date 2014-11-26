@@ -8,26 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		21104E5C1A253C67009B0D3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21104E5B1A253C67009B0D3C /* AppDelegate.swift */; };
-		21104E611A253E3F009B0D3C /* CoinsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21104E601A253E3F009B0D3C /* CoinsKit.swift */; };
-		21104E621A253EAE009B0D3C /* CoinsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21104E601A253E3F009B0D3C /* CoinsKit.swift */; };
 		21104E641A2541F6009B0D3C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21104E631A2541F6009B0D3C /* TableViewCell.swift */; };
 		21104E661A25441B009B0D3C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21104E651A25441B009B0D3C /* TextField.swift */; };
 		2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E1681864AD58006D3470 /* Foundation.framework */; };
 		2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16A1864AD58006D3470 /* CoreGraphics.framework */; };
 		2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2130E16C1864AD58006D3470 /* UIKit.framework */; };
 		21363FF519C9434A0073FA6C /* BTCTodayValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21363FF419C9434A0073FA6C /* BTCTodayValueView.m */; };
-		21363FF819C955170073FA6C /* BTCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 21363FF719C955170073FA6C /* BTCPreferences.m */; };
-		21363FF919C957650073FA6C /* BTCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 21363FF719C955170073FA6C /* BTCPreferences.m */; };
+		213D0A551A25FEE900FA254B /* GradientView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A541A25FEE900FA254B /* GradientView.framework */; };
+		213D0A661A25FF0500FA254B /* CoinsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; };
+		213D0A6F1A25FF0500FA254B /* CoinsKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213D0A6E1A25FF0500FA254B /* CoinsKitTests.swift */; };
+		213D0A721A25FF0500FA254B /* CoinsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; };
+		213D0A741A25FF0500FA254B /* CoinsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		213D0A7B1A25FF1000FA254B /* GradientView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A541A25FEE900FA254B /* GradientView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		213D0A7C1A25FF4E00FA254B /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */; };
+		213D0A7D1A25FF4E00FA254B /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2519C91BBB0011C908 /* BTCValueView.m */; };
+		213D0A7E1A25FF4E00FA254B /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103ED19C91EE700CC5F36 /* BTCDefines.m */; };
+		213D0A801A25FF4E00FA254B /* NSUserDefaults+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */; };
+		213D0A811A25FF4E00FA254B /* BTCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 21363FF719C955170073FA6C /* BTCPreferences.m */; };
+		213D0A821A25FF5800FA254B /* CoinsKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C14D2C19C91BCA0011C908 /* CoinsKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		213D0A831A25FF5800FA254B /* BTCConversionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C103F019C921DD00CC5F36 /* BTCConversionProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		213D0A841A25FF5800FA254B /* BTCValueView.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C14D2419C91BBB0011C908 /* BTCValueView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		213D0A851A25FF5800FA254B /* BTCDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C103EC19C91EE700CC5F36 /* BTCDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		213D0A871A25FF5800FA254B /* NSUserDefaults+Coins.h in Headers */ = {isa = PBXBuildFile; fileRef = 21C103E819C91E4000CC5F36 /* NSUserDefaults+Coins.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		213D0A881A25FF5800FA254B /* BTCPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 21363FF619C955170073FA6C /* BTCPreferences.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		213D0A891A25FF5D00FA254B /* CoinsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21104E601A253E3F009B0D3C /* CoinsKit.swift */; };
+		213D0A8A1A25FFFD00FA254B /* CoinsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; };
+		213D0A8F1A26002D00FA254B /* CoinsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21900F5E1A254DE300C0CA2C /* TickingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21900F5D1A254DE300C0CA2C /* TickingButton.swift */; };
 		21900F601A25506C00C0CA2C /* NSDate+Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */; };
-		21C103EA19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */; };
-		21C103EB19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */; };
-		21C103EE19C91EE700CC5F36 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103ED19C91EE700CC5F36 /* BTCDefines.m */; };
-		21C103EF19C91EE700CC5F36 /* BTCDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103ED19C91EE700CC5F36 /* BTCDefines.m */; };
-		21C103F219C921DD00CC5F36 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */; };
-		21C103F319C921DD00CC5F36 /* BTCConversionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */; };
 		21C14CEF19C910F80011C908 /* CurrencyPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CCE19C910F80011C908 /* CurrencyPickerTableViewController.swift */; };
-		21C14CF419C910F80011C908 /* BTCValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD819C910F80011C908 /* BTCValueViewController.m */; };
+		21C14CF419C910F80011C908 /* ValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C14CD819C910F80011C908 /* ValueViewController.swift */; };
 		21C14CFB19C910F80011C908 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE519C910F80011C908 /* currencies.json */; };
 		21C14CFC19C910F80011C908 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE619C910F80011C908 /* Localizable.strings */; };
 		21C14CFD19C910F80011C908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C14CE819C910F80011C908 /* Images.xcassets */; };
@@ -35,15 +45,40 @@
 		21C14D0919C91A370011C908 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C14D0819C91A370011C908 /* NotificationCenter.framework */; };
 		21C14D1419C91A370011C908 /* Coins Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 21C14D0719C91A370011C908 /* Coins Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		21C14D2019C91B9F0011C908 /* BTCTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D1D19C91B9F0011C908 /* BTCTodayViewController.m */; };
-		21C14D2819C91BBB0011C908 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2519C91BBB0011C908 /* BTCValueView.m */; };
-		21C14D2919C91BBB0011C908 /* BTCValueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2519C91BBB0011C908 /* BTCValueView.m */; };
-		21C14D2A19C91BBB0011C908 /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2719C91BBB0011C908 /* UIColor+Coins.m */; };
-		21C14D2B19C91BBB0011C908 /* UIColor+Coins.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C14D2719C91BBB0011C908 /* UIColor+Coins.m */; };
 		21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */; };
+		21FD2C4C1A26085700F8615D /* PullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD2C4B1A26085700F8615D /* PullToRefreshView.swift */; };
 		32A93DCF17EE721A2B4BF684 /* libPods-Coins.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 421E383A04144C6A8624166B /* libPods-Coins.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		213D0A671A25FF0500FA254B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 213D0A5A1A25FF0500FA254B;
+			remoteInfo = CoinsKit;
+		};
+		213D0A691A25FF0500FA254B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2130E1641864AD58006D3470;
+			remoteInfo = Coins;
+		};
+		213D0A701A25FF0500FA254B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 213D0A5A1A25FF0500FA254B;
+			remoteInfo = CoinsKit;
+		};
+		213D0A8B1A26000200FA254B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 213D0A5A1A25FF0500FA254B;
+			remoteInfo = CoinsKit;
+		};
 		21C14D1219C91A370011C908 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2130E15D1864AD57006D3470 /* Project object */;
@@ -61,6 +96,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		213D0A731A25FF0500FA254B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				213D0A741A25FF0500FA254B /* CoinsKit.framework in Embed Frameworks */,
+				213D0A7B1A25FF1000FA254B /* GradientView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213D0A8D1A26001400FA254B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				213D0A8F1A26002D00FA254B /* CoinsKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		21C14D1A19C91A370011C908 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,6 +147,12 @@
 		21363FF419C9434A0073FA6C /* BTCTodayValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCTodayValueView.m; sourceTree = "<group>"; };
 		21363FF619C955170073FA6C /* BTCPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCPreferences.h; sourceTree = "<group>"; };
 		21363FF719C955170073FA6C /* BTCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCPreferences.m; sourceTree = "<group>"; };
+		213D0A541A25FEE900FA254B /* GradientView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GradientView.framework; path = ../Carthage.build/iOS/GradientView.framework; sourceTree = "<group>"; };
+		213D0A5B1A25FF0500FA254B /* CoinsKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		213D0A5E1A25FF0500FA254B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		213D0A651A25FF0500FA254B /* CoinsKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinsKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		213D0A6D1A25FF0500FA254B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		213D0A6E1A25FF0500FA254B /* CoinsKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsKitTests.swift; sourceTree = "<group>"; };
 		21900F5D1A254DE300C0CA2C /* TickingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickingButton.swift; sourceTree = "<group>"; };
 		21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Coins.swift"; sourceTree = "<group>"; };
 		21B148BA19C92DB200972BEF /* Coins.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Coins.entitlements; sourceTree = "<group>"; };
@@ -100,9 +164,7 @@
 		21C103F019C921DD00CC5F36 /* BTCConversionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCConversionProvider.h; sourceTree = "<group>"; };
 		21C103F119C921DD00CC5F36 /* BTCConversionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCConversionProvider.m; sourceTree = "<group>"; };
 		21C14CCE19C910F80011C908 /* CurrencyPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyPickerTableViewController.swift; sourceTree = "<group>"; };
-		21C14CD719C910F80011C908 /* BTCValueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueViewController.h; sourceTree = "<group>"; };
-		21C14CD819C910F80011C908 /* BTCValueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueViewController.m; sourceTree = "<group>"; };
-		21C14CE019C910F80011C908 /* Coins-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Coins-Prefix.pch"; sourceTree = "<group>"; };
+		21C14CD819C910F80011C908 /* ValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueViewController.swift; sourceTree = "<group>"; };
 		21C14CE319C910F80011C908 /* Coins-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Coins-Info.plist"; sourceTree = "<group>"; };
 		21C14CE519C910F80011C908 /* currencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
 		21C14CE719C910F80011C908 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -115,12 +177,10 @@
 		21C14D1F19C91B9F0011C908 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C14D2419C91BBB0011C908 /* BTCValueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCValueView.h; sourceTree = "<group>"; };
 		21C14D2519C91BBB0011C908 /* BTCValueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCValueView.m; sourceTree = "<group>"; };
-		21C14D2619C91BBB0011C908 /* UIColor+Coins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Coins.h"; sourceTree = "<group>"; };
-		21C14D2719C91BBB0011C908 /* UIColor+Coins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Coins.m"; sourceTree = "<group>"; };
 		21C14D2C19C91BCA0011C908 /* CoinsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinsKit.h; sourceTree = "<group>"; };
-		21F9D1981876952A00F36678 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		21F9D19A1876952A00F36678 /* LocalyticsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsUtilities.h; sourceTree = "<group>"; };
 		21F9D19B1876952A00F36678 /* LocalyticsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUtilities.m; sourceTree = "<group>"; };
+		21FD2C4B1A26085700F8615D /* PullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshView.swift; sourceTree = "<group>"; };
 		421E383A04144C6A8624166B /* libPods-Coins.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coins.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C733206B69A4AA88CE1C3A3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BD2968FA93A53EDFA565AD /* Pods-Coins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coins.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coins/Pods-Coins.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,8 +195,25 @@
 			files = (
 				2130E16B1864AD58006D3470 /* CoreGraphics.framework in Frameworks */,
 				2130E16D1864AD58006D3470 /* UIKit.framework in Frameworks */,
+				213D0A721A25FF0500FA254B /* CoinsKit.framework in Frameworks */,
 				2130E1691864AD58006D3470 /* Foundation.framework in Frameworks */,
 				32A93DCF17EE721A2B4BF684 /* libPods-Coins.a in Frameworks */,
+				213D0A551A25FEE900FA254B /* GradientView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213D0A571A25FF0500FA254B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213D0A621A25FF0500FA254B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213D0A661A25FF0500FA254B /* CoinsKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213D0A8A1A25FFFD00FA254B /* CoinsKit.framework in Frameworks */,
 				21C14D0919C91A370011C908 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +235,7 @@
 				21C14CC719C910F80011C908 /* Coins */,
 				21C14D0A19C91A370011C908 /* Coins Today */,
 				21C14D2219C91BBB0011C908 /* CoinsKit */,
+				213D0A6B1A25FF0500FA254B /* CoinsKitTests */,
 				21F9D1971876952A00F36678 /* Vendor */,
 				2130E1671864AD58006D3470 /* Frameworks */,
 				2130E1661864AD58006D3470 /* Products */,
@@ -169,6 +248,8 @@
 			children = (
 				2130E1651864AD58006D3470 /* Coins.app */,
 				21C14D0719C91A370011C908 /* Coins Today.appex */,
+				213D0A5B1A25FF0500FA254B /* CoinsKit.framework */,
+				213D0A651A25FF0500FA254B /* CoinsKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +269,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		213D0A5D1A25FF0500FA254B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				213D0A5E1A25FF0500FA254B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		213D0A6B1A25FF0500FA254B /* CoinsKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				213D0A6E1A25FF0500FA254B /* CoinsKitTests.swift */,
+				213D0A6C1A25FF0500FA254B /* Supporting Files */,
+			);
+			path = CoinsKitTests;
+			sourceTree = "<group>";
+		};
+		213D0A6C1A25FF0500FA254B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				213D0A6D1A25FF0500FA254B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		21C14CC719C910F80011C908 /* Coins */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,14 +307,10 @@
 		21C14CC819C910F80011C908 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				21104E5B1A253C67009B0D3C /* AppDelegate.swift */,
-				21C14CCE19C910F80011C908 /* CurrencyPickerTableViewController.swift */,
-				21900F5D1A254DE300C0CA2C /* TickingButton.swift */,
-				21C14CD719C910F80011C908 /* BTCValueViewController.h */,
-				21C14CD819C910F80011C908 /* BTCValueViewController.m */,
-				21104E651A25441B009B0D3C /* TextField.swift */,
-				21104E631A2541F6009B0D3C /* TableViewCell.swift */,
-				21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */,
+				21FD2C4D1A2619E100F8615D /* Application */,
+				21FD2C4E1A2619E900F8615D /* View Controllers */,
+				21FD2C4F1A2619F400F8615D /* Views */,
+				21FD2C501A2619F700F8615D /* Extensions */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -217,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				21104E5D1A253D3C009B0D3C /* Coins-Bridging-Header.h */,
-				21C14CE019C910F80011C908 /* Coins-Prefix.pch */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
@@ -269,6 +370,7 @@
 			children = (
 				21104E601A253E3F009B0D3C /* CoinsKit.swift */,
 				21C14D2319C91BBB0011C908 /* Classes */,
+				213D0A5D1A25FF0500FA254B /* Supporting Files */,
 			);
 			path = CoinsKit;
 			sourceTree = "<group>";
@@ -283,8 +385,6 @@
 				21C14D2519C91BBB0011C908 /* BTCValueView.m */,
 				21C103EC19C91EE700CC5F36 /* BTCDefines.h */,
 				21C103ED19C91EE700CC5F36 /* BTCDefines.m */,
-				21C14D2619C91BBB0011C908 /* UIColor+Coins.h */,
-				21C14D2719C91BBB0011C908 /* UIColor+Coins.m */,
 				21C103E819C91E4000CC5F36 /* NSUserDefaults+Coins.h */,
 				21C103E919C91E4000CC5F36 /* NSUserDefaults+Coins.m */,
 				21363FF619C955170073FA6C /* BTCPreferences.h */,
@@ -296,7 +396,7 @@
 		21F9D1971876952A00F36678 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				21F9D1981876952A00F36678 /* Crashlytics.framework */,
+				213D0A541A25FEE900FA254B /* GradientView.framework */,
 				21F9D1991876952A00F36678 /* Localytics */,
 			);
 			path = Vendor;
@@ -311,6 +411,42 @@
 			path = Localytics;
 			sourceTree = "<group>";
 		};
+		21FD2C4D1A2619E100F8615D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				21104E5B1A253C67009B0D3C /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		21FD2C4E1A2619E900F8615D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21C14CD819C910F80011C908 /* ValueViewController.swift */,
+				21C14CCE19C910F80011C908 /* CurrencyPickerTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		21FD2C4F1A2619F400F8615D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21900F5D1A254DE300C0CA2C /* TickingButton.swift */,
+				21104E651A25441B009B0D3C /* TextField.swift */,
+				21104E631A2541F6009B0D3C /* TableViewCell.swift */,
+				21FD2C4B1A26085700F8615D /* PullToRefreshView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		21FD2C501A2619F700F8615D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				21900F5F1A25506C00C0CA2C /* NSDate+Coins.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		9625555A56EE5EEE4742E258 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +457,22 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		213D0A581A25FF0500FA254B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213D0A871A25FF5800FA254B /* NSUserDefaults+Coins.h in Headers */,
+				213D0A821A25FF5800FA254B /* CoinsKit.h in Headers */,
+				213D0A851A25FF5800FA254B /* BTCDefines.h in Headers */,
+				213D0A831A25FF5800FA254B /* BTCConversionProvider.h in Headers */,
+				213D0A881A25FF5800FA254B /* BTCPreferences.h in Headers */,
+				213D0A841A25FF5800FA254B /* BTCValueView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2130E1641864AD58006D3470 /* Coins */ = {
@@ -334,17 +486,56 @@
 				21C14D0219C9196B0011C908 /* Hockey */,
 				21C14D1A19C91A370011C908 /* Embed App Extensions */,
 				0B7B534546DA5F32F0701796 /* Copy Pods Resources */,
+				213D0A731A25FF0500FA254B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				21C14D1319C91A370011C908 /* PBXTargetDependency */,
 				21C14D1619C91A370011C908 /* PBXTargetDependency */,
+				213D0A711A25FF0500FA254B /* PBXTargetDependency */,
 			);
 			name = Coins;
 			productName = Coins;
 			productReference = 2130E1651864AD58006D3470 /* Coins.app */;
 			productType = "com.apple.product-type.application";
+		};
+		213D0A5A1A25FF0500FA254B /* CoinsKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213D0A751A25FF0500FA254B /* Build configuration list for PBXNativeTarget "CoinsKit" */;
+			buildPhases = (
+				213D0A561A25FF0500FA254B /* Sources */,
+				213D0A571A25FF0500FA254B /* Frameworks */,
+				213D0A581A25FF0500FA254B /* Headers */,
+				213D0A591A25FF0500FA254B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoinsKit;
+			productName = CoinsKit;
+			productReference = 213D0A5B1A25FF0500FA254B /* CoinsKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		213D0A641A25FF0500FA254B /* CoinsKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213D0A781A25FF0500FA254B /* Build configuration list for PBXNativeTarget "CoinsKitTests" */;
+			buildPhases = (
+				213D0A611A25FF0500FA254B /* Sources */,
+				213D0A621A25FF0500FA254B /* Frameworks */,
+				213D0A631A25FF0500FA254B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				213D0A681A25FF0500FA254B /* PBXTargetDependency */,
+				213D0A6A1A25FF0500FA254B /* PBXTargetDependency */,
+			);
+			name = CoinsKitTests;
+			productName = CoinsKitTests;
+			productReference = 213D0A651A25FF0500FA254B /* CoinsKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		21C14D0619C91A370011C908 /* Coins Today */ = {
 			isa = PBXNativeTarget;
@@ -353,10 +544,12 @@
 				21C14D0319C91A370011C908 /* Sources */,
 				21C14D0419C91A370011C908 /* Frameworks */,
 				21C14D0519C91A370011C908 /* Resources */,
+				213D0A8D1A26001400FA254B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				213D0A8C1A26000200FA254B /* PBXTargetDependency */,
 			);
 			name = "Coins Today";
 			productName = "Coins Today";
@@ -387,6 +580,14 @@
 							};
 						};
 					};
+					213D0A5A1A25FF0500FA254B = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = UP9C8XM22A;
+					};
+					213D0A641A25FF0500FA254B = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 2130E1641864AD58006D3470;
+					};
 					21C14D0619C91A370011C908 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = UP9C8XM22A;
@@ -415,6 +616,8 @@
 			targets = (
 				2130E1641864AD58006D3470 /* Coins */,
 				21C14D0619C91A370011C908 /* Coins Today */,
+				213D0A5A1A25FF0500FA254B /* CoinsKit */,
+				213D0A641A25FF0500FA254B /* CoinsKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -428,6 +631,20 @@
 				21C14CFC19C910F80011C908 /* Localizable.strings in Resources */,
 				21C14CFE19C910F80011C908 /* Settings.bundle in Resources */,
 				21C14CFB19C910F80011C908 /* currencies.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213D0A591A25FF0500FA254B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213D0A631A25FF0500FA254B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,21 +709,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21363FF919C957650073FA6C /* BTCPreferences.m in Sources */,
 				21104E641A2541F6009B0D3C /* TableViewCell.swift in Sources */,
 				21900F5E1A254DE300C0CA2C /* TickingButton.swift in Sources */,
 				21900F601A25506C00C0CA2C /* NSDate+Coins.swift in Sources */,
 				21104E661A25441B009B0D3C /* TextField.swift in Sources */,
-				21C103F219C921DD00CC5F36 /* BTCConversionProvider.m in Sources */,
-				21C14D2819C91BBB0011C908 /* BTCValueView.m in Sources */,
-				21C14D2A19C91BBB0011C908 /* UIColor+Coins.m in Sources */,
 				21104E5C1A253C67009B0D3C /* AppDelegate.swift in Sources */,
-				21C103EA19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */,
-				21C14CF419C910F80011C908 /* BTCValueViewController.m in Sources */,
-				21C103EE19C91EE700CC5F36 /* BTCDefines.m in Sources */,
+				21FD2C4C1A26085700F8615D /* PullToRefreshView.swift in Sources */,
+				21C14CF419C910F80011C908 /* ValueViewController.swift in Sources */,
 				21C14CEF19C910F80011C908 /* CurrencyPickerTableViewController.swift in Sources */,
 				21F9D19D1876952A00F36678 /* LocalyticsUtilities.m in Sources */,
-				21104E611A253E3F009B0D3C /* CoinsKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213D0A561A25FF0500FA254B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213D0A7D1A25FF4E00FA254B /* BTCValueView.m in Sources */,
+				213D0A891A25FF5D00FA254B /* CoinsKit.swift in Sources */,
+				213D0A7C1A25FF4E00FA254B /* BTCConversionProvider.m in Sources */,
+				213D0A7E1A25FF4E00FA254B /* BTCDefines.m in Sources */,
+				213D0A811A25FF4E00FA254B /* BTCPreferences.m in Sources */,
+				213D0A801A25FF4E00FA254B /* NSUserDefaults+Coins.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		213D0A611A25FF0500FA254B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213D0A6F1A25FF0500FA254B /* CoinsKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,21 +746,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C103EB19C91E4000CC5F36 /* NSUserDefaults+Coins.m in Sources */,
 				21363FF519C9434A0073FA6C /* BTCTodayValueView.m in Sources */,
-				21C14D2919C91BBB0011C908 /* BTCValueView.m in Sources */,
-				21C14D2B19C91BBB0011C908 /* UIColor+Coins.m in Sources */,
 				21C14D2019C91B9F0011C908 /* BTCTodayViewController.m in Sources */,
-				21104E621A253EAE009B0D3C /* CoinsKit.swift in Sources */,
-				21C103F319C921DD00CC5F36 /* BTCConversionProvider.m in Sources */,
-				21363FF819C955170073FA6C /* BTCPreferences.m in Sources */,
-				21C103EF19C91EE700CC5F36 /* BTCDefines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		213D0A681A25FF0500FA254B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 213D0A5A1A25FF0500FA254B /* CoinsKit */;
+			targetProxy = 213D0A671A25FF0500FA254B /* PBXContainerItemProxy */;
+		};
+		213D0A6A1A25FF0500FA254B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2130E1641864AD58006D3470 /* Coins */;
+			targetProxy = 213D0A691A25FF0500FA254B /* PBXContainerItemProxy */;
+		};
+		213D0A711A25FF0500FA254B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 213D0A5A1A25FF0500FA254B /* CoinsKit */;
+			targetProxy = 213D0A701A25FF0500FA254B /* PBXContainerItemProxy */;
+		};
+		213D0A8C1A26000200FA254B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 213D0A5A1A25FF0500FA254B /* CoinsKit */;
+			targetProxy = 213D0A8B1A26000200FA254B /* PBXContainerItemProxy */;
+		};
 		21C14D1319C91A370011C908 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 21C14D0619C91A370011C908 /* Coins Today */;
@@ -584,7 +829,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -617,7 +862,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -638,9 +883,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Vendor",
+					"$(PROJECT_DIR)/Carthage.build/iOS",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -663,14 +907,118 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Vendor",
+					"$(PROJECT_DIR)/Carthage.build/iOS",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Coins/Other Sources/Coins-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coins/Resources/Coins-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Coins/Other Sources/Coins-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		213D0A761A25FF0500FA254B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CoinsKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-missing-variable-declarations",
+				);
+			};
+			name = Debug;
+		};
+		213D0A771A25FF0500FA254B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CoinsKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-missing-variable-declarations",
+				);
+			};
+			name = Release;
+		};
+		213D0A791A25FF0500FA254B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CoinsKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
+			};
+			name = Debug;
+		};
+		213D0A7A1A25FF0500FA254B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = CoinsKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coins.app/Coins";
 			};
 			name = Release;
 		};
@@ -729,6 +1077,24 @@
 			buildConfigurations = (
 				2130E1921864AD58006D3470 /* Debug */,
 				2130E1931864AD58006D3470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213D0A751A25FF0500FA254B /* Build configuration list for PBXNativeTarget "CoinsKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213D0A761A25FF0500FA254B /* Debug */,
+				213D0A771A25FF0500FA254B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213D0A781A25FF0500FA254B /* Build configuration list for PBXNativeTarget "CoinsKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213D0A791A25FF0500FA254B /* Debug */,
+				213D0A7A1A25FF0500FA254B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

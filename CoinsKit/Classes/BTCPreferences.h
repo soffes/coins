@@ -14,6 +14,7 @@
 
 - (void)registerDefaults:(NSDictionary *)defaults;
 - (id)objectForKey:(NSString *)key;
+- (double)doubleForKey:(NSString *)key;
 - (void)setObject:(id<NSCoding>)object forKey:(NSString *)key;
 - (void)removeObjectForKey:(NSString *)key;
 

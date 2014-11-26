@@ -11,5 +11,4 @@
 #import "BTCValueView.h"
 #import "BTCDefines.h"
 
-#import "UIColor+Coins.h"
 #import "NSUserDefaults+Coins.h"

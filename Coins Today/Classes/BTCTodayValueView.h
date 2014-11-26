@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Nothing Magical, Inc. All rights reserved.
 //
 
-#import "BTCValueView.h"
+@import CoinsKit;
 
 @interface BTCTodayValueView : BTCValueView
 @end

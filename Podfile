@@ -4,7 +4,6 @@ platform :ios, '7.0'
 
 target 'Coins' do
   pod 'HockeySDK'
-  pod 'SAMGradientView'
   pod 'SSPullToRefresh'
   pod 'Localytics-iOS-Client'
 end

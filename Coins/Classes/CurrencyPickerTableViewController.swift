@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoinsKit
 
 class CurrencyPickerTableViewController: UITableViewController {
 

@@ -9,7 +9,7 @@
 #import "BTCTodayViewController.h"
 #import "BTCTodayValueView.h"
 
-#import "CoinsKit.h"
+@import CoinsKit;
 
 @import NotificationCenter;
 

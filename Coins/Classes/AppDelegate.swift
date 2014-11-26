@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoinsKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -71,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		BITHockeyManager.sharedHockeyManager().startManager()
 		BITHockeyManager.sharedHockeyManager().authenticator.authenticateInstallation()
 
-//		LLStartSession("987380b36bedad08c8468c1-1e2d6372-7443-11e3-1898-004a77f8b47f")
+		LLStartSession("987380b36bedad08c8468c1-1e2d6372-7443-11e3-1898-004a77f8b47f")
 
 		application.statusBarStyle = .LightContent
 		application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)

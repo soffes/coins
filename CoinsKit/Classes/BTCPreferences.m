@@ -33,6 +33,11 @@
 }
 
 
+- (double)doubleForKey:(NSString *)key {
+	return [[self objectForKey:key] doubleValue];
+}
+
+
 - (void)setObject:(id<NSCoding>)object forKey:(NSString *)key {
 	[[self defaultsStore] setObject:object forKey:key];
 	[[self iCloudStore] setObject:object forKey:key];

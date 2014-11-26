@@ -10,8 +10,6 @@
 #import "BTCPreferences.h"
 #import "BTCDefines.h"
 
-#import "UIColor+Coins.h"
-
 @implementation BTCValueView
 
 #pragma mark - Accessors
