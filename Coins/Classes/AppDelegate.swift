@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Mixpanel
 		let mixpanel = Mixpanel.sharedInstanceWithToken("a487667944fcb1107bcaa025b3ca744c")
 		mixpanel.showNetworkActivityIndicator = false
-		mixpanel.track("Launch")
 #endif
 	}
 
@@ -109,6 +108,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		BTCConversionProvider.sharedProvider().getConversionRates { conversionRate, result in
 			completionHandler(result)
 		}
+	}
+
+	func applicationDidBecomeActive(application: UIApplication) {
+#if !DEBUG
+	Mixpanel.sharedInstance().track("Active")
+#endif
 	}
 
 	func applicationWillResignActive(application: UIApplication) {
