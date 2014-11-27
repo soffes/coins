@@ -2,6 +2,12 @@
 
 Version history for [Coins for iOS](http://getcoinsapp.com).
 
+## Version 1.1.3
+*Unrelased*
+
+* Fix a bug causing your bitcoin quanity to get reset for some users
+* Other improvements
+
 
 ## Version 1.1.2
 *Released October 23, 2014*

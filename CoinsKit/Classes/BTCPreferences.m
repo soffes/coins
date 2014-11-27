@@ -26,10 +26,10 @@
 
 - (id)objectForKey:(NSString *)key {
 	id value = [[self defaultsStore] objectForKey:key];
-	if (!value) {
-		value = self.defaults[key];
+	if (value) {
+		return value;
 	}
-	return value;
+	return self.defaults[key];
 }
 
 
@@ -96,9 +96,23 @@
 
 
 - (void)iCloudStoreDidChange:(NSNotification *)notification {
-	NSDictionary *iCloud = [[self iCloudStore] dictionaryRepresentation];
-	for (NSString *key in iCloud) {
-		[[self defaultsStore] setObject:iCloud[key] forKey:key];
+	NSDictionary *userInfo = [notification userInfo];
+	NSNumber *changeReason = [userInfo objectForKey:NSUbiquitousKeyValueStoreChangeReasonKey];
+	NSInteger reason = -1;
+
+	if (!changeReason) {
+		return;
+	} else {
+		reason = [changeReason integerValue];
+	}
+
+	if (reason == NSUbiquitousKeyValueStoreServerChange || reason == NSUbiquitousKeyValueStoreInitialSyncChange) {
+		NSArray *changedKeys = [userInfo objectForKey:NSUbiquitousKeyValueStoreChangedKeysKey];
+		NSUbiquitousKeyValueStore *store = [self iCloudStore];
+
+		for (NSString *key in changedKeys) {
+			[[self defaultsStore] setObject:[store objectForKey:key] forKey:key];
+		}
 	}
 }
 
