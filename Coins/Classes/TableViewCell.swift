@@ -16,10 +16,10 @@ class TableViewCell: UITableViewCell {
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		super.init(style: .Value1, reuseIdentifier: reuseIdentifier)
 
-		textLabel.font = UIFont(name: "Avenir-Heavy", size: 18)
-		textLabel.textColor = UIColor(white: 0.4, alpha: 1)
-		textLabel.highlightedTextColor = UIColor.whiteColor()
-		textLabel.adjustsFontSizeToFitWidth = true
+		textLabel?.font = UIFont(name: "Avenir-Heavy", size: 18)
+		textLabel?.textColor = UIColor(white: 0.4, alpha: 1)
+		textLabel?.highlightedTextColor = UIColor.whiteColor()
+		textLabel?.adjustsFontSizeToFitWidth = true
 
 		if let detailTextLabel = detailTextLabel {
 			detailTextLabel.font = UIFont(name: "Avenir-Book", size: 18)
@@ -48,9 +48,11 @@ class TableViewCell: UITableViewCell {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 
-		var rect = textLabel.frame
-		rect.size.width = min(rect.size.width, 240)
-		textLabel.frame = rect
+		if let textLabel = textLabel {
+			var rect = textLabel.frame
+			rect.size.width = min(rect.size.width, 240)
+			textLabel.frame = rect
+		}
 
 		if let detailTextLabel = detailTextLabel {
 			let size = contentView.bounds.size
